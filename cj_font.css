@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'cjBody';
+  font-style: normal;
+  font-weight: 300;
+  src: url('cjBodyRegular.eot?#iefix') format('embedded-opentype'),
+       url(http://www.studiodragon.net/resources/front/kr/font/cjBodyRegular.woff) format('woff2'),
+       url(cjBodyRegular.woff) format('woff'),
+       url(cjBodyRegular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'cjTitle';
+  font-style: normal;
+  font-weight: 400;
+   src: url('cjTitle.eot?#iefix') format('embedded-opentype'),
+        url(http://www.studiodragon.net/resources/front/kr/font/cjTitle.woff) format('woff2'),
+        url(cjTitle.woff) format('woff'),
+        url(cjTitle.otf) format('opentype');
+}

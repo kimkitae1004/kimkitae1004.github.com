@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>반응형 사이트2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="noto_font.css">
+	<link rel="stylesheet" href="nanumgothic_font.css">
+	<link rel="stylesheet" href="nanummyeongjo_font.css">
+	<link rel="stylesheet" href="nanumpen_font.css">
+	<link rel="stylesheet" href="cj_font.css">
+	<style>
+	/* font-family: 'Noto Sans KR', sans-serif;  */
+	/* font-family: 'Nanum Gothic', sans-serif; */
+	/* font-family: 'Nanum Myeongjo', serif; */
+	/* font-family: 'Nanum Pen Script', cursive;  */
+	/* font-family: 'Nanum Brush Script', cursive;  */
+	/* font-family: 'cjBody', sans-serif;  */
+	/* font-family: 'cjTitle', sans-serif;  */
+
+	/* 모바일의 경우 */
+	.desk { display:none; }
+	.mobile { display:block; }
+	
+	body, html { width:100%; height:100%; }
+	a { text-decoration:none; }
+	dl { color:#fff; text-align:center; }
+	dl dt { font-size:1.1em; line-height:300%; }
+	dl dd { font-size:0.75em; line-height:200%; width:90%; text-align:center; margin:0 auto; }
+
+	#wrap { position:relative; width:100%; height:100%; }
+	.content_area { clear:both; width:100%; height:100%; }
+	.page, .half_page { clear:both; width:100%; height:100%; background-position:center top;
+	   background-size:auto auto; position:relative; background-color:#fff; }
+	.half_page { height:50%; }
+	.page_box { display:block; width:100%; margin:0 auto; padding-top:0; }
+	.bg_img { display:block; width:100%; height:100%; }
+	.page_data { position:absolute; width:100%; height:100%; top:0; }
+	#main .page_data { width:80%; margin-top:40%; left:10%; border:0px; }
+	.scroll { text-align:center; padding-top:55%; }
+	.secTitle { clear:both; color:#333; text-indent:5px; line-height:160px; font-size:2.5em; }
+	.secTitle:before { content:"-  "; }
+	.slideWrap { clear:both; width:100%; padding-bottom:40px; }
+	.bx-wrapper { width:200%; margin-left:-25%; }
+	.slide_box { width:100%;  }
+	.bx-clone { float:left; width:25%; }
+	.bx-clone a { display:block; width:100%; text-align:center; }
+	.bx-clone a img { display:block; width:90%; margin:0 auto; }
+	.bx-clone dl { color:#333; }
+	.bx-clone dl dt { font-size:0.95em; }
+	.ctrlBtns { width:110px; margin:20px auto; height:60px;  }
+	.ctrlBtns a { display:block; text-indent:-9999px; background-repeat:no-repeat; 
+		width:50px; height:20px; float:left; margin-right:5px; 
+		background-image:url("./img/btn_list_side_mo.png"); margin-top:80px; }
+	.prev { background-position:0px center; }
+	.next { background-position:-50px center; }
+	.blind { display:block; text-indent:-9999px; }
+
+	.worksListWrap { width:100%; }
+	.leftSide { float:left; width:50%;}
+	.rightSide { float:right; width:50%; }
+	.worksListWrap div ul { display:block; width:80%; }
+	.worksListWrap .leftSide ul { float:right; }
+	.worksListWrap .rightSide ul { float:left; }
+	.worksListWrap div ul li { position:relative; }
+	.worksListWrap div ul li img { display:block; width:100%; height:auto; }
+	.worksListWrap div ul li a {  } 
+	.worksOver { position:absolute; display:block; top:0px; writing-mode:vertical-rl; 
+ color:#333; text-align:center;  padding:6px; font-size:0.8em; 
+	font-weight:bold; z-index:10;}
+	.worksListWrap .leftSide .worksOver { left:-40px;  }
+	.worksListWrap .rightSide .worksOver { right:-20px; }
+	.worksListWrap .rightSide .list03 .worksOver { writing-mode:horizontal-tb; 
+		position:static; }
+	.btn-area { clear:both; width:100%; height:60px; position:absolute;
+		bottom:0px; z-index:11; left:0; }
+	.more { display:block; width:40%; height:42px; border:1px solid #333; color:#333;
+		font-size:0.9em; text-align:center; margin:0 auto; line-height:42px;
+		font-weight:bold; }
+	#issueArea { clear:both; width:100%; background:none; }
+	#issueArea a { display:block; width:100%; }
+	#issueArea .issue_img { display:block; height:auto; width:100%; padding-bottom:60px; 
+		position:static; top:0; }
+	.pageWrap { clear:both; position:relative; }
+	.pageWrap table { margin:30px auto; text-align:center;
+    table-layout: fixed; display:block; width:90%; height:350px; }
+	.pageWrap table caption { font-size:1.6em; padding-bottom:10px; 
+		border-bottom:2px solid #333; }
+	.pageWrap colgroup {   display: table-column-group;  }
+	.pageWrap table tbody {     display: table-row-group;    vertical-align: middle;}
+	.pageWrap table col {    display:table-column; }
+	.pageWrap table .dateCell {    width:90px;   }
+
+	.pageWrap table tr { display:table-row; height:20px;  }
+	.pageWrap table td { font-size:0.85em;    word-break:break-all; 	    color: #000;
+		border-bottom: 1px solid #f2f2f2;	vertical-align: middle;  padding:2px; }
+	.pageWrap table td.tl {  text-align:left; }
+	.pageWrap table td.tr {  text-align:right; }
+	.pageWrap table td a { display:inline-block; padding:4px; color:#000; 
+		overflow:hidden; line-height:25px; height:22px; text-overflow:ellipsis; }
+
+	#hd { position:fixed; top:0; left:0; width:100%; z-index:90; }
+	.nav_wrap { width:100%; height:40px; }
+	.logo { display:block; float:left; margin-left:5%; height:20px; line-height:40px; }
+	.mobile .logo img { display:block; height:20px; width:auto; margin-top:10px; }
+	.colap_btn { display:block; float:right; margin-right:5%; width:28px; height:28px; 
+		background-position:center center; background-repeat:no-repeat; 
+		background-size:20px 20px; margin-top:10px; }
+	#list { background-image:url("./img/ico_menu.png"); }
+	#close { background-image:url("./img/btn_pop_close.png"); }
+	#opener { background-color:transparent; }
+	#closer { background-color:#fff; }
+	.mobile #gnb { display:none; padding:20px; background-color:#fff; }
+	.mobile #gnb li { clear:both; }
+	.mobile #gnb li a { display:block; }
+	.mobile #gnb .gnb_item {  height:50px; line-height:50px; border-bottom:1px solid #9c9c9c; color:#333; background-color:#fff; font-size:1.2em; font-weight:bold; cursor:pointer; }
+	.mobile #gnb .gnb_item span { display:block; float:left; }
+	.mobile #gnb .gnb_item .arrow1 { display:block; float:right; }
+	.mobile #gnb .sub { display:none; }
+	.mobile #gnb .sub li a { height:36px; line-height:36px; color:#444; font-weight:300; 
+		font-size:0.95em; text-indent:15px; }
+
+	.mobile #rnb { clear:both; padding-top:100px; padding-left:25px; background-color:#fff;
+		padding-bottom:30px; display:none; }
+	.mobile #rnb ul { padding-bottom:30px; }
+	.mobile #rnb li { float:left; padding:15px;  background-color:#fff;  border-right:1px solid #333; padding:10px; }
+	.mobile #rnb li:last-child { border:0px; }
+	.mobile #rnb li a { color:#333; font-size:0.95em; font-weight:bold; background-color:#fff; margin:5px; }
+
+	#main { background-image:url("./img/visual1.jpg"); }
+
+	
+
+	#ft { clear:both; width:100%; position:static; background:#212121;  
+		color:#fff; }
+	.ft_inner { width:95%; margin:0 auto; padding:5%; }
+	.family { width:100%; clear:both; position:relative; height:32px; line-height:34px; }
+	.sel { display:block; float:left; width:40%; height:32px; color:#fff; font-size:0.85em; line-height:34px; }
+	.family ul { width:55%; position:absolute; bottom:0; right:0; border:1px solid #333; }
+	.family ul li { height:32px; background-color:#fff; display:none; }
+	.family ul li.active { display:block; } 
+	.family ul li a { display:block; color:#333;  font-size:0.85em; text-indent:20px; line-height:32px; }
+	.family ul li:hover { background-color:#ededed; }
+	.fnb { clear:both; height:60px; padding-top:30px; }
+	.fnb li { padding:8px; font-size:0.75em; float:left;}
+	.fnb a { color:#fff; padding:4px; }
+	#ft .ft_txt { padding-top:20px; }
+	#ft .txt { color:#fff; line-height:1.6; font-size:0.67em; padding-right:20px;
+		padding-top:20px; }
+
+	/* 데스크탑일 경우 */
+	@media screen and (min-width:960px) {
+		body, html { overflow-x:hidden; }
+		dl dt { font-size:1.8em; line-height:300%; }
+		dl dd { font-size:1.1em; line-height:200%; width:90%; text-align:center; margin:0 auto; }
+		.mobile { display:none; }
+		.desk { display:block; }
+		#hd2.desk { display:block; }
+		#hd2 { background-color:transparent; 
+		position:fixed; top:0; left:0; width:100%; z-index:90; }
+		#hd2 .logo { display:block; float:left; margin-top:15px; }
+		#hd2 li a { color:#fff; background-color:transparent; }
+		#hd2 #gnb2 { float:left; margin-left:10%; background-color:transparent; }
+		#hd2 #gnb2 li { float:left; padding:10px; background-color:transparent;}
+		#hd2 #gnb2 li a { display:block; color:#fff; background-color:transparent; }
+		#hd2 #gnb2 li .gnb_item { font-size:0.9em; font-weight:600; padding:10px;
+		font-size:1em; font-weight:bold;  }
+		#hd2 #gnb2 li .sub { position:absolute; background-color:transparent; display:none;}
+		#hd2 #gnb2 li:hover .sub { display:block; }
+		#hd2 #gnb2 li .sub li { clear:both; height:32px; }
+		#hd2 #gnb2 li .sub li a { font-size:0.9em; line-height:32px;  }
+
+		#rnb2 { margin-left:30px; float:left; }
+		#rnb2 li { float:left; padding:15px; }
+		#rnb2 li a { display:block; padding:5px; }
+
+		#lnb { position:fixed; width:90px; height:60%; z-index:90; left:0; top:20%; 
+			background-color:#fff; }
+		#lnb ul { float:left; }	
+		#lnb li {  padding:8px;}	
+		#lnb li a { display:block; writing-mode:vertical-rl; padding:10px; 
+			color:#333; font-size:0.9em; font-weight:bold; }
+		#lnb .lnb_menu { width:50px; margin-top:80px; }	
+		#lnb .menu_arrow { width:20px; margin-top:80px; height:100%; 
+			position:relative; background-position-x:center; 
+			background-repeat:no-repeat; background-image:url("./img/arrow_main_loca.png");  }
+
+		#main .page_data { width:40%; margin-top:25%; left:30%; border:3px solid #fff;
+		height:28%; }
+		.scroll { text-align:center; padding-top:45%; }
+		.secTitle { text-indent:100px;  }
+		.bx-wrapper { width:70%;  overflow-x:hidden; margin:0 auto; }
+		.slide_box { width:134%;  }
+		.bx-clone { float:left; width:25%; }
+		.ctrlBtns { margin:0px auto; height:25px;  }
+		.worksListWrap { width:42%; margin:0 auto; }
+		.more {width:12%; }
+		#page3 { background-color:transparent; }
+		#page3 .secTitle { background-color:#fff; }
+		#issueArea { clear:both; width:100%; background:url("./img/issue_bg.png");
+			background-size:100% 200%; background-repeat:no-repeat; height:450px; background-color:transparent; overflow:hidden; 
+			background-position:center center; }
+		#issueArea .issue_img { position:fixed; z-index:-1; top:280px; left:0; }
+		.pageWrap { width:100%; padding:20px;}
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+	$(function(){
+		var sw1 = -1;
+		$("#closer").css("display", "none");
+		$("#gnb").css("display", "none");
+		$(".colap_btn").click(function(){
+			sw1 = sw1 * -1;
+			if(sw1 == 1) {
+				$("#opener").css("display", "none");
+				$("#closer").css("display", "block");
+				$(".mobile #gnb").css("display", "block");
+				$(".mobile #rnb").css("display", "block");
+			} else {
+				$("#opener").css("display", "block");
+				$("#closer").css("display", "none");
+				$(".mobile #gnb").css("display", "none");
+				$(".mobile #rnb").css("display", "none");
+			}
+		});
+	});
+	$(function(){
+		var sw2 = -1;
+		var sw_txt;
+		$(".mobile #gnb .gnb_item").removeAttr("href");
+		$(".mobile #gnb .gnb_item span").after("<label class='arrow1'></label>")
+		$(".arrow1").text(" ▼");
+		$(".mobile #gnb .gnb_item").click(function(event){
+			sw2 = sw2 * -1;
+			if(sw2 == 1) {
+				$(".mobile #gnb .gnb_item").nextAll(".sub").css("display","none");
+				$(this).nextAll(".sub").css("display","block");
+				$("#hd.mobile").css("background", "#ffffff");
+			} else {
+				$(".mobile #gnb .gnb_item").nextAll(".sub").css("display","none");
+				$(this).nextAll(".sub").css("display","none");
+				$("#hd.mobile").css("background", "transparent");
+			}
+			sw_txt = $(this).find(".arrow1").text();
+			if(sw_txt == " ▼") {
+				$(this).find(".arrow1").text(" ▲");
+			} else {
+				$(this).find(".arrow1").text(" ▼");
+			}
+		});
+	});
+	$(function(){
+		var win_wd = parseInt($(window).width());
+		var win_ht = parseInt($(window).height());
+		var sc_top = parseInt($(window).scrollTop());
+
+		$(".page").width(win_wd);
+		$(".page").height(win_ht);
+		$(".half_page").height(win_ht/1.5);
+		$("#ft").height(win_ht/2);
+
+
+		$(window).scroll(function(){
+			sc_top = parseInt($(window).scrollTop());
+			if(sc_top>=100) {
+				$(".pop_logo").attr("src", "./img/logo_b.png");
+				$("#opener").css("background","#fff");
+				$("#list").css("background-image","url(./img/ico_menu_b.png)");
+			} else {
+				$(".pop_logo").attr("src", "./img/logo_w.png");
+				$("#opener").css("background","transparent");
+				$("#list").css("background-image","url(./img/ico_menu.png)");
+			}
+
+		});
+	});
+
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header id="hd2" class="desk">
+			<a href="index.html" class="logo">
+				<img src="./img/logo_w.png" alt="로고">
+			</a>
+			<nav id="gnb2">
+				<ul>
+					<li>
+						<a href="" data-page="1" class="gnb_item">ABOUT</a>
+						<ul class="sub">
+							<li><a href="">ABOUT US</a></li>
+							<li><a href="">COMPANY HISTORY</a></li>
+							<li><a href="">PARTNERS</a></li>
+							<li><a href="">CONTACT US</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="2" class="gnb_item">WORKS</a>
+						<ul class="sub">
+							<li><a href="">SHOWS</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="3" class="gnb_item">CARERRS</a>
+						<ul class="sub">
+							<li><a href="">RECRUITMENT</a></li>
+							<li><a href="">FEATURED JOBS</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="4" class="gnb_item">NEWSROOM</a>
+						<ul class="sub">
+							<li><a href="">NOTICE</a></li>
+							<li><a href="">PRESS RELEASES</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="5" class="gnb_item">IR</a>
+						<ul class="sub">
+							<li><a href="">PUBLIC NOTICE</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav id="rnb2">
+				<ul>
+					<li><a href="">KOR</a></li>
+					<li><a href="">ENG</a></li>
+				</ul>
+			</nav>
+		</header>
+		<header id="hd" class="mobile">
+			<div class="nav_wrap" id="opener">
+				<a href="index.html" class="logo">
+					<img src="./img/logo_w.png" alt="로고" class="pop_logo">
+				</a>
+				<label for="" id="list" class="colap_btn"></label>
+			</div>
+			<div class="nav_wrap" id="closer">
+				<a href="index.html" class="logo">
+					<img src="./img/logo_b.png" alt="로고">
+				</a>
+				<label for="" id="close" class="colap_btn"></label>
+			</div>
+			<nav id="gnb">
+				<ul>
+					<li>
+						<a href="" data-page="1" class="gnb_item"><span>ABOUT</span></a>
+						<ul class="sub">
+							<li><a href="">ABOUT US</a></li>
+							<li><a href="">COMPANY HISTORY</a></li>
+							<li><a href="">PARTNERS</a></li>
+							<li><a href="">CONTACT US</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="2" class="gnb_item"><span>WORKS</span></a>
+						<ul class="sub">
+							<li><a href="">SHOWS</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="3" class="gnb_item"><span>CARERRS</span></a>
+						<ul class="sub">
+							<li><a href="">RECRUITMENT</a></li>
+							<li><a href="">FEATURED JOBS</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="4" class="gnb_item"><span>NEWSROOM</span></a>
+						<ul class="sub">
+							<li><a href="">NOTICE</a></li>
+							<li><a href="">PRESS RELEASES</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" data-page="5" class="gnb_item"><span>IR</span></a>
+						<ul class="sub">
+							<li><a href="">PUBLIC NOTICE</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav id="rnb">
+				<ul>
+					<li class="active"><a href="">KOR</a></li>
+					<li class=""><a href="">ENG</a></li>
+				</ul>
+			</nav>
+		</header>
+		<aside id="lnb" class="desk">
+			<ul class="menu_arrow">
+				<li page-data="1" id="scroll_arrow"></li>
+			</ul>
+			<ul class="lnb_menu">
+				<li><a href="" page-data="1" class="lnb_item">HOME</a></li>
+				<li><a href="" page-data="2" class="lnb_item">ON AIR</a></li>
+				<li><a href="" page-data="3" class="lnb_item">WORKS</a></li>
+				<li><a href="" page-data="4" class="lnb_item">ISSUE</a></li>
+				<li><a href="" page-data="5" class="lnb_item">NEWS</a></li>
+			</ul>
+		</aside>
+		<div class="content_area">
+			<section id="main" page-data="0" class="page">
+				<img src="./img/main_data.png" alt="배경" class="bg_img">
+				<div class="page_data" style="">
+					<dl class="page_box">
+						<dt>WE CREATE NEW CULTURE</dt>
+						<dd>아시아의 콘텐츠와 라이프스타일을<br>선도하는 트렌드 리더로서 늘 새로운 시도로 <br>시청자들에게 보는 즐거움을 선사합니다.</dd>
+					</dl>
+					<p class="scroll">
+						<img src="./img/img_visual_scroll_pc.png" alt="Scroll Down" class="pc">
+					</p>
+				</div>
+			</section>
+			<section id="page1" page-data="1" class="page">
+				<img src="./img/main_data.png" alt="배경" class="bg_img">
+				<div class="page_data">
+					<h2 class="secTitle">ON AIR</h2>
+					<div class="slideWrap">
+						<div class="bx-wrapper">
+							<ul class="slide_box">
+								<li class="bx-clone">
+									<a href="">
+										<img src="./img/onair1.jpg" alt="구해줘 이미지">
+									</a>
+									<dl>
+										<dt>구해줘</dt>
+										<dd>OCN (토, 일) 오후 10:20</dd>
+									</dl>
+								</li>
+								<li class="bx-clone">
+									<a href="">
+										<img src="./img/onair2.jpg" alt="하백의 신부 2017 이미지">
+									</a>
+									<dl>
+										<dt>하백의 신부 2017</dt>
+										<dd>tvN (월, 화) 오후 10:50</dd>
+									</dl>
+								</li>
+								<li class="bx-clone">
+									<a href="">
+										<img src="./img/onair3.jpg" alt="비밀의 숲 이미지">
+									</a>
+									<dl>
+										<dt>비밀의 숲</dt>
+										<dd>tvN (토, 일) 오후 9:00</dd>
+									</dl>
+								</li>
+								<li class="bx-clone">
+									<a href="">
+										<img src="./img/onair4.jpg" alt="크리미널마인드 이미지">
+									</a>
+									<dl>
+										<dt>크리미널마인드</dt>
+										<dd>tvN (수, 목) 오후 10:50</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="ctrlBtns">
+						<a href="#" class="prev">
+							<span class="blind">이전</span>
+						</a>
+						<a href="#" class="next">
+							<span class="blind">다음</span>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section id="page2" page-data="2" class="page">
+				<img src="./img/main_data.png" alt="배경" class="bg_img">
+				<div class="page_data">
+					<h2 class="secTitle">WORKS</h2>
+					<div class="worksListWrap">
+						<div class="leftSide">
+							<ul>
+								<li class="list01">
+									<a href="">
+										<img src="./img/works1.jpg" alt="도깨비 이미지">
+										<strong class="worksOver">
+											<span>도깨비</span>
+										</strong>
+									</a>
+								</li>
+								<li class="list02">
+									<a href="">
+										<img src="./img/works2.jpg" alt="치즈인더트랩 이미지">
+										<strong class="worksOver">
+											<span>치즈인더트랩</span>
+										</strong>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="rightSide">
+							<ul>
+								<li class="list03">
+									<a href="">
+										<strong class="worksOver">
+											<span>또 오해영</span>
+										</strong>
+										<img src="./img/works3.jpg" alt="또 오해영 이미지">
+									</a>
+								</li>
+								<li class="list04">
+									<a href="">
+										<img src="./img/works4.jpg" alt="디어 마이 프렌즈 이미지">
+										<strong class="worksOver">
+											<span>디어 마이 프렌즈</span>
+										</strong>
+									</a>
+								</li>
+								<li class="list05">
+									<a href="">
+										<img src="./img/works5.jpg" alt="THE K2 이미지">
+										<strong class="worksOver">
+											<span>THE K2</span>
+										</strong>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="btn-area">
+							<a href="#" class="more">VIEW MORE</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="page3" page-data="3" class="half_page">
+				<img src="./img/main_half_data.png" alt="배경" class="bg_img">
+				<div class="page_data">
+					<h2 class="secTitle">ISSUE</h2>
+					<div id="issueArea">
+						<a href="#">
+							<img src="./img/news1.jpg" alt="이슈이미지" class="issue_img">
+							<dl class="scrollable">
+								<dt>감독은 있는데 대본이 없다.</dt>
+								<dd>작가를 꿈꾸는 이들에게 열려 있는 창작 공간과 기회를 제공합니다.</dd>
+							</dl>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section id="page4" page-data="4" class="page">
+				<img src="./img/main_data.png" alt="배경" class="bg_img">
+				<div class="page_data">
+					<h2 class="secTitle">NEWS</h2>
+					<div class="pageWrap">
+						<table>
+							<caption>뉴스 목록</caption>
+							<colgroup>
+								<col><col class="dateCell">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="tl">
+										<a href="#" class="txt">반전 장인‘써클’이 보여준 뒷통수 클래스</a>
+									</td>
+									<td class="tr dateCell">2017.06.07</td>
+								</tr>
+								<tr>
+									<td class="tl">
+										<a href="#" class="txt">‘하백의 신부 2017’ “난 수국의 왕 하백이다” 남주혁표 하백 베일 벗었다!</a>
+									</td>
+									<td class="tr dateCell">2017.06.07</td>
+								</tr>
+								<tr>
+									<td class="tl">
+										<a href="#" class="txt">tvN 화제작 ‘비밀의 숲’  시청자들과 함께 한 시사회, 후끈!</a>
+									</td>
+									<td class="tr dateCell">2017.06.07</td>
+								</tr>
+								<tr>
+									<td class="tl">
+										<a href="#" class="txt">OCN 복제인간 추격 스릴러‘듀얼’ 배우 양세종, 절대악 살인마 vs 기억 잃은 복제인간 1人 2色 대본 탐독 현장 포착!</a>
+									</td>
+									<td class="tr dateCell">2017.06.07</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn-area">
+							<a href="#" class="more">VIEW MORE</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer id="ft" class="half_page">
+				<div class="ft_inner">
+					<div class="ft_top">
+						<div class="family"><!-- class on 추가 -->
+							<a href="" class="sel">Family Site
+								<span class="arr"></span>
+							</a>
+							<ul class="">
+								<li class="active"><a href="#">CJ 그룹</a></li>
+								<li><a href="#">CJ E&amp;M</a></li>
+								<li><a href="#">tvN</a></li>
+								<li><a href="#">OCN</a></li>
+								<li><a href="#">문화창고</a></li>
+								<li><a href="#">JS Pictures</a></li>
+							</ul>
+						</div>
+						<ul class="fnb">
+							<li><a href="#">법적고지</a></li>
+							<li><a href="#">이메일 무단수집 거부</a></li>
+							<li><a href="#">윤리경영</a></li>
+							<li><a href="#">CONTACT US</a></li>
+							<li><a href="#">사이트맵</a></li>
+						</ul>
+					</div>
+					<div class="ft_txt">
+						<div class="ft_logo">
+							<img src="./img/footer_logo.png" alt="studio dragon">
+						</div>
+						<div class="txt">
+							<p>서울특별시 마포구 매봉산로 75, 17층 스튜디오 드래곤 주식회사</p>
+							<span>FAX : +82 2-2146-0988</span>
+							<span>사업자등록번호 : 747-81-00388</span><br/>
+							<span>대표자 : 최진희</span>
+							<p class="copyright">©2017 <strong>STUDIO DRAGON Corp.</strong> All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

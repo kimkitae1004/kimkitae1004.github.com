@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Nanum Pen Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/ea/nanumpenscript/v4/NanumPenScript-Regular.eot);
+  src: url(http://fonts.gstatic.com/ea/nanumpenscript/v4/NanumPenScript-Regular.eot?#iefix) format('embedded-opentype'),
+       url(http://fonts.gstatic.com/ea/nanumpenscript/v4/NanumPenScript-Regular.woff2) format('woff2'),
+       url(http://fonts.gstatic.com/ea/nanumpenscript/v4/NanumPenScript-Regular.woff) format('woff'),
+       url(http://fonts.gstatic.com/ea/nanumpenscript/v4/NanumPenScript-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Brush Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/ea/nanumbrushscript/v4/NanumBrushScript-Regular.eot);
+  src: url(http://fonts.gstatic.com/ea/nanumbrushscript/v4/NanumBrushScript-Regular.eot?#iefix) format('embedded-opentype'),
+       url(http://fonts.gstatic.com/ea/nanumbrushscript/v4/NanumBrushScript-Regular.woff2) format('woff2'),
+       url(http://fonts.gstatic.com/ea/nanumbrushscript/v4/NanumBrushScript-Regular.woff) format('woff'),
+       url(http://fonts.gstatic.com/ea/nanumbrushscript/v4/NanumBrushScript-Regular.ttf) format('truetype');
+}
