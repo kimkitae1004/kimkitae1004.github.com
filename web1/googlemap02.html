@@ -1,0 +1,211 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+ <meta charset="utf-8"> 
+
+ <title>구글지도 API 탭 구현하기</title> 
+
+ <style>
+
+ * { margin: 0; padding: 0; }
+
+ body, html { width:100%; }     
+
+ ul { list-style: none; }
+
+ a { text-decoration: none; }
+
+ .tab_fr { clear:both; width: 900px; margin:20px auto; border:2px solid #333; min-height: 550px; position:relative; }     
+
+ .ra_item { display:none; }  
+
+ .tab_tit { line-height: 3.6; text-align: center} 
+
+ .map_tit { line-height: 2.4; text-align: center}     
+
+ .btn_fr { width: 900px; height: 50px; clear:both; position:relative; }
+
+ .btn_fr label { display:block; width:225px; text-align:center; line-height: 50px; 
+
+     height: 50px; border:2px solid #333; color:#333; box-sizing:border-box; 
+
+     float:left; font-weight:bold; cursor:pointer; }   
+
+ #ra_map1:checked ~ .btn_fr .ra_map_btn1 { background:#333; color:#fff; }
+
+ #ra_map2:checked ~ .btn_fr .ra_map_btn2 { background:#333; color:#fff; }
+
+ #ra_map3:checked ~ .btn_fr .ra_map_btn3 { background:#333; color:#fff; }
+
+ #ra_map4:checked ~ .btn_fr .ra_map_btn4 { background:#333; color:#fff; }
+
+    
+
+ .map_box { clear:both; width: 600px; height:450px; margin:0 auto; }     
+
+ .map_box li { clear:both; width: 600px; height:450px; margin:0 auto; 
+
+     position:relative; display:none; } 
+
+     
+
+ #ra_map1:checked ~ .map_box .item1 { display:block; }
+
+ #ra_map2:checked ~ .map_box .item2 { display:block; }     
+
+ #ra_map3:checked ~ .map_box .item3 { display:block; }
+
+ #ra_map4:checked ~ .map_box .item4 { display:block; }
+
+ </style>
+
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+ <script> 
+
+  function initialize() { 
+
+      var myLatlng1 = new google.maps.LatLng(37.50563,127.02635); 
+
+      var myLatlng2 = new google.maps.LatLng(36.3491563,127.3776857); 
+
+      var myLatlng3 = new google.maps.LatLng(35.154865,129.0595085); 
+
+      var myLatlng4 = new google.maps.LatLng(35.150783,126.8488780); 
+
+      var mapOptions1 = { zoom: 17, center: myLatlng1, 
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+
+      } 
+
+      var mapOptions2 = { zoom: 17, center: myLatlng2, 
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+
+      } 
+
+      var mapOptions3 = { zoom: 17, center: myLatlng3, 
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+
+      } 
+
+      var mapOptions4 = { zoom: 17, center: myLatlng4, 
+
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+
+      } 
+
+      var map1 = new google.maps.Map(document.getElementById('map_canvas1'), mapOptions1); 
+
+      var map2 = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions2); 
+
+      var map3 = new google.maps.Map(document.getElementById('map_canvas3'), mapOptions3); 
+
+      var map4 = new google.maps.Map(document.getElementById('map_canvas4'), mapOptions4); 
+
+      
+
+      var marker1 = new google.maps.Marker({ position: myLatlng1, map: map1,
+
+        title: '그린컴퓨터학원본사'   
+
+      });   
+
+      var marker2 = new google.maps.Marker({ position: myLatlng2, map: map2,
+
+        title: '대전그린컴퓨터아트학원'   
+
+      });   
+
+      var marker3 = new google.maps.Marker({ position: myLatlng3, map: map3,
+
+        title: '부산그린컴퓨터아트학원'   
+
+      });  
+
+      var marker4 = new google.maps.Marker({ position: myLatlng4, map: map4,
+
+        title: '광주그린컴퓨터아트학원'   
+
+      });  
+
+  } 
+
+ </script> 
+
+</head> 
+
+<body onload="initialize()"> 
+
+    <div class="tab_fr">
+
+        <h2 class="tab_tit">오시는 길</h2>
+
+        <input type="radio" name="ra_google_map" class="ra_item" id="ra_map1" checked>
+
+        <input type="radio" name="ra_google_map" class="ra_item" id="ra_map2">
+
+        <input type="radio" name="ra_google_map" class="ra_item" id="ra_map3">
+
+        <input type="radio" name="ra_google_map" class="ra_item" id="ra_map4">
+
+        <div class="btn_fr">
+
+            <label for="ra_map1" class="ra_map_btn1">본사</label>
+
+            <label for="ra_map2" class="ra_map_btn2">대전</label>
+
+            <label for="ra_map3" class="ra_map_btn3">부산</label>
+
+            <label for="ra_map4" class="ra_map_btn4">광주</label>
+
+        </div>
+
+        <ul class="map_box">
+
+            <li class="map_fr item1">
+
+                <h3 class="map_tit">본사 오시는 길</h3>
+
+                <div id="map_canvas1"style="width:600px; height:400px;"></div> 
+
+            </li>
+
+            <li class="map_fr item2">
+
+                <h3 class="map_tit">대전지사 오시는 길</h3>
+
+                <div id="map_canvas2"style="width:600px; height:400px;"></div> 
+
+            </li>
+
+            <li class="map_fr item3">
+
+                <h3 class="map_tit">부산지사 오시는 길</h3>
+
+                <div id="map_canvas3"style="width:600px; height:400px;"></div> 
+
+            </li>
+
+            <li class="map_fr item4">
+
+                <h3 class="map_tit">광주지사 오시는 길</h3>
+
+                <div id="map_canvas4"style="width:600px; height:400px;"></div> 
+
+            </li>
+
+        </ul>
+
+    </div>
+
+ 
+
+</body> 
+
+</html>

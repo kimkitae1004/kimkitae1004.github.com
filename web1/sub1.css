@@ -1,0 +1,116 @@
+@charset "utf-8";
+    /* geoje11.html의 전체 및 #page1 스타일 */ 
+    #gnb_nav .sub_cate_tit { padding: 0; }    
+    .page { position:relative;  width: 100%; overflow:hidden; background-color: #fff;  }
+    .content { display:none; }    
+    .sub_main:before, .page:before { content:""; display:block; width:100%; height: 161px; }    
+    .content:target { display:block; } 
+    .page_content { clear:both; overflow:auto; }
+    .page_content:before { content:""; display:block; clear:both;  }    
+/*
+    .content .lnb { display:none; } 
+    .content:target .lnb { display:block; }    
+*/
+    #page1:target .cate1 a { color:cornflowerblue; }
+    #page2:target .cate2 a { color:cornflowerblue; }    
+    #page3:target .cate3 a { color:cornflowerblue; } 
+    .sub_main .cate1 a { color:cornflowerblue; }    
+        
+    .sub_img { clear:both; background-image: url("./img/bg_360vR.png");
+        background-position:center center;
+        background-repeat: no-repeat; 
+        padding: 25px 0 0px 0; text-align: center;  color:#999; width: 909px; margin: 0 auto;  }
+    .btxt { color:cornflowerblue; }    
+    .sub_img_tit { font-size:2em; line-height: 1.6; font-weight:400; }   
+    .sub_img_com { font-size:1.1em; line-height: 1.6; padding-bottom: 2.5em; font-weight: 200; }
+    .thumb_box { background-image:url("./img/ico_vrvideo.png"); background-position:14px center; background-repeat: no-repeat; background-color:#eee; padding: 1em; margin: 1em auto; 
+        width: 909px; margin-top: 2em; }  
+    .thumb_com { padding-left:5em; position:relative; 
+        color:#666; font-weight:200; }
+    .thumb_com:before { content:""; width:2px; height:48px; display:block; background-color:#aaa;  position:absolute;
+        left:3.6em;  }    
+    .thumb_lst { width: 100%; clear:both; background-color:#fff; padding-top:3em; width: 909px; margin:1em auto; }
+    .thumb_lst li { float:left; width: 292px; height: 204px; overflow:hidden; margin: 5px; 
+        background-image: url("./img/bg_360vR.jpg"); 
+        background-repeat: no-repeat; 
+        background-size:auto 612px; 
+        cursor:pointer; position:relative; }
+    .thumb_lst li.item1 { background-position:0px 0px; }       .thumb_lst li.item2 { background-position:-292px 0px; }
+    .thumb_lst li.item3 { background-position:-584px 0px; }
+    .thumb_lst li.item4 { background-position:0px -204px; }
+    .thumb_lst li.item5 { background-position:-292px -204px; }    
+    .thumb_lst li.item6 { background-position:-584px -204px; }
+    .thumb_lst li.item7 { background-position:0px -408px; }
+    .thumb_lst li.item8 { background-position:-292px -408px; }
+    .thumb_lst li.item9 { background-position:-584px -408px; }
+        
+    .thumb_lst li .off_box { width: 292px; height: 204px; 
+        background-repeat: no-repeat; 
+        background-position: center 40px; 
+        text-align:center; color:#fff;  }
+    .thumb_lst li .off_box img { display:block; margin: 2em auto; }
+    .thumb_lst li .off_box .thumb_tit1 { text-shadow:1px 1px 1px #333; font-weight:300; }    
+/*
+    .thumb_lst li.item1 .off_box { background-image: url("./img/ico_360Vr01.png"); }
+    .thumb_lst li.item2 .off_box { background-image: url("./img/ico_360Vr02.png"); }    
+    .thumb_lst li.item3 .off_box { background-image: url("./img/ico_360Vr03.png"); }
+    .thumb_lst li.item4 .off_box { background-image: url("./img/ico_360Vr04.png"); }
+    .thumb_lst li.item5 .off_box { background-image: url("./img/ico_360Vr05.png"); }
+    .thumb_lst li.item6 .off_box { background-image: url("./img/ico_360Vr06.png"); }    
+    .thumb_lst li.item7 .off_box { background-image: url("./img/ico_360Vr07.png"); }
+    .thumb_lst li.item8 .off_box { background-image: url("./img/ico_360Vr08.png"); }    
+    .thumb_lst li.item9 .off_box { background-image: url("./img/ico_360Vr09.png"); }    
+*/
+        
+    .thumb_lst li .on_box { display:block; width: 292px; height: 204px; background:rgba(255,122,33,0.95); position:absolute; top:204px; left: 0; color:#fff; transition:0.5s; text-align:center; }
+    .thumb_lst li:hover .on_box { top: 0; }    
+    .thumb_lst li .on_box .thumb_tit2 { margin-top:2em; font-weight:400; }
+    .thumb_lst li .on_box .thumb_tit2:after { content:""; display:block; width: 40px; height: 2px; background-color: #ffe221; clear:both; margin: 10px auto; }  
+    .thumb_lst li .on_box .thumb_tit3 { font-size:2em; font-weight:300; } 
+    .thumb_lst li .on_box .detail { display:block; width: 120px; margin:1em auto; line-height:2; text-align:center; border:1px solid #fff; }  
+    .thumb_lst:after { content:""; display:block; width: 100%; height:10px; margin:1em auto; clear:both; }
+        
+    .research_box { clear:both; margin:2em auto; width: 909px; border:1px solid #ccc; padding-bottom: 1em; min-height:118px; }
+    .research_box p { background-color:#eee;  color:#999; font-weight: 300;  clear:both; height: auto; min-height:60px; }  
+    .research_box p span { display:block; float:left; padding-left:2.4em; background-repeat: no-repeat; background-position:0px center; margin: 1em; }    
+    .research_box p strong { color:#666; font-weight:500; }   .research_box p span.res1 { background-image:url("./img/f-in-1.png"); } 
+    .research_box p span.res2 { background-image:url("./img/f-in-2.png"); } 
+    .research_box p span.res3 { background-image:url("./img/f-in-3.png"); } 
+    .research_frm { clear:both; margin:1em auto; width: 909px; padding: 1em; }  
+    .research_tit { color:#666; font-weight:300; line-height: 40px; }    
+    .radio_group { float:left; }
+    .radio_group label { padding-right: 2em; cursor:pointer; }    
+    .research_txt_box {float:right; } 
+    .input_box { display:inline-block; width:320px; height: 36px; line-height: 36px; text-indent:0.5em; }
+    .input_btn { display:inline-block; width: 90px; height: 36px; line-height: 36px; text-align:center; background-color: deepskyblue; color:#fff; border:1px solid deepskyblue; }    
+
+    /* #page2 스타일 */
+    #page2 .sub_img { background-image:url("./img/img_namsanVr.jpg"); } 
+    .page_cate_tit {     background: url("./img/bull_h4.gif") no-repeat 0 2px;     padding-left: 25px;    font-size: 1.5em;    font-weight: bold;    color: #004ea1; width: 909px; margin: 1em auto; margin-top: 2em; }  
+    .sub_icon_lst { clear:both; width: 909px; margin: 1em auto;  }
+    .sub_icon_lst li { width: 25%; float:left; margin-bottom:30px; }
+    .sub_icon_lst li .sub_icon { text-align:center; line-height:2; color:#666; height:320px; padding: 15px; } 
+    .sub_icon_lst li + li .sub_icon { border-left:1px solid #ccc; }  
+    .sub_icon_lst li .sub_icon img { display:block; margin: 3em auto; margin-bottom: 2em; }  
+    .sub_icon_lst li .sub_icon_com { line-height: 2.4; font-weight:300; }
+    .sub_img_cate { clear:both; width: 909px; text-align:center; margin: 1em auto; height: auto; padding-bottom: 10px; overflow:hidden; }
+    .sub_img_cate:after {content: ''; display: block; clear: both;}    
+    .sub_img_cate.six img { display:block; float:left; margin:4px; }
+    
+    .sub_thumb_lst { clear:both; width: 909px; margin: 1em auto;  }
+    .sub_thumb_lst li { width: 25%; float:left; margin-bottom:30px; min-height:280px; text-align:center; color:#666; font-weight: 300; }
+    .sub_thumb_lst li .sub_thumb_tit { font-weight: 400; padding-top: 1em; } .sub_thumb_lst li .sub_thumb_com { padding:0.5em 1em; }   
+
+    /* #page3  스타일 */
+    .sub_sea_vrbox1 { width: 909px; margin:1em auto; 
+        padding: 2em; padding-left: 350px; box-sizing:border-box; 
+        background: url("./img/img_vr1.jpg") no-repeat;
+    }    
+    .sub_sea_vrbox_tit1 { font-size:1.6em;  color: #195797; font-weight:300;    }
+    .sub_sea_vrbox_tit1 strong {  font-size:2em; font-weight:400;  padding-right:0.5em; }  
+    .sub_sea_vrbox_com1 { font-size: 1.2em;   padding: 20px 0;
+    color: #666;    line-height: 1.2; font-weight:300; }
+    .sub_sea_vrbox_com2 { font-size: 1.6em; padding: 40px;  line-height: 1.3; padding-left: 0; font-weight:200; color: #666; } 
+    .sub_sea_vrbox_lst { clear:both; }
+    .sub_sea_vrbox_lst li {     background: url("./img/bull_bar.gif") no-repeat 0 8px;    padding-left: 15px;    margin-bottom: 8px;
+    line-height: 1.4; font-size:1.2em; color:#666; font-weight:200; }    

@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>거제관광문화</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="거제시청 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/geoje.ico">
+    <title>거제관광문화</title>
+    <!-- 폰트를 정의하고, 초기화 스타일을 가져오기 --> 
+    
+    <link rel="stylesheet" href="./fontsystem.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/notosanskr.css">
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="common.css">
+    
+    <!-- 서브페이지 공통 시작 -->
+    <link rel="stylesheet" href="sub_common.css">
+    <script src="sub_common.js"></script>
+    <!-- 서브페이지 공통 끝 -->
+    
+    <!-- geoje11.html 만을 위한 설정 시작 -->    
+    <link rel="stylesheet" href="sub1.css">
+    <script src="sub1.js"></script>
+    <!-- geoje11.html 만을 위한 설정 끝 -->    
+    
+    <script src="tnb.js"></script>
+    <script src="footer.js"></script>
+    <style>
+    .page_cate_tit { background-image: url("./img/bull_h5.gif"); 
+        background-position:left center; margin-bottom: 0.25em; } 
+    .tab_box { clear:both; width: 909px; margin: 1em auto; border-top:2px solid #666; }  
+    .thumb_lst {  }   
+    .thumb_lst li { height: 320px; overflow:hidden; background-image:none; padding: 0; box-sizing:border-box; border:1px solid #ddd; background-color:#f1f1f1; }  
+    .thumb_lst li .off_box { padding-top: 0; margin: 0; }    
+    .thumb_lst li .off_box .thumb_lst_img { display:block; height:210px;  margin: 0; padding: 0; min-width:292px; }
+    .thumb_lst li .on_box { height: 320px; top: 320px; }    
+    .thumb_lst li .off_box .thumb_tit1 { color:#666; padding-top: 2em; text-shadow:0px 0px 2px #fff; font-weight: 400; }
+    .thumb_lst li .thumb_tit4 { padding-top: 2.4em; }  
+    .thumb_on_com { padding-top:8em; background:url("./img/over_ico_1.png") no-repeat;
+        background-position:center 20px; }
+    .thumb_on_com span { display:block; text-align:left; padding-left: 48px; background-repeat: no-repeat; background-position:24px center;
+        overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding-right: 24px; }
+    .thumb_on_com span.thumb_addr { background-image:url("./img/ico_i-1.png");  }
+    .thumb_on_com span.thumb_tel { background-image:url("./img/ico_i-2.png"); }    
+    .lst_ra { display:none;  } 
+    .thumb_lst { display:none; }
+    #lst_ra1:checked ~ .thumb_lst.lst1 { display:block; }    
+    #lst_ra2:checked ~ .thumb_lst.lst2 { display:block; } 
+    #lst_ra21:checked ~ .thumb_lst.lst1 { display:block; }    
+    #lst_ra22:checked ~ .thumb_lst.lst2 { display:block; }
+    #lst_ra31:checked ~ .thumb_lst.lst1 { display:block; }    
+    #lst_ra32:checked ~ .thumb_lst.lst2 { display:block; }
+        
+    .page_nation { width: 160px; margin: 1em auto; padding-bottom: 60px; }
+    .page_nation li { width: 32px; height: 32px; margin: 4px; 
+        box-sizing:border-box;  float:left; }
+    .page_nation li label { display:block; text-align: center; line-height: 30px; color:#666; width: 30px; height: 30px; 
+        border:1px solid #ccc; cursor: pointer;
+        background-repeat: no-repeat; background-position: center center; }
+    .page_nation li.first label { background-image:url("./img/page_arr1.gif"); text-indent: -9999px; }   
+    .page_nation li.last label { background-image:url("./img/page_arr4.gif"); text-indent: -9999px; } 
+    #lst_ra1:checked ~ .page_nation li:nth-child(2) label  { background-color:deepskyblue; color:#fff; }    
+    #lst_ra2:checked ~ .page_nation li:nth-child(3) label  { background-color:deepskyblue; color:#fff; } 
+    #lst_ra21:checked ~ .page_nation li:nth-child(2) label  { background-color:deepskyblue; color:#fff; }    
+    #lst_ra22:checked ~ .page_nation li:nth-child(3) label  { background-color:deepskyblue; color:#fff; }
+    #lst_ra31:checked ~ .page_nation li:nth-child(2) label  { background-color:deepskyblue; color:#fff; }    
+    #lst_ra32:checked ~ .page_nation li:nth-child(3) label  { background-color:deepskyblue; color:#fff; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        initialize();
+        $(".tab_con_lst li:first-child").addClass("on");
+        $(".tab_btn_lst li").click(function(){
+            $(".tab_btn_lst li").removeClass("on");
+            var tar_btn = $(this).index();
+            $(this).addClass("on");
+            $(".tab_con_lst li").removeClass("on");
+            $(this)
+                .parents(".tab_btn_lst")
+                .siblings(".tab_con_lst")
+                .find("li.item")
+                .eq(tar_btn).addClass("on");
+        }); 
+    });    
+    </script>
+</head>
+<body>
+<div class="container">
+    <header class="hd">
+        <div class="hd_wrap">
+            <nav class="tnb">
+                <ul class="t_left">
+                    <li><a href="geoje_login.html">로그인</a></li>
+                    <li><a href="geoje_join.html">회원가입</a></li>
+                    <li><a href="geoje_map.html">오시는길</a></li>
+                </ul>
+                <input type="checkbox" id="find_open_btn">
+                <div class="find_window">
+                    <form action="" id="find_form" name="find_form" class="frm">
+                        <input type="text" id="keyword" class="find_input" placeholder="검색어 입력">
+                        <input type="submit" id="find_btn" class="find_btn">
+                    </form>
+                </div>
+                <ul class="t_right">
+                    <li class="lang">
+                        <div class="lang_box">
+                            <span class="cur_lang">LANGUAGE</span>
+                            <a href="index_en.html">ENGLISH</a>
+                            <a href="javascript:;">中文</a>
+                            <a href="javascript:;">日文</a>
+                        </div>
+                    </li>
+                    <li class="ls">
+                        <a href=""></a>
+                    </li>
+                    <li class="find">
+                        <label for="find_open_btn" class="find_open"></label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <nav class="gnb" id="gnb_nav">
+                <ul>
+                    <li class="mn">
+                        <a href="geoje11.html">한눈에 거제</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">360VR 체험&amp; 전자지도</li>
+                                <li><a href="geoje11.html#page1">360 VR영상</a></li>
+                                <li><a href="geoje11.html#page2">남산서울타워 VR체험관</a></li>
+                                <li><a href="geoje11.html#page3">거제조선해양문화관 VR체험</a></li>
+                                <li><a href="geoje_map.html">관광 전자 지도</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li><a href="geoje12.html#page1">거제 9경</a></li>
+                                <li><a href="geoje12.html#page2">거제 9미</a></li>
+                                <li><a href="geoje12.html#page3">거제 9품</a></li>
+                                <li><a href="">남파랑길</a></li>
+                                <li><a href="">추천여행코스</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">체험관광</li>
+                                <li><a href="">씨라인</a></li>
+                                <li><a href="">요트투어</a></li>
+                                <li><a href="">유람선/여객선 관광</a></li>
+                                <li><a href="">낚시여행</a></li>
+                                <li><a href="">드라마촬영지</a></li>
+                                <li><a href="">거제블루시티투어</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">캠핑여행</li>
+                                <li><a href="">학동자동차야영장</a></li>
+                                <li><a href="">거제문화관광농원 오토캠핑장</a></li>
+                                <li><a href="">스톤힐야영장</a></li>
+                                <li><a href="">거제글램퍼스</a></li>
+                                <li><a href="">옥계영농조합법인</a></li>
+                                <li><a href="">트로피칼드림</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">섬&amp;섬길</li>
+                                <li><a href="">칠천량 해전길</a></li>
+                                <li><a href="">맹종죽순 체험길</a></li>
+                                <li><a href="">고려촌 문화체험길</a></li>
+                                <li><a href="">계룡산 둘레길</a></li>
+                                <li><a href="">충무공이순신 만나러가는길</a></li>
+                                <li><a href="">양지암 등대길</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="geoje21.html#page1">거제여행</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li><a href="geoje21.html#page1">해수욕장</a></li>
+                                <li><a href="geoje21.html#page2">섬여행</a></li>
+                                <li><a href="geoje21.html#page3">바다</a></li>
+                                <li><a href="javascript:;">등대</a></li>
+                                <li><a href="javascript:;">다리</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">즐길거리</li>
+                                <li><a href="">공원</a></li>
+                                <li><a href="">유원지</a></li>
+                                <li><a href="">관광농원</a></li>
+                                <li><a href="">유적지</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">먹거리</li>
+                                <li><a href="">지역별 음식</a></li>
+                                <li><a href="">계절별먹거리</a></li>
+                                <li><a href="">위생등급지정업소</a></li>
+                                <li><a href="">모범음식점</a></li>
+                                <li><a href="">칭찬업소</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">숙박</li>
+                                <li><a href="">지역별숙박</a></li>
+                                <li><a href="">공중위생서비스평가최우수업소</a></li>
+                                <li><a href="">칭찬업소</a></li>
+                                <li><a href="">관광숙박업</a></li>
+                                <li><a href="">청소년수련원/유스호스텔</a></li>
+                                <li><a href="">거제자연휴양림</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">살거리</li>
+                                <li><a href="">특산품안내</a></li>
+                                <li><a href="">전통시장</a></li>
+                                <li><a href="">기념품안내</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">즐거운 축제</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">지역축제</li>
+                                <li><a href="">신년해맞이축제</a></li>
+                                <li><a href="">산방산삼월삼짇날축제</a></li>
+                                <li><a href="">대금산 진달래 축제</a></li>
+                                <li><a href="">거제 맹종 대나무 축제</a></li>
+                                <li><a href="">양지암축제</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">관광축제</li>
+                                <li><a href="">거제 옥포대첩 축제</a></li>
+                                <li><a href="">남부면 수국축제</a></li>
+                                <li><a href="">바다로 세계로</a></li>
+                                <li><a href="">거제 예술제</a></li>
+                                <li><a href="">거제몽돌해변축제</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">행사</li>
+                                <li><a href="">시민의 날 행사</a></li>
+                                <li><a href="">어업인의 날 행사</a></li>
+                                <li><a href="">노인의 날 행사</a></li>
+                                <li><a href="">관광의 날 행사</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">문화/공연</li>
+                                <li><a href="">공연</a></li>
+                                <li><a href="">전시</a></li>
+                                <li><a href="">기타행사</a></li>
+                                <li><a href="">문화가 있는 날</a></li>
+                                <li><a href="">문화공간</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">역사/문화</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">국가지정문화재</li>
+                                <li><a href="">천연기념물</a></li>
+                                <li><a href="">명승</a></li>
+                                <li><a href="">사적</a></li>
+                                <li><a href="">등록문화재</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">도지정문화재</li>
+                                <li><a href="">유형문화재</a></li>
+                                <li><a href="">기념물</a></li>
+                                <li><a href="">문화재자료</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">향토문화재</li>
+                                <li><a href="">문화유적</a></li>
+                                <li><a href="">고분유적</a></li>
+                                <li><a href="">전통사찰</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">거제인물</li>
+                                <li><a href="">인물1</a></li>
+                                <li><a href="">인물2</a></li>
+                                <li><a href="">인물3</a></li>
+                                <li><a href="">대한외국인</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">여행가이드</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">여행준비</li>
+                                <li><a href="">거제 스마트관광앱</a></li>
+                                <li><a href="">관광안내지도</a></li>
+                                <li><a href="">관광안내소</a></li>
+                                <li><a href="">주요관광지 요금</a></li>
+                                <li><a href="">문화관광해설사</a></li>
+                                <li><a href="">거제투어 여행사</a></li>
+                                <li><a href="">모바일 키오스크</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">교통정보</li>
+                                <li><a href="">찾아오시는길</a></li>
+                                <li><a href="">시외버스</a></li>
+                                <li><a href="">시내버스</a></li>
+                                <li><a href="">조은섬콜택시</a></li>
+                                <li><a href="">렌터카</a></li>
+                                <li><a href="">항공편</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">여객선/유람선/도선 예약</li>
+                                <li><a href="">여객선 예약</a></li>
+                                <li><a href="">유람선 예약</a></li>
+                                <li><a href="">도선 예약</a></li>
+                                <li><a href="">투어버스 예약</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">무료 와이파이</li>
+                                <li><a href="">공공와이파이</a></li>
+                                <li><a href="">공유와이파이</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">커뮤니티</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">커뮤니티</li>
+                                <li><a href="">새소식</a></li>
+                                <li><a href="">내가찍은거제</a></li>
+                                <li><a href="">인증샷 갤러리</a></li>
+                                <li><a href="">여행후기</a></li>
+                                <li><a href="">포토 갤러리</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">공모전</li>
+                                <li><a href="">거제관광투어 SNS 공모전</a></li>
+                                <li><a href="">제7회 거제○○여행 SNS 공모전</a></li>
+                                <li><a href="">제6회 거제관광투어 SNS 공모전</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">블로그</li>
+                                <li><a href="">제5회 거제관광투어블로그</a></li>
+                                <li><a href="">제4회 거제관광투어블로그</a></li>
+                                <li><a href="">제3회 거제관광투어블로그</a></li>
+                                <li><a href="">제2회 거제관광투어블로그</a></li>
+                                <li><a href="">제1회 거제관광투어블로그</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">신고하기</li>
+                                <li><a href="">GREAT거제캠페인</a></li>
+                                <li><a href="">관광불편신고</a></li>
+                                <li><a href="">사고/재해신고</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">묻고 답하기</li>
+                                <li><a href="">여행Q&amp;A</a></li>
+                                <li><a href="">웹서비스Q&amp;A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="content" id="page1">
+        <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">거제여행</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">거제여행</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">해수욕장</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">거제여행</a></li>
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li>
+                                    <span class="cur_page">
+                                        해수욕장
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">촬영유명지</li>
+                                    <li class="cate1"><a href="geoje21.html#page1">해수욕장</a></li>
+                                    <li class="cate2"><a href="geoje21.html#page2">섬여행</a></li>
+                                    <li class="cate3"><a href="geoje21.html#page3">바다</a></li>
+                                    <li class="cate4"><a href="javascript:;">등대</a></li>
+                                    <li class="cate5"><a href="javascript:;">다리</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">즐길거리</li>
+                                    <li><a href="">공원</a></li>
+                                    <li><a href="">유원지</a></li>
+                                    <li><a href="">관광농원</a></li>
+                                    <li><a href="">유적지</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">먹거리</li>
+                                    <li><a href="">지역별 음식</a></li>
+                                    <li><a href="">계절별먹거리</a></li>
+                                    <li><a href="">위생등급지정업소</a></li>
+                                    <li><a href="">모범음식점</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">숙박</li>
+                                    <li><a href="">지역별숙박</a></li>
+                                    <li><a href="">공중위생서비스평가최우수업소</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                    <li><a href="">관광숙박업</a></li>
+                                    <li><a href="">청소년수련원/유스호스텔</a></li>
+                                    <li><a href="">거제자연휴양림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">살거리</li>
+                                    <li><a href="">특산품안내</a></li>
+                                    <li><a href="">전통시장</a></li>
+                                    <li><a href="">기념품안내</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <div class="tab_box">
+                            <input type="radio" name="lst_ra" class="lst_ra" id="lst_ra1" checked>
+                            <input type="radio" name="lst_ra" class="lst_ra" id="lst_ra2">
+                            <ul class="thumb_lst lst1">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="구조라 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">구조라 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">구조라 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 일운면 거제대로 2056</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_02.jpg" alt="농소몽돌 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">농소몽돌 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">농소몽돌 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 거제북로 2593</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item3">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_03.jpg" alt="덕원 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕원 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕원 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 가배리</span>
+                                            <span class="thumb_tel">
+                                            055-639-6513    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item4">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_04.jpg" alt="덕포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 덕포동</span>
+<!--
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+-->
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item5">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_05.jpg" alt="명사 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">명사 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">명사 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 남부면 저구리 명사해수욕장길 32</span>
+                                            <span class="thumb_tel">
+                                            055-639-6551    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item6">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_06.jpg" alt="물안 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">물안 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">물안 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 하청면 어온리 산16-3</span>
+                                            <span class="thumb_tel">
+                                            055-639-6712    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item7">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_07.jpg" alt="사곡해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">사곡해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">사곡해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 사등면 사곡리 757-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6652    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item8">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_08.jpg" alt="여차몽돌" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">여차몽돌</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">여차몽돌</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 여차길 22</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item9">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_09.jpg" alt="옥계해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">옥계해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">옥계해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 하청면 연구리 416</span>
+                                            <span class="thumb_tel">
+                                            055-639-6713    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item10">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_10.jpg" alt="와현 모래숲 해변 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">와현 모래숲 해변 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">와현 모래숲 해변 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경남 거제시 일운면 와현리 363-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item11">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_11.jpg" alt="학동 흑진주 몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">학동 흑진주 몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">학동 흑진주 몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 학동6길 18-1</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item12">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_12.jpg" alt="함목몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">함목몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">함목몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 갈곶리 370</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421   
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>                                
+                            </ul>
+                            <ul class="thumb_lst lst2">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="황포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">황포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">황포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 구영리 1181-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_14.jpg" alt="흥남 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">흥남 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">흥남 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 흥남길 46</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="page_nation">
+                                <li class="first"><label for="lst_ra1">1</label></li>
+                                <li><label for="lst_ra1">1</label></li>
+                                <li><label for="lst_ra2">2</label></li>
+                                <li class="last"><label for="lst_ra2">2</label></li>
+                            </ul>    
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm2" id="research_frm2">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research2" class="research_ra" id="research21" checked>
+                                    <label for="research21">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research22">
+                                    <label for="research22">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research23">
+                                    <label for="research23">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research24">
+                                    <label for="research24">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research25">
+                                    <label for="research25">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>       
+    <main class="content" id="page2">       
+        <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">거제여행</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">거제여행</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">섬여행</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">거제여행</a></li>
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li>
+                                    <span class="cur_page">
+                                        섬여행
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">촬영유명지</li>
+                                    <li class="cate1"><a href="geoje21.html#page1">해수욕장</a></li>
+                                    <li class="cate2"><a href="geoje21.html#page2">섬여행</a></li>
+                                    <li class="cate3"><a href="geoje21.html#page3">바다</a></li>
+                                    <li class="cate4"><a href="javascript:;">등대</a></li>
+                                    <li class="cate5"><a href="javascript:;">다리</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">즐길거리</li>
+                                    <li><a href="">공원</a></li>
+                                    <li><a href="">유원지</a></li>
+                                    <li><a href="">관광농원</a></li>
+                                    <li><a href="">유적지</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">먹거리</li>
+                                    <li><a href="">지역별 음식</a></li>
+                                    <li><a href="">계절별먹거리</a></li>
+                                    <li><a href="">위생등급지정업소</a></li>
+                                    <li><a href="">모범음식점</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">숙박</li>
+                                    <li><a href="">지역별숙박</a></li>
+                                    <li><a href="">공중위생서비스평가최우수업소</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                    <li><a href="">관광숙박업</a></li>
+                                    <li><a href="">청소년수련원/유스호스텔</a></li>
+                                    <li><a href="">거제자연휴양림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">살거리</li>
+                                    <li><a href="">특산품안내</a></li>
+                                    <li><a href="">전통시장</a></li>
+                                    <li><a href="">기념품안내</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <div class="tab_box">
+                            <input type="radio" name="lst_ra2" class="lst_ra" id="lst_ra21" checked>
+                            <input type="radio" name="lst_ra2" class="lst_ra" id="lst_ra22">
+                            <ul class="thumb_lst lst1">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="구조라 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">구조라 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">구조라 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 일운면 거제대로 2056</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_02.jpg" alt="농소몽돌 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">농소몽돌 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">농소몽돌 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 거제북로 2593</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item3">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_03.jpg" alt="덕원 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕원 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕원 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 가배리</span>
+                                            <span class="thumb_tel">
+                                            055-639-6513    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item4">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_04.jpg" alt="덕포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 덕포동</span>
+<!--
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+-->
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item5">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_05.jpg" alt="명사 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">명사 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">명사 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 남부면 저구리 명사해수욕장길 32</span>
+                                            <span class="thumb_tel">
+                                            055-639-6551    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item6">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_06.jpg" alt="물안 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">물안 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">물안 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 하청면 어온리 산16-3</span>
+                                            <span class="thumb_tel">
+                                            055-639-6712    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item7">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_07.jpg" alt="사곡해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">사곡해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">사곡해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 사등면 사곡리 757-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6652    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item8">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_08.jpg" alt="여차몽돌" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">여차몽돌</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">여차몽돌</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 여차길 22</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item9">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_09.jpg" alt="옥계해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">옥계해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">옥계해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 하청면 연구리 416</span>
+                                            <span class="thumb_tel">
+                                            055-639-6713    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item10">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_10.jpg" alt="와현 모래숲 해변 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">와현 모래숲 해변 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">와현 모래숲 해변 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경남 거제시 일운면 와현리 363-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item11">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_11.jpg" alt="학동 흑진주 몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">학동 흑진주 몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">학동 흑진주 몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 학동6길 18-1</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item12">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_12.jpg" alt="함목몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">함목몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">함목몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 갈곶리 370</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421   
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>                                
+                            </ul>
+                            <ul class="thumb_lst lst2">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="황포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">황포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">황포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 구영리 1181-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_14.jpg" alt="흥남 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">흥남 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">흥남 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 흥남길 46</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="page_nation">
+                                <li class="first"><label for="lst_ra21">1</label></li>
+                                <li><label for="lst_ra21">1</label></li>
+                                <li><label for="lst_ra22">2</label></li>
+                                <li class="last"><label for="lst_ra22">2</label></li>
+                            </ul>    
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm3" id="research_frm3">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research3" class="research_ra" id="research31" checked>
+                                    <label for="research31">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research32">
+                                    <label for="research32">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research33">
+                                    <label for="research33">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research34">
+                                    <label for="research34">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research35">
+                                    <label for="research35">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>       
+    <main class="content" id="page3">
+                <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">거제여행</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">거제여행</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">바다</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">거제여행</a></li>
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li>
+                                    <span class="cur_page">
+                                        바다
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">촬영유명지</li>
+                                    <li class="cate1"><a href="geoje21.html#page1">해수욕장</a></li>
+                                    <li class="cate2"><a href="geoje21.html#page2">섬여행</a></li>
+                                    <li class="cate3"><a href="geoje21.html#page3">바다</a></li>
+                                    <li class="cate4"><a href="javascript:;">등대</a></li>
+                                    <li class="cate5"><a href="javascript:;">다리</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">즐길거리</li>
+                                    <li><a href="">공원</a></li>
+                                    <li><a href="">유원지</a></li>
+                                    <li><a href="">관광농원</a></li>
+                                    <li><a href="">유적지</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">먹거리</li>
+                                    <li><a href="">지역별 음식</a></li>
+                                    <li><a href="">계절별먹거리</a></li>
+                                    <li><a href="">위생등급지정업소</a></li>
+                                    <li><a href="">모범음식점</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">숙박</li>
+                                    <li><a href="">지역별숙박</a></li>
+                                    <li><a href="">공중위생서비스평가최우수업소</a></li>
+                                    <li><a href="">칭찬업소</a></li>
+                                    <li><a href="">관광숙박업</a></li>
+                                    <li><a href="">청소년수련원/유스호스텔</a></li>
+                                    <li><a href="">거제자연휴양림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">살거리</li>
+                                    <li><a href="">특산품안내</a></li>
+                                    <li><a href="">전통시장</a></li>
+                                    <li><a href="">기념품안내</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <div class="tab_box">
+                            <input type="radio" name="lst_ra3" class="lst_ra" id="lst_ra31" checked>
+                            <input type="radio" name="lst_ra3" class="lst_ra" id="lst_ra32">
+                            <ul class="thumb_lst lst1">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="구조라 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">구조라 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">구조라 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 일운면 거제대로 2056</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_02.jpg" alt="농소몽돌 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">농소몽돌 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">농소몽돌 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 거제북로 2593</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item3">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_03.jpg" alt="덕원 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕원 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕원 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 가배리</span>
+                                            <span class="thumb_tel">
+                                            055-639-6513    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item4">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_04.jpg" alt="덕포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">덕포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">덕포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 덕포동</span>
+<!--
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+-->
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item5">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_05.jpg" alt="명사 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">명사 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">명사 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 남부면 저구리 명사해수욕장길 32</span>
+                                            <span class="thumb_tel">
+                                            055-639-6551    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item6">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_06.jpg" alt="물안 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">물안 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">물안 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 하청면 어온리 산16-3</span>
+                                            <span class="thumb_tel">
+                                            055-639-6712    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item7">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_07.jpg" alt="사곡해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">사곡해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">사곡해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 사등면 사곡리 757-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6652    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item8">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_08.jpg" alt="여차몽돌" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">여차몽돌</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">여차몽돌</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 여차길 22</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item9">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_09.jpg" alt="옥계해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">옥계해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">옥계해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">거제시 하청면 연구리 416</span>
+                                            <span class="thumb_tel">
+                                            055-639-6713    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item10">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_10.jpg" alt="와현 모래숲 해변 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">와현 모래숲 해변 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">와현 모래숲 해변 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경남 거제시 일운면 와현리 363-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-3000    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item11">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_11.jpg" alt="학동 흑진주 몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">학동 흑진주 몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">학동 흑진주 몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 동부면 학동6길 18-1</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item12">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_12.jpg" alt="함목몽돌해변" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">함목몽돌해변</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">함목몽돌해변</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 남부면 갈곶리 370</span>
+                                            <span class="thumb_tel">
+                                            055-635-5421   
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>                                
+                            </ul>
+                            <ul class="thumb_lst lst2">
+                                <li class="item1">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_01.jpg" alt="황포 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">황포 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">황포 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 구영리 1181-1</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item2">
+                                    <div class="off_box">
+                                        <img src="./img/geoje21_14.jpg" alt="흥남 해수욕장" class="thumb_lst_img">
+                                        <h3 class="thumb_tit1">흥남 해수욕장</h3>
+                                    </div>
+                                    <a href="" class="on_box">
+                                        <h3 class="thumb_tit4">흥남 해수욕장</h3>
+                                        <p class="thumb_on_com">
+                                            <span class="thumb_addr">경상남도 거제시 장목면 흥남길 46</span>
+                                            <span class="thumb_tel">
+                                            055-639-6743    
+                                            </span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="page_nation">
+                                <li class="first"><label for="lst_ra31">1</label></li>
+                                <li><label for="lst_ra31">1</label></li>
+                                <li><label for="lst_ra32">2</label></li>
+                                <li class="last"><label for="lst_ra32">2</label></li>
+                            </ul>    
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm4" id="research_frm4">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research4" class="research_ra" id="research41" checked>
+                                    <label for="research21">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research42">
+                                    <label for="research42">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research43">
+                                    <label for="research43">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research44">
+                                    <label for="research44">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research45">
+                                    <label for="research45">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap1">
+            <nav class="fnb">
+                <ul>
+                    <li>
+                        <span class="cur_cate">관련 관/과</span>
+                        <ul class="popup">
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910001000000" target="_blank" title="기획예산담당관 새창열림">기획예산담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910002000000" target="_blank" title="감사법무담당관 새창열림">감사법무담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910003000000" target="_blank" title="홍보담당관 새창열림">홍보담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910004000000" target="_blank" title="시정혁신담당관 새창열림">시정혁신담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910008000000" target="_blank" title="미래전략과 새창열림">미래전략과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910006000000" target="_blank" title="조선산업일자리과 새창열림">조선산업일자리과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910036000000" target="_blank" title="생활경제과 새창열림">생활경제과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910032001001" target="_blank" title="도시재생과 새창열림">도시재생과</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                       <span class="cur_cate">면/동</span>
+                       <ul class="popup">
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911001000000" target="_blank" title="일운면 새창열림">일운면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911002000000" target="_blank" title="동부면 새창열림">동부면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911003000000" target="_blank" title="남부면 새창열림">남부면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911004000000" target="_blank" title="거제면 새창열림">거제면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911005000000" target="_blank" title="둔덕면 새창열림">둔덕면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911006000000" target="_blank" title="사등면 새창열림">사등면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911007000000" target="_blank" title="연초면 새창열림">연초면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911008000000" target="_blank" title="하청면 새창열림">하청면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911009000000" target="_blank" title="장목면 새창열림">장목면</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cur_cate">시/군청</span>
+                        <ul class="popup">
+                            <li><a href="http://www.gyeongnam.go.kr" target="_blank" title="경상남도청 새창열림">경상남도청</a></li>
+                             <li><a href="http://www.changwon.go.kr" target="_blank" title="창원시 새창열림">창원시</a></li>
+                             <li><a href="http://www.jinju.go.kr" target="_blank" title="진주시 새창열림">진주시</a></li>
+                             <li><a href="http://www.tongyeong.go.kr/main/" target="_blank" title="통영시 새창열림">통영시</a></li>
+                             <li><a href="http://www.sacheon.go.kr" target="_blank" title="사천시 새창열림">사천시</a></li>
+                             <li><a href="http://www.gimhae.go.kr" target="_blank" title="김해시 새창열림">김해시</a></li>
+                             <li><a href="http://www.miryang.go.kr" target="_blank" title="밀양시 새창열림">밀양시</a></li>
+                             <li><a href="http://www.yangsan.go.kr" target="_blank" title="양산시 새창열림">양산시</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cur_cate">패밀리사이트</span>
+                        <ul class="popup">
+                            <li><a href="http://www.gjcl.go.kr" target="_blank" title="거제시 의회 새창열림">거제시 의회</a></li>
+                             <li><a href="http://www.geoje.go.kr/yacht" target="_blank" title="거제시 요트부 새창열림">거제시 요트부</a></li>
+                             <li><a href="https://www.peti.go.kr" target="_blank" title="공직자재산등록 새창열림">공직자재산등록</a></li>
+                             <li><a href="http://www.gw.re.kr" target="_blank" title="거제시여성인력개발센터 새창열림">거제시여성인력개발센터</a></li>
+                             <li><a href="http://www.gjyc.kr" target="_blank" title="청소년수련관 새창열림">청소년수련관</a></li>
+                             <li><a href="http://www.geojehuyang.or.kr" target="_blank" title="거제자연휴양림 새창열림">거제자연휴양림</a></li>
+                             <li><a href="http://www.cheongma.or.kr" target="_blank" title="청마기념관 새창열림">청마기념관</a></li>
+                             <li><a href="http://gev.co.kr" target="_blank" title="거제시영어마을 새창열림">거제시영어마을</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="ft_wrap2">
+            <ul class="ft_banner">
+                <li><a href=""><img src="./img/f_ban1.gif" alt="하단슬라이드배너이미지1"></a></li>
+                <li><a href=""><img src="./img/f_ban2.gif" alt="하단슬라이드배너이미지2"></a></li>
+                <li><a href=""><img src="./img/f_ban3.gif" alt="하단슬라이드배너이미지3"></a></li>
+                <li><a href=""><img src="./img/f_ban4.jpg" alt="하단슬라이드배너이미지4"></a></li>
+                <li><a href=""><img src="./img/f_ban5.gif" alt="하단슬라이드배너이미지5"></a></li>
+                <li><a href=""><img src="./img/f_ban6.jpg" alt="하단슬라이드배너이미지6"></a></li>
+                <li><a href=""><img src="./img/f_ban7.jpg" alt="하단슬라이드배너이미지7"></a></li>
+                <li><a href=""><img src="./img/f_ban8.jpg" alt="하단슬라이드배너이미지8"></a></li>
+                <li><a href=""><img src="./img/f_ban9.png" alt="하단슬라이드배너이미지9"></a></li>
+                <li><a href=""><img src="./img/f_ban10.jpg" alt="하단슬라이드배너이미지10"></a></li>
+            </ul>
+        </div>
+        <script src="./js/slider.js"></script>
+        <script>
+        /* 푸터 슬라이드 배너 slider.js */    
+        $(document).ready(function(){
+           $(".ft_banner").sliding({spd:500, intv:4500, chd:"li"}); 
+        });    
+        </script>
+        <div class="ft_wrap2">
+            <nav class="ft_link">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="copy1">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                <p class="copy1">Copyright ⓒ 2019 <span class="ortxt">GEOJE CITY</span>. All Rights Reserved.
+                </p>
+            </div>
+            <a href="" class="wamark">
+                <img src="./img/wacc-logo.png" alt="WA인증">
+            </a>
+        </div>
+    </footer>
+</div>                        
+</body>
+</html>

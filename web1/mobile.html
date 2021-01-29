@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>거제관광문화</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+    <meta name="title" content="거제시청 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/geoje.ico">
+    <title>거제관광문화</title>
+    <!-- 폰트를 정의하고, 초기화 스타일을 가져오기 --> 
+    <!-- 오픈 그래프 정의 -->
+    <!-- 그 밖에 모바일 내용 입력 -->
+    <link rel="stylesheet" href="./fontsystem.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/notosanskr.css">
+    <!-- 구글 애널리틱스에 가입하고, 해당 사이트를 등록한 후 소스코드를 복사하여 붙여넣기 -->
+    <!-- https://github아이디.github.io/web1 -->
+    <!-- 구글 애널리틱스 소스 코드 
+    <script async src="googleanalytics.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1708370-27');
+    </script>
+    -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        //언어 설정
+        $(".cur_lang").click(function(){
+           $(".lang_box").toggleClass("on");
+        });  
+    });    
+    </script>
+    <link rel="stylesheet" href="quick.css">
+    <script src="footer.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100vw; overflow-x:hidden; max-width:100vw; min-width:100vw; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+        
+    /* 모바일 헤더 구역 */
+    .menu_ck { display: none; }
+    .hd { width: 100vw; }
+    .top_hd { clear:both; height:88px; background-color:#fff; width: 100%; 
+        position:relative; }
+    .logo { display:block; float:left; max-height:58px; padding-left: 12px; margin-top: 15px; width: 143px; }
+    .logo img { display:block; max-height:58px; width:143px; }    
+    .top_hd label { display:block; float:right; color:#333; width:48px; height: 48px; background-repeat: no-repeat; background-position: center center; 
+        text-indent:-9999px; background-color:#05a4a6; margin-top: 20px; }   
+    .ls { background-image:url("./img/bt-mnall.png"); margin-right: 5px; }
+    .ls2 { background-image:url("./img/login-icon-mem.png"); margin-right: 12px;  } 
+    .tnb { display:none; width: 100%; border-top:3px solid #ddd; border-bottom:3px solid #ddd;  position:relative; height: auto;  }
+    .tnb:after { content:""; clear:both; display:block; }
+    .tnb li { float:left; }    
+    .tnb .t_left { float:left; }
+    .tnb .t_left li a { display:block; padding: 1em; border:1px solid #333; margin: 1em; margin-right: 0; margin-top: 62px;}    
+    .tnb .t_right { float:right; }    
+    #top_call:checked ~ .tnb { display:block; } 
+    .lang_box { display:block; width:110px; text-align:center; border:1px solid #333; margin: 1em; box-sizing:border-box; line-height: 52px; height: 52px; 
+        overflow:hidden; transition:0.5s; margin-top:64px; }  
+    .lang_box.on { height: 208px; }    
+    .lang_box a, .lang_box span { display:block; }    
+    .close_btn { display:block; width: 48px; height: 48px; 
+        background-image:url("./img/bt-close.png"); background-color:#05a4a6;
+        background-repeat: no-repeat; background-position: center center; }
+    .tnb .close_btn { position:absolute; right:5px; top:5px; }  
+    .gnb { position:fixed; height:100vh; width: 100vw; transition:0.5s;
+        background:rgba(0,0,0,0.65); z-index:9999; top: 0; left:-100vw; 
+        padding: 1em; }
+    .gnb li { min-height:48px; width: 100%; clear:both; background-color:#fff; }
+    .gnb li a { display:block; line-height: 46px; border-top:1px solid #eee; 
+        border-bottom:1px solid #ddd; text-indent:24px; color:#333; }    
+    #menu_call:checked ~ .gnb { display:block; left: 0; }
+    .gnb li:first-child { margin-top: 12px; }    
+    
+    .content { clear:both; width: 100vw; border-top:2px solid #ccc; }
+    .content:after { content:""; clear:both; display:block; }
+    .vs { clear:both; width: 100%; position:relative; }
+    .ban_box { width: 400%; }
+    .ban_box li { float:left; width: 25%; position:relative; }
+    .ban_box li img { display:block; width: 100%; height:auto; }
+    .tit_box { position:absolute; top: 0; left: 0; color:#fff; padding: 1.5em; font-weight:300; text-shadow:1px 1px 1px #333; }
+    
+    .page { width:100%; clear:both; position:relative; }
+    .page:before { content:""; display:block; border-bottom:3px solid #eee; clear:both; width: 100%; }    
+    .page_container { width: 94vw; margin: 0 auto; overflow:hidden; position:relative; padding-top: 10rem; }   
+    .col1200, .col600, .col300 { width: 94vw; clear:both; position:relative; }
+    .col300 { height: 94vw; background-size:100% 100%; overflow:hidden; }
+        
+    .ft { clear:both;   margin-top: 10px; width:100vw; } 
+    .ft_wrap2 { width:94vw; margin: 0 auto; clear:both; position:relative; border-top:1px solid #f1f1f1; height:auto; overflow:hidden; }
+    .ft_banner { width:3000px; height: 50px; overflow:hidden; }    
+    .ft_banner li { float:left;  }    
+    .ft_banner li a { display:block; padding:10px; padding-left: 0; padding-right: 20px; } 
+    .ft_banner li a img { display:block; height: 30px; width:auto; }
+    .ft_link { clear:both; margin:1em auto; }    
+    .ft_link li { float: left; width: 50%; }
+    .ft_link li:nth-child(2n+1) { clear:both; }    
+    .ft_link li a { display:block; padding: 10px; padding-left: 0; 
+        text-align:center; }
+    .ft_link li:first-child a, .ft_link li:last-child a { background-color:#eee; }    
+    .ft_link li a:hover { text-decoration:underline; }    
+    .ft_link li:first-child a { color:#42a2eb; }    
+    .copyright { clear:both; padding-bottom: 24px; padding-top: 1em;
+        text-align:center; }  
+    .ortxt { color:chocolate; }    
+    .wamark { display:block; position:relative; clear:both; padding-bottom: 2em; margin: 0 auto; width: 123px; }
+    </style>
+    <style>    
+   .page_container:before { content:"";
+    display:block; position: absolute;    width:300px;
+    height:300px;    left: 50%;    top: -180px;
+    transform: translate(-50% ,0);    box-sizing: border-box;
+    padding-top:220px;    border-radius: 50%;
+    text-align: center;    box-shadow: 7px 7px 0px rgba(0,0,0,0.1); background-color:#05a4a6; }  
+    .page_tit1 { width: 100%; color:#fff; text-align:center; position:absolute; top:18px; left: 0; font-family: 'Noto Sans KR';
+        font-size;0.9em; }    
+    .page_tit2 { width: 100%; color:#fff; text-align:center; position:absolute; top:42px; left: 0; font-family: 'TTTogether'; font-size:1.4em; font-weight:400; }
+        
+    .grd_item { position:relative; }    
+    .grdbox { clear:both; margin:0 auto; padding-top:2rem; }
+    .gtit1 { font-size:20px;    font-family: 'Noto Sans KR';
+    display: block;    line-height:60px; padding-top: 8px;
+    position: relative; text-align:center; font-weight:500; } 
+    .gtit1:after {  content: "";  display: inline-block;
+    position: absolute;    bottom: 0;
+    width: 34px;    height: 2px;   left: 50%;    margin-left: -17px;     background-color: #2e99e4;        }
+    .gtit2 { font-size:20px;    font-family: 'Noto Sans KR';
+    display: block;    line-height:60px; padding-top:12px;
+    position: relative; text-align:center; color:#fff; font-weight:500;  } 
+    .gtit2:after {  content: "";  display: inline-block;
+    position: absolute;    bottom: 0;
+    width: 34px;    height: 2px;   left: 50%;    margin-left: -17px;     background-color: #fff;        } 
+    .gcom1 { color: #666; font-weight:400; padding:14px 68px;
+        text-align:center; }
+    .gcom2 { color:#fff; text-shadow: 1px 1px #000, 1px 1px #000; padding:14px 34px; text-align:center; }    
+    .umore {    position: relative;    z-index: 99;
+            display: block;    margin: 34px auto 0;
+            background: url("./img/btn_movie_play.png") no-repeat;            width: 76px;            height: 76px;
+    }
+    .gmore2 { display: block;    margin: 26px auto 0;
+    background: url("./img/ico_go-bright.png") no-repeat;
+    width: 38px;    height: 38px; }    
+    </style>
+    <style>
+    #page1 .grd_item.left li { background-size:100% 100%; position:relative; }    
+    #page1 .grd_item.left .item1 { background-color:#eee; }
+    #page1 .grd_item.left .item1 a { display:block; width:50%; height: 120px; float:left; background: #2e99e4;
+    border-left: 1px solid #1c9c97; color:#fff; text-align:center; line-height: 185px; position:absolute; bottom:0;
+        background-position:center center; background-repeat:no-repeat; }
+    #page1 .grd_item.left .item1 a.app_icon1 { background-image: url("./img/ico_app-1.png"); left: 0; bottom:0; }    
+    #page1 .grd_item.left .item1 a.app_icon2 { background-image: url("./img/ico_app-2.png"); left: 50%; }
+    #page1 .grd_item.left .item2 { background-image:url("./img/sec1Bg3.jpg"); 
+    background-repeat:no-repeat; }
+    #page1 .grd_item.left .item3 { background-image:url("./img/sec1Bg.jpg"); background-repeat:no-repeat; }
+    #page1 .grd_item.left .item4 { background-image:url("./img/sec1Bg2.png "); background-repeat:no-repeat; }
+    #page1 .grd_item.left .item4 a { display:block; width:110px; 
+        line-height: 40px; color:#fff; text-align:center; float:left; background:rgba(62,150,41,0.4); margin:18px;  }   
+    #page1 .grd_item.left .item4 a:hover { text-decoration:underline; }
+    #page1 .grd_item.left .item4 a:first-of-type, #page1 .grd_item.left .item4 a:last-child { background:rgba(40,123,29,0.3); }   #page1 .grd_item .item4 a:first-of-type, #page1 .grd_item .item4 a:nth-of-type(2) { margin-top:40px; }  
+    .ra, .rd { display:none; }
+    .slider { width:800%; height: 556px; }
+    .slider li { float:left; width: 12.5%; position:relative; } 
+    #sl1 { margin-left: 0; transition:0.6s; }    
+    #ra1:checked ~ #sl1 { margin-left: 0; }    
+    #ra2:checked ~ #sl1 { margin-left:-100%; } 
+    #ra3:checked ~ #sl1 { margin-left:-200%; }     
+    #ra4:checked ~ #sl1 { margin-left:-300%; } 
+    #ra5:checked ~ #sl1 { margin-left:-400%; }  
+    #ra6:checked ~ #sl1 { margin-left:-500%; } 
+    #ra7:checked ~ #sl1 { margin-left:-600%; }  
+    #ra8:checked ~ #sl1 { margin-left:-700%; }
+        
+    .sl_tit_box { position:absolute; top: 0; left: 0; padding-left:2em; padding-top: 1.5em; color:#fff; text-shadow:1px 1px 2px #333; }    
+    .sl_tit2 { font-family: 'TTTogether'; font-size:1.6rem; font-weight:400; } 
+    .sl_com { padding-top:0.5em; padding-right: 1em; }    
+    #sl_box1 { position:absolute; right:0; bottom:0; z-index:24; background-color:#fff; background-image:url("./img/rail1.png"); background-position:20px 30px; background-repeat: no-repeat; padding-top: 10px; 
+        padding-bottom: 10px; padding-right: 10px; width: 94vw;  } 
+    #sl_box1 li { position:relative; }
+    #sl_box1 li label { display:block; line-height: 40px; padding:0 30px; margin-left:40px; border:2px solid transparent;  cursor:pointer; } 
+    #sl_box1 li:before { content:""; display:block; width: 10px; height: 10px; border:4px solid transparent; box-sizing: content-box;  border-radius:20px; position:absolute; top: 13px; 
+        background-color:#42a2eb; left:12px; }
+    #sl_box1 li.on:before { border-color:#42a2eb; background-color:#fff; } 
+    #sl_box1 li.on label { border-color:#42a2eb; } 
+    #sl1 li img { display:block; width:auto; height: 94vw; }      
+    </style>
+    
+    <style>
+    #page2 .grd_item.right .item1 { background-image:url("./img/sec2Bg2.png"); background-repeat:no-repeat; }
+    #page2 .grd_item.right .item1 .gtit2 { margin-top: 30px; line-height: 1.2; }
+    #page2 .grd_item.right .item1 .gtit2:after { bottom:-20px; margin-top: 20px; }
+    #page2 .grd_item.right .item1 .gtit3 { font-size: 0;
+    display: block;    margin: 50px auto 0;
+    background: url("./img/ico_newvr2.png") no-repeat;
+    width: 120px;        height: 72px; }
+    #page2 .grd_item.right .item2 { background-image:url("./img/sec2Bg4.jpg");
+        background-repeat:no-repeat; }    
+    #page2 .grd_item.right .item3 { background-image:url("./img/sec2Bg3.jpg"); background-repeat:no-repeat; }
+    #page2 .grd_item.right .item4 { background-color:#eee; position:relative; }
+    #page2 .grd_item.right .item4 .gtit1 { line-height: 1.2; margin-top: 45px; }
+    #page2 .grd_item.right .item4 .gtit1:after { bottom: -20px; } 
+    #page2 .grd_item.right .item4 a { display:block; width: 50%; 
+         float:left; line-height: 40px; text-align:center; position:absolute; bottom: 0; left: 0; background:#42a2eb; color:#fff; }
+    #page2 .grd_item.right .item4 a:first-of-type { bottom:40px; 
+        border-right:1px solid #fff; border-bottom:1px solid #fff; }        
+    #page2 .grd_item.right .item4 a:nth-of-type(2) { bottom:40px; left: 50%; border-bottom:1px solid #fff; }
+    #page2 .grd_item.right .item4 a:nth-of-type(3) { border-right:1px solid #fff; }   
+    #page2 .grd_item.right .item4 a:last-child { left:50%; }    
+
+    #sl2 { margin-left: 0; transition:0.6s; height: 188vw; padding-top:1.8em; } 
+    #sl2 li a { display:block; }
+    #sl2 li a img { display:block; width: 100%; height:auto; }    
+    #rd1:checked ~ #sl2 { margin-left: 0; }    
+    #rd2:checked ~ #sl2 { margin-left:-100%; } 
+    #rd3:checked ~ #sl2 { margin-left:-200%; }     
+    #rd4:checked ~ #sl2 { margin-left:-300%; }
+    #sl_box2 { position:absolute;  width:94vw; height: 94vw; background-color:#42a2eb; overflow:hidden; left: 0; top:50%; }
+    #sl_box2 li { display:none; }    
+    #sl_box2 li .thum { width: 145px; height: 145px; 
+        margin: 20px auto; background-position:center center;
+        background-repeat: no-repeat; border-radius:80px; 
+        border:4px solid #fff; overflow:hidden; }
+    #sl_box2 li.item1 .thum { background-image:url("./img/img_healing-1.jpg"); } 
+    #sl_box2 li.item2 .thum { background-image:url("./img/img_healing-2.jpg"); }  
+    #sl_box2 li.item3 .thum { background-image:url("./img/img_healing-3.jpg"); }  
+    #sl_box2 li.item4 .thum { background-image:url("./img/img_healing-4.jpg"); }  
+    #sl_box2 li label { display:block; width: 18px; height: 36px; position:absolute; background-repeat: no-repeat; 
+        background-position:center center; top:50%; }
+    #sl_box2 li label.lbtn { background-image: url("./img/btn_section6-prev.png"); left:20px; }
+    #sl_box2 li label.rbtn { background-image: url("./img/btn_section6-right.png"); right:20px; }   
+
+    #rd1:checked ~ #sl_box2 li.item1 { display:block; }    
+    #rd2:checked ~ #sl_box2 li.item2 { display:block; } 
+    #rd3:checked ~ #sl_box2 li.item3 { display:block; }     
+    #rd4:checked ~ #sl_box2 li.item4 { display:block; }
+
+    #sl2 .sl_tit3 { line-height: 1.2; }    
+    #sl2 .btxt {   font-family: 'TTTogether', 'NotokrB';
+        font-weight: 100;    color: #0e61ef;    font-size: 45px; } 
+    #sl2 .gtxt { color: #00bcb5;    font-size: 50px;
+    display: block;    font-family: 'TTTogether', 'NotokrB';
+        font-weight: 100; }  
+    #sl2 .sl_com2 { padding-top: 32px; color:#666; text-shadow:1px 1px 2px #fff; }  
+    #sl2 li img { display:block; width:auto; height: 94vw; }    
+    </style>
+    
+    <style>
+    .ico_box { clear:both; width:94vw; margin: 0 auto; 
+    padding-top:1em; } 
+    .ico_box li { float:left; width:47vw; cursor:pointer;
+        height:40vw; padding-top: 1em; } 
+    .ico_box li:nth-child(3n+1) { background-color:#eee; }
+    .ico_box li:nth-child(3n) { background-color:#f9e1d4; }    
+    .ico_box li:nth-child(3n+2) { background-color:#e9f1e4; } 
+        
+    .ico_box li img { display:block; width:auto; height: auto; border:5px solid #fff; background-color:#fff; border-radius:60px; box-sizing: content-box; padding:0.5em; clear:both;
+        margin:0.5em auto; }    
+    .ico_box li .hv_txt { display:block; line-height:28px; 
+        text-align: center; }  
+    .ico_box li:hover img { border:5px solid #42a2eb; }
+    .ico_box li:hover .hv_txt { color: #42a2eb; } 
+    .nt_box { clear:both; min-height: 316px; background-color:#fff; width: 94vw; margin: 20px auto; margin-top: 60px; }
+    .nt_box .left.col600 { padding: 20px; position:relative; }
+    .nt_tit { font-size:24px; font-weight:400; }
+    .more3 { display:block; font-size:32px; font-weight:300; position:absolute; right:20px; top:14px; } 
+    .nt_lst { clear:both; padding-top:20px; }
+    .nt_lst li { background-image:url("./img/submenu_bullet.png"); background-repeat:no-repeat; background-position:0px 18px; padding-left: 14px; border-bottom:1px dotted #ccc; clear:both; }
+    .nt_lst li.cur_lst { background-image:url("./img/sec3Notice.png"); padding-left:64px; 
+        margin-bottom: 10px; border:0; }   
+    .nt_lst li .txt_tit { display:block; padding-top:9px; padding-bottom:9px; float:left; overflow:hidden; text-overflow:ellipsis; white-space: nowrap; padding-right: 1em; width:70vw; }
+    .nt_lst li .date { padding-top:9px; padding-bottom:9px; float:right;} 
+    .nt_lst li .txt_com { display:block; clear:both; 
+        white-space: normal; line-height: 1.2; height: 2.4em; text-align: left; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical; overflow:hidden; text-overflow:ellipsis; margin-bottom: 10px; }
+    #page3 .right.col600 .right_box { clear:both; width: 94vw; height:188vw; }   
+    #page3 .tit_box { clear:both; width:94vw; height:94vw; 
+        background-color:#42a2eb; color:#fff; text-align:center; padding: 24px; padding-top:60px; position:relative; }
+    #page3 .conti_box { clear:both; width:94vw; height:94vw; background-color:#eee;  }
+    
+    .tit1 { font-size:24px; font-weight:400; }
+    .com1 { font-size:16px; font-weight:400; padding-top: 24px; } 
+    .btn_box3 { clear:both; width: 132px; margin: 10px auto; 
+        margin-top: 60px; }    
+    .btn_box3 li { width: 37px; height: 37px; float: left;
+        margin:3px; }   
+    .btn_box3 li button { display:block; background-color:#eee; border:1px solid #ccc; width: 37px; height: 37px; background-position:center center; background-repeat:no-repeat; }  
+    .btn_box3 li button.prev { background-image:url("./img/fb-prev.png"); }    
+    .btn_box3 li button.play { background-image:url("./img/fb-stop.png");  }   
+    .btn_box3 li button.play.on { background-image:url("./img/fb-play.png");  }    
+    .btn_box3 li button.next { background-image:url("./img/fb-next.png");  } 
+    .conti_box { overflow:hidden; }   
+    .img_box { width: 400%; }
+    .img_box li { float:left; width: 25%; position:relative; } .img_box li a { display:block; }
+    .img_box li a img { display:block; width: 260px; height: auto; margin: 20px auto; }   
+    .img_tit { text-align:center; line-height:28px; }
+    .img_com { text-align:center; line-height:28px; }     
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="hd">
+        <input type="checkbox" class="menu_ck" id="top_call">
+        <input type="checkbox" class="menu_ck" id="menu_call">
+        <div class="top_hd">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <label for="top_call" class="ls2">상단열기</label>
+            <label for="menu_call" class="ls">메인메뉴</label>
+        </div>
+        <nav class="tnb">
+            <ul class="t_left">
+                <li><a href="geoje_login.html">로그인</a></li>
+                <li><a href="geoje_join.html">회원가입</a></li>
+            </ul>
+            <ul class="t_right">
+                <li class="lang">
+                    <div class="lang_box">
+                        <span class="cur_lang">LANGUAGE</span>
+                        <a href="index_en.html">ENGLISH</a>
+                        <a href="#">中文</a>
+                        <a href="#">日文</a>
+                    </div>
+                </li>
+            </ul>
+            <label for="top_call" class="close_btn"></label>
+        </nav>
+        <nav class="gnb">
+            <label for="menu_call" class="close_btn"></label>
+            <ul>
+                <li class="mn">
+                    <a href="m_geoje11.html">한눈에 거제</a>
+                </li>
+                <li class="mn">
+                    <a href="m_geoje21.html">거제여행</a>
+                </li>
+                <li class="mn">
+                    <a href="">즐거운 축제</a>
+                </li>
+                <li class="mn">
+                    <a href="">역사/문화</a>
+                </li>
+                <li class="mn">
+                    <a href="">여행가이드</a>
+                </li>
+                <li class="mn">
+                    <a href="">커뮤니티</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <figure class="vs">
+            <ul class="ban_box">
+                <li class="item1">
+                    <img src="./img/mainBg.jpg" alt="배너1">
+                    <div class="tit_box">
+                        <h2 class="ban_tit">거제 애<span>(愛)</span> 빠지다</h2>
+                        <span class="ban_com">바람의 언덕</span>
+                    </div>
+                </li>
+                <li class="item2">
+                    <img src="./img/mainBg2.jpg" alt="배너2">
+                    <div class="tit_box">
+                        <h2 class="ban_tit">꽃을 품은 섬. 거제<span>(愛)</span> 취하다</h2>
+                        <span class="ban_com">꽃축제</span>
+                    </div>
+                </li>
+                <li class="item3">
+                    <img src="./img/mainBg3.jpg" alt="배너3">
+                    <div class="tit_box">
+                        <h2 class="ban_tit">거제 애<span>(愛)</span> 빠지다</h2>
+                        <span class="ban_com">청마꽃들축제</span>
+                    </div>
+                </li>
+                <li class="item4">
+                    <img src="./img/mainBg4.jpg" alt="배너4">
+                    <div class="tit_box">
+                        <h2 class="ban_tit">거제 애<span>(愛)</span> 빠지다</h2>
+                        <span class="ban_com">학동 흑진주 몽돌해변</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item a1 on"><button class="ban_btn"></button></li>
+                <li class="item a2"><button class="ban_btn"></button></li>
+                <li class="item a3"><button class="ban_btn"></button></li>
+                <li class="item a4"><button class="ban_btn"></button></li>
+            </ul>
+        </figure>
+        <script src="./js/slider.js"></script>    <script>
+        //비주얼 배너 부분 연결    
+        $(document).ready(function(){
+           $(".vs .ban_box").sliding({spd:500, intv:4500, chd:"li", numfr:".btn_box", numbox:".btn_box li"}); 
+        });    
+        </script>
+        <div class="page" id="page1">
+            <section class="page_container">
+                <h3 class="page_tit1">거제9경 및 맞춤관광지</h3>
+                <h2 class="page_tit2">거제의 여행정보</h2>
+                <div class="grdbox col1200">
+                    <ul class="grd_item left col600">
+                        <li class="item1 col300">
+                            <h3 class="gtit1">거제여행앱 다운로드</h3>
+                            <p class="gcom1">거제여행을 위한 필수 앱을 다운로드 받으세요</p>
+                            <a href="" class="app_icon1">안드로이드</a>
+                            <a href="" class="app_icon2">아이폰</a>
+                        </li>
+                        <li class="item2 col300">
+                            <h3 class="gtit2">홍보동영상</h3>
+                            <a href="" class="umore"></a>
+                        </li>
+                        <li class="item3 col300">
+                            <h3 class="gtit2">섬&amp;섬길</h3>
+                            <p class="gcom2">오랜 세월 자연이 빛어낸 아름다운 보석! 섬과 섬을 잇는 아름다운 길</p>
+                            <a href="" class="gmore2"></a>
+                        </li>
+                        <li class="item4 col300">
+                            <h3 class="gtit2">섬안의 섬여행</h3>
+                            <a href="">
+                                <span class="gtxt">외도</span>
+                            </a>
+                            <a href="">
+                                <span class="gtxt">내도</span>
+                            </a>
+                            <a href="">
+                                <span class="gtxt">이수도</span>
+                            </a>
+                            <a href="">
+                                <span class="gtxt">지심도</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="grd_item right col600">
+                        <input type="radio" name="ra" class="ra" id="ra1" checked>
+                        <input type="radio" name="ra" class="ra" id="ra2">
+                        <input type="radio" name="ra" class="ra" id="ra3">
+                        <input type="radio" name="ra" class="ra" id="ra4">
+                        <input type="radio" name="ra" class="ra" id="ra5">
+                        <input type="radio" name="ra" class="ra" id="ra6">
+                        <input type="radio" name="ra" class="ra" id="ra7">
+                        <input type="radio" name="ra" class="ra" id="ra8">
+                        <ul class="slider" id="sl1">
+                            <li class="item1">
+                                <img src="./img/bg_story-1.jpg" alt="스토리1">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">거제 해금강</h3>
+                                    <p class="sl_com">한류의 열풍, 진나라 서불이 이미 다녀갔던 곳!</p>
+                                </div>
+                            </li>
+                            <li class="item2">
+                                <img src="./img/bg_story-2.jpg" alt="스토리2">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">바람의 언덕과 신선대</h3>
+                                    <p class="sl_com">바람과 신선이 노니는 곳! 자연이 주는 상쾌함을 즐겨라!</p>
+                                </div>
+                            </li>
+                            <li class="item3">
+                                <img src="./img/bg_story-3.jpg" alt="스토리3">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">외도보타니아</h3>
+                                    <p class="sl_com">정녕 여기가 대한민국이란 말인가? 지중해를 옮겨와, 어디서 찍든 화보급!
+                                        !</p>
+                                </div>
+                            </li>
+                            <li class="item4">
+                                <img src="./img/bg_story-4.jpg" alt="스토리4">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">학동 흑진주 몽돌해변</h3>
+                                    <p class="sl_com">흑진주 몽돌로 이루어진, 몽돌 굴러 가는 소리에 살포시 잠들 곳!</p>
+                                </div>
+                            </li>
+                            <li class="item5">
+                                <img src="./img/bg_story-5.jpg" alt="스토리5">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">거제도포로수용소유적공원</h3>
+                                    <p class="sl_com">동족상잔의 아픔을 간직한 곳! 이제는 다크투어리즘, 역사 안보의 체험장!</p>
+                                </div>
+                            </li>  
+                            <li class="item6">
+                                <img src="./img/bg_story-6.jpg" alt="스토리6">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">동백섬 지심도</h3>
+                                    <p class="sl_com">빨간 동백꽃이 우리에게 손짓한다! 어서 오라!</p>
+                                </div>
+                            </li>  
+                            <li class="item7">
+                                <img src="./img/bg_story-7.jpg" alt="스토리7">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">여차․홍포해안비경</h3>
+                                    <p class="sl_com">해안의 아름다운 경치에 감탄을 금치 못할 곳!</p>
+                                </div>
+                            </li> 
+                            <li class="item8">
+                                <img src="./img/bg_story-8.jpg" alt="스토리8">
+                                <div class="sl_tit_box">
+                                    <h4 class="sl_tit1">이야기여행</h4>
+                                    <h3 class="sl_tit2">공곶이 &amp; 내도</h3>
+                                    <p class="sl_com">동백터널이 안내하고, 수선화가 반기는, 아름다움을 뽐내도!</p>
+                                </div>
+                            </li>                       
+                        </ul>
+                        <ul class="sl_btn_box" id="sl_box1">
+                            <li class="item1 on">
+                                <label for="ra1">거제 해금강</label>
+                            </li>
+                            <li class="item2">
+                                <label for="ra2">바람의 언덕과 신선대</label>
+                            </li>
+                            <li class="item3">
+                                <label for="ra3">외도보타니아</label>
+                            </li>
+                            <li class="item4">
+                                <label for="ra4">학동 흑진주 몽돌해변</label>
+                            </li>
+                            <li class="item5">
+                                <label for="ra5">거제도포로수용소유적공원</label>
+                            </li>
+                            <li class="item6">
+                                <label for="ra6">동백섬 지심도</label>
+                            </li>
+                            <li class="item7">
+                                <label for="ra7">여차․홍포해안비경</label>
+                            </li>
+                            <li class="item8">
+                                <label for="ra8">공곶이 &amp; 내도</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <script>
+            /* 페이지1의 슬라이더 js 없이 */    
+            $(document).ready(function(){
+               var a = 0;    
+               var itv = setInterval(function(){ 
+                 if(a==7) {
+                    a = 0;    
+                 } else {
+                    a=a+1; 
+                 }  
+                 ani(a);      
+               }, 4000);
+                function ani(b) {
+                    $(".ra").prop("checked","false");
+                    $(".ra").eq(b).prop("checked","true");
+                    $("#sl_box1 li").removeClass("on");
+                    $("#sl_box1 li").eq(b).addClass("on");
+                }
+            });    
+            </script>
+        </div>
+        <div class="page" id="page2">
+            <section class="page_container">
+                <h3 class="page_tit1">축제·행사 및 다양한 정보</h3>
+                <h2 class="page_tit2">거제의 테마여행</h2>
+                <div class="grdbox col1200">
+                    <div class="grd_item left col600">
+                        <input type="radio" name="rd" class="rd" id="rd1" checked>
+                        <input type="radio" name="rd" class="rd" id="rd2">
+                        <input type="radio" name="rd" class="rd" id="rd3">
+                        <input type="radio" name="rd" class="rd" id="rd4">
+                        <ul class="slider" id="sl2">
+                            <li class="item1">
+                                <a href="">
+                                    <img src="./img/bg_healing-1.jpg" alt="힐링1">
+                                    <div class="sl_tit_box">
+                                        <h2 class="sl_tit3">
+                                            <span class="btxt">거제에서</span>
+                                            <span class="gtxt">힐링하자</span>
+                                        </h2>
+                                        <p class="sl_com2">맑고 푸른 바다 위를 한마리 새처럼 <br>자유롭고 짜릿하게 활강하면서 즐기자!</p>
+                                    </div>
+                                </a>   
+                            </li>
+                            <li class="item2">
+                                <a href="">
+                                    <img src="./img/bg_healing-2.jpg" alt="힐링2">
+                                    <div class="sl_tit_box">
+                                        <h2 class="sl_tit3">
+                                            <span class="btxt">거제에서</span>
+                                            <span class="gtxt">힐링하자</span>
+                                        </h2>
+                                        <p class="sl_com2">
+                                           Chilcheondo Cruise marine Tour <br>
+                                            대통령도 반해버린 '저도'와 '거가대교'
+                                        </p>
+                                    </div>
+                                </a>   
+                            </li>
+                            <li class="item3">
+                                <a href="">
+                                    <img src="./img/bg_healing-3.jpg" alt="힐링3">
+                                    <div class="sl_tit_box">
+                                        <h2 class="sl_tit3">
+                                            <span class="btxt">거제에서</span>
+                                            <span class="gtxt">힐링하자</span>
+                                        </h2>
+                                        <p class="sl_com2">맑은물, 푸른산, 쪽빛바다의 수려한 자연경관을 갖춘  <br>
+                                        거제도에 위치한 해양리조트 명가 대명리조트 거제</p>
+                                    </div>
+                                </a>   
+                            </li>
+                            <li class="item4">
+                                <a href="">
+                                    <img src="./img/bg_healing-4.jpg" alt="힐링4">
+                                    <div class="sl_tit_box">
+                                        <h2 class="sl_tit3">
+                                            <span class="btxt">거제에서</span>
+                                            <span class="gtxt">힐링하자</span>
+                                        </h2>
+                                        <p class="sl_com2">거제시의 아름다운 항구와 이색적인 명소를  <br>
+                                        더욱 여유 있고 편리하게 즐길수 있는 유람선</p>
+                                    </div>
+                                </a>   
+                            </li>                   
+                        </ul>
+                        <ul class="sl_btn_box2" id="sl_box2">
+                            <li class="item1">
+                                <h3 class="gtit2">씨라인</h3>
+                                <label for="rd4" class="lbtn"></label>
+                                <div class="thum"></div>
+                                <label for="rd2" class="rbtn"></label>
+                            </li>
+                            <li class="item2">
+                                <h3 class="gtit2">크루즈투어</h3>
+                                <label for="rd1" class="lbtn"></label>
+                                <div class="thum"></div>
+                                <label for="rd3" class="rbtn"></label>
+                            </li>
+                            <li class="item3">
+                                <h3 class="gtit2">요트투어</h3>
+                                <label for="rd2" class="lbtn"></label>
+                                <div class="thum"></div>
+                                <label for="rd4" class="rbtn"></label>
+                            </li>
+                            <li class="item4">
+                                <h3 class="gtit2">유람선</h3>
+                                <label for="rd3" class="lbtn"></label>
+                                <div class="thum"></div>
+                                <label for="rd1" class="rbtn"></label>
+                            </li>
+                        </ul>
+                    </div>                   
+                    <ul class="grd_item right col600">
+                        <li class="item1 col300">
+                            <a href="">
+                                <h3 class="gtit2">
+                                    <span>GREAT</span><br>
+                                    <span class="cOrg">거제캠페인</span>
+                                </h3>
+                                <h2 class="gtit3">graet<br>거제</h2>
+                            </a>
+                        </li>
+                        <li class="item2 col300">
+                            <h3 class="gtit2">
+                                실감나는<br>거제360도VR영상
+                            </h3>
+                            <a href="" class="umore"></a>
+                        </li>
+                        <li class="item3 col300">
+                            <h3 class="gtit2">거제의 축제</h3>
+                            <p class="gcom2">열정의 도시! 거제의 축제에대해 알려드립니다.</p>
+                            <a href="" class="gmore2"></a>
+                        </li>
+                        <li class="item4 col300">
+                            <h3 class="gtit1">먹고, 자고, 즐기는<br>
+                            알찬 거제여행</h3>
+                            <a href="" class="ico1">
+                                <span class="gtxt">음식</span>
+                            </a>
+                            <a href="" class="ico2">
+                                <span class="gtxt">숙박</span>
+                            </a>
+                            <a href="" class="ico3">
+                                <span class="gtxt">체험관광</span>
+                            </a>
+                            <a href="" class="ico4">
+                                <span class="gtxt">캠핑여행</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <script>
+            /* 페이지2의 슬라이더 js없이 */    
+            $(document).ready(function(){
+               var a = 0;    
+               var itv2 = setInterval(function(){ 
+                 if(a==3) {
+                    a = 0;    
+                 } else {
+                    a=a+1; 
+                 }  
+                 ani2(a);      
+               }, 4000);
+                function ani2(b) {
+                    $(".rd").prop("checked","false");
+                    $(".rd").eq(b).prop("checked","true");
+                }
+                $("#sl_box2 li .lbtn, sl_box2 li .rbtn").click(function(){
+                    clearInterval(intv);
+                    itv2 = setInterval(function(){ 
+                     if(a==3) { a = 0; } else { a=a+1; }  
+                     ani2(a);      
+                    }, 3200);
+                });
+            });    
+            </script>
+        </div>
+        <div class="page" id="page3">
+            <section class="page_container">
+                <h3 class="page_tit1">소식 및 다양한 정보</h3>
+                <h2 class="page_tit2">거제의 소식정보</h2>
+                <ul class="ico_box">
+                    <li class="item1">
+                        <img src="./img/sec3Icon1.png" alt="관광안내지도">
+                        <span class="hv_txt">관광안내지도</span>
+                    </li>
+                    <li class="item2">
+                        <img src="./img/sec3Icon2.png" alt="관광안내소">
+                        <span class="hv_txt">관광안내소</span>
+                    </li>
+                    <li class="item3">
+                        <img src="./img/sec3Icon3.png" alt="관광지요금">
+                        <span class="hv_txt">관광지요금</span>
+                    </li>
+                    <li class="item4">
+                        <img src="./img/sec3Icon4.png" alt="문화관광해설사">
+                        <span class="hv_txt">문화관광해설사</span>
+                    </li>
+                    <li class="item5">
+                        <img src="./img/sec3Icon5.png" alt="거제투어여행사">
+                        <span class="hv_txt">거제투어여행사</span>
+                    </li>
+                    <li class="item6">
+                        <img src="./img/sec3Icon6.png" alt="교통정보">
+                        <span class="hv_txt">교통정보</span>
+                    </li>
+                    <li class="item7">
+                        <img src="./img/sec3Icon7.png" alt="렌터카">
+                        <span class="hv_txt">렌터카</span>
+                    </li>
+                    <li class="item8">
+                        <img src="./img/sec3Icon8.png" alt="조은섬콜택시">
+                        <span class="hv_txt">조은섬콜택시</span>
+                    </li>
+                </ul>
+                <div class="nt_box">
+                    <div class="left col600">
+                        <h3 class="nt_tit">새소식</h3>
+                        <a href="" class="more3">+</a>
+                        <ul class="nt_lst">
+                            <li class="cur_lst">
+                                <a href="" class="txt_tit">경기도, 안성시 재난기본소득 환수 예정 안내 ..</a>
+                                <a href="" class="txt_com">
+                                경기도, 안성시 재난기본소득 지급과 관련, 착오 및 부당지급액에 대한 환수 예정 안내 통지서를 발송하였으나
+                                수취인 불명, 주소 불명 등의 사유로 송달이 불가능하여, 행정절차법 제14조 제4항의 규정에 따라
+                                첨부파일과 같이 공시송달 공고 게재합니다.
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="txt_tit">정부 긴급재난지원금 환수명령 통지 공시송달 게..</a><span class="date">2021-01-20</span>
+                            </li>
+                            <li>
+                                <a href="" class="txt_tit">정부 긴급재난지원금 환수명령 통지서 반송에 따..</a><span class="date">2021-01-20</span>
+                            </li>
+                            <li>
+                                <a href="" class="txt_tit">2021학년도 한국폴리텍대한 진주캠퍼스 신입생..</a><span class="date">2021-01-20</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right col600">
+                        <div class="right_box">
+                            <div class="tit_box">
+                                <h3 class="tit1">내가 찍은 거제</h3>
+                                <p class="com1">한려수도의 해양관광도시! 거제</p>
+                                <ul class="btn_box3">
+                                    <li><button class="prev"></button></li>
+                                    <li><button class="play"></button></li>
+                                    <li><button class="next"></button></li>
+                                </ul>
+                            </div>
+                            <div class="conti_box">
+                                <ul class="img_box">
+                                    <li class="item1">
+                                        <a href="">
+                                            <img src="./img/news_img_01.jpg" alt="함목삼거리 폭포">
+                                            <h4 class="img_tit">함목삼거리 폭포</h4>
+                                            <p class="img_com">2020-09-15</p>
+                                        </a>   
+                                    </li>
+                                    <li class="item2">
+                                        <a href="">
+                                            <img src="./img/news_img_02.jpg" alt="거제시 사진 핫플레이스 근포동굴">
+                                            <h4 class="img_tit">거제시 사진 핫플레이스 근포동굴</h4>
+                                            <p class="img_com">2020-02-19</p>
+                                        </a>   
+                                    </li>
+                                    <li class="item3">
+                                        <a href="">
+                                            <img src="./img/news_img_03.jpg" alt="거제14길의 새벽질주">
+                                            <h4 class="img_tit">거제14길의 새벽질주</h4>
+                                            <p class="img_com">2019-04-19</p>
+                                        </a>   
+                                    </li>
+                                    <li class="item4">
+                                        <a href="">
+                                            <img src="./img/news_img_04.jpg" alt="언제나 가도 가도 또 가고 싶은 그리운 거제도">
+                                            <h4 class="img_tit">언제나 가도 가도 또 가고 싶은 그리운 거제도</h4>
+                                            <p class="img_com">2019-03-19</p>
+                                        </a>   
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                        /* 페이지3 슬라이드 배너 - 상단의 slider.js */    
+                        $(document).ready(function(){
+                           $(".img_box").sliding({spd:500, intv:3800, chd:"li", next:".btn_box3 .next", prev:".btn_box3 .prev",playBtn:".btn_box3 .play"}); 
+                        });    
+                        </script>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap2">
+            <ul class="ft_banner">
+                <li><a href=""><img src="./img/f_ban1.gif" alt="하단슬라이드배너이미지1"></a></li>
+                <li><a href=""><img src="./img/f_ban2.gif" alt="하단슬라이드배너이미지2"></a></li>
+                <li><a href=""><img src="./img/f_ban3.gif" alt="하단슬라이드배너이미지3"></a></li>
+                <li><a href=""><img src="./img/f_ban4.jpg" alt="하단슬라이드배너이미지4"></a></li>
+                <li><a href=""><img src="./img/f_ban5.gif" alt="하단슬라이드배너이미지5"></a></li>
+                <li><a href=""><img src="./img/f_ban6.jpg" alt="하단슬라이드배너이미지6"></a></li>
+                <li><a href=""><img src="./img/f_ban7.jpg" alt="하단슬라이드배너이미지7"></a></li>
+                <li><a href=""><img src="./img/f_ban8.jpg" alt="하단슬라이드배너이미지8"></a></li>
+                <li><a href=""><img src="./img/f_ban9.png" alt="하단슬라이드배너이미지9"></a></li>
+                <li><a href=""><img src="./img/f_ban10.jpg" alt="하단슬라이드배너이미지10"></a></li>
+            </ul>
+        </div>
+        <script>
+        /* 푸터 슬라이드 배너 slider.js */    
+        $(document).ready(function(){
+           $(".ft_banner").sliding({spd:500, intv:4500, chd:"li"}); 
+        });    
+        </script>
+        <div class="ft_wrap2">
+            <nav class="ft_link">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="copy1">(53257) 거제시 계룡로 125 (고현동)<br> 대표전화 : 055)639-3000</p>
+                <p class="copy1">Copyright ⓒ 2019 <span class="ortxt">GEOJE CITY</span>.<br> All Rights Reserved.
+                </p>
+            </div>
+            <a href="" class="wamark">
+                <img src="./img/wacc-logo.png" alt="WA인증">
+            </a>
+        </div>
+    </footer>
+</div>                        
+</body>
+</html>

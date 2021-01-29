@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* 퀵 메뉴 부분 */    
+.quick { position:fixed; right:0px; top:40%; z-index:999; width:222px; height: 240px; } 
+.quick li { clear:both; margin:14px; height:66px; width: 120px;  transition:0.5s; 
+    position:relative;  }  
+.quick li.on { width: 220px; }    
+.quick li a { display:block; }
+.quick li a span { display:block; float:left; line-height: 66px; }
+.quick li a span.qtxt { padding-right: 16px; opacity:0; transition:0.3s; }
+.quick li.on a span.qtxt { opacity:1; }   
+.quick li.item1.on a span.qtxt {  color:#05a4a6;   } 
+.quick li.item2.on a span.qtxt {  color:#174697;   } 
+.quick li.item3.on a span.qtxt {  color:#10a4ce;   } 
+.quick li a span.qicon { width: 66px; height: 66px; background-repeat: no-repeat; background-position:center center; border:3px solid #fff; background-color: transparent; border-radius:40px;
+    transition:0.3s; position:absolute; top:0px; right:50px; }  
+.quick li.on a span.qicon { right:86px;  }    
+.quick li.item1 a span.qicon { background-image:url("./img/secTap1.png"); }   
+.quick li.item2 a span.qicon { background-image:url("./img/secTap2.png"); }   
+.quick li.item3 a span.qicon { background-image:url("./img/secTap3.png"); } 
+.quick li.item1.on a span.qicon { border:3px solid #05a4a6; background-color: #05a4a6;}   
+.quick li.item2.on a span.qicon { border:3px solid #174697; background-color: #174697;} 
+.quick li.item3.on a span.qicon { border:3px solid #10a4ce; background-color: #10a4ce;} 
+.quick li a:after { content:""; display:block; float:right; width:0px; height: 3px; top: 33px; right: -14px; transition:0.5s; position:absolute; }
+.quick li.on a:after { width: 100px; }   
+.quick li.item1 a:after { background-color:#05a4a6; }    
+.quick li.item2 a:after { background-color:#174697; }    
+.quick li.item3 a:after { background-color:#10a4ce; } 

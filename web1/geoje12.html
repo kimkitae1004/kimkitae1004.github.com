@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>거제관광문화</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="거제시청 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./img/geoje.ico">
+    <title>거제관광문화</title>
+    <!-- 폰트를 정의하고, 초기화 스타일을 가져오기 --> 
+    
+    <link rel="stylesheet" href="./fontsystem.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/notosanskr.css">
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="common.css">
+    
+    <!-- 서브페이지 공통 시작 -->
+    <link rel="stylesheet" href="sub_common.css">
+    <script src="sub_common.js"></script>
+    <!-- 서브페이지 공통 끝 -->
+    
+    <!-- geoje11.html 만을 위한 설정 시작 -->    
+    <link rel="stylesheet" href="sub1.css">
+    <script src="sub1.js"></script>
+    <!-- geoje11.html 만을 위한 설정 끝 -->    
+    
+    <script src="tnb.js"></script>
+    <script src="footer.js"></script>
+    <style>
+    .page_cate_tit { background-image: url("./img/bull_h5.gif"); 
+        background-position:left center; margin-bottom: 0.25em; } 
+    .tab_box { clear:both; width: 909px; margin: 1em auto; }    
+    .tab_btn_lst { clear:both; width: 909px; margin:1em auto; margin-bottom: 0.5em; height: 150px; padding-top: 1.5em; }    
+    .tab_btn_lst li { margin-right: 5px; float: left;  }
+    .tab_btn_lst li:last-child { margin-right: 0; }    
+    .tab_btn_lst li label { display: block; position: relative;
+            height: 150px;  width:96px; overflow:hidden; cursor:pointer; }
+    .tab_btn_tit { display: block;    background: #e1e1e1;
+    padding: 10px 5px;    height: 50px;    box-sizing: border-box;
+    color: #555;    font-size: 14px;    text-align: center;
+    width: 100%; line-height: 1.2; font-weight:200; }    
+    .tab_btn_lst li.on .tab_btn_tit { background: #2e70b4; color:#fff; }
+    .tab_btn_pic { display:block; height: 100px; width:auto; margin-left: -10%; }    
+    .tab_con_lst { clear:both; width: 909px; margin: 1em auto; }
+    .tab_con_lst li { display:none; }    
+    .tab_con_lst li.on { display:block; }    
+    .cate_vs { clear:both; width: 909px; height: 460px; margin: 1em auto; overflow:hidden; position:relative; }
+    .cate_vs img { display:block; width: 100%; padding-top: 1em; } 
+    .cate_vs_tit_box { position:absolute; bottom:0; left: 0; height: 90px; background:rgba(0,0,0,0.8); color:#fff; padding-left: 3em; 
+        width: 100%; box-sizing: border-box; }
+    .cate_vs_tit {  font-size:1.8em; padding-top:0.5em; font-weight: 300; }
+    .cate_vs.com { font-weight: 300; } 
+    .tab_con_tit { text-align: center;    font-size: 2.5em;
+    font-weight: 700;    padding: 25px 0 0;    color: #2e70b4;
+    letter-spacing: -2px; margin-top: 0.8em; }  
+    .tab_con_txt { padding: 1em; font-weight:300; color:#666; padding-left: 2em; padding-top: 0; }  
+    .sub_img_cate img { display:block; width: 909px; height:auto; }    
+    .tab_map { width: 909px; height: 400px; }
+    .page_cate_com { color:#666; padding-top: 1em; font-weight: 300; }    
+        
+    #page2 .sub_img {    background-image: url(./img/bg_360vR.png);
+        background-position: center center;
+        background-repeat: no-repeat; }
+    #page2 .cate_vs { height:275px; }    
+    #page2 .cate_vs_tit_box { background-color:rgba(46,112,180,0.85); } 
+    #page2 .cate_vs_tit { float:left; padding-top: 0.8em; }
+    #page2 .cate_vs_com { float:right; text-align:right; padding-right: 2em; padding-top: 1.5em; }
+    .tab_img_cate { padding-bottom: 1em; min-height:160px; }
+    .cate_inner_img { display:block; float:left; margin-right: 12px; width: 166px; margin-top: 1em; margin-left: 2em; margin-bottom: 1em; }   
+    .food_seq_lst { float:right; list-style: decimal;
+        counter-reset: myImgNumber; width: 680px; padding-bottom: 2em; }    
+    .food_seq_lst li { list-style: decimal; margin-left: 25px; line-height: 1.6; display:block;  color:#666; font-weight: 300; }
+    .food_seq_lst li:before {
+        display:block;
+        counter-increment: myImgNumber; 
+        content: counter(myImgNumber) ".";
+        float:left; 
+        padding-right: 10px; 
+    }
+
+    
+    #page3 .cate_vs { height:275px; }    
+    #page3 .cate_vs_tit_box { background-color:rgba(46,112,180,0.85); } 
+    #page3 .cate_vs_tit { float:left; padding-top: 0.8em; }
+    #page3 .cate_vs_com { float:right; text-align:right; padding-right: 2em; padding-top: 1.5em; }
+    .tab_table_box { clear:both; width: 900px; margin: 1em auto; } 
+    .tab_table { display:table; border-collapse:collapse;
+        width: 900px; }
+    .tab_table tr { display:table-row; }
+    .tab_table th, .tab_table td { display:table-cell; line-height: 40px; width:25%;  text-align:center; }
+    .tab_table.d8 th, .tab_table.d8 td { width: 12.5%; }   
+    .tab_table th { border-top:2px solid #1f3c64; 
+        border-bottom: 1px solid #cecece; background-color:#eee; color:#1f3c64; font-weight: 500; }
+    .tab_table td { border-bottom: 1px solid #cecece; 
+        color:#999; font-weight: 300; }
+    .tab_table td ~ td, .tab_table th ~ th { border-left: 1px solid #cecece; } 
+        
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script> 
+    function initialize() { 
+        
+        var myLatlng1 = new google.maps.LatLng(34.73357639288442, 128.68383434067692); 
+        var myLatlng2 = new google.maps.LatLng(34.74494678399802, 128.66314780448673); 
+        var myLatlng3 = new google.maps.LatLng(34.73684679569468, 128.6646909801027); 
+        var myLatlng4 = new google.maps.LatLng(34.7700428151473, 128.71184659687134); 
+        var myLatlng5 = new google.maps.LatLng(34.77356910546291, 128.64003935188978);
+        var myLatlng6 = new google.maps.LatLng(34.876005019342124, 128.62427206951517);
+        var myLatlng7 = new google.maps.LatLng(34.86752774949948, 128.7276167425312); 
+        var myLatlng8 = new google.maps.LatLng(34.70825641452108, 128.61820461184055); 
+        var myLatlng9 = new google.maps.LatLng(34.79919553843396, 128.7153526732189);
+        var myLatlng10 = new google.maps.LatLng(35.01764566028209, 128.72885911184542);
+        
+      var mapOptions1 = { zoom: 15, center: myLatlng1, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions2 = { zoom: 15, center: myLatlng2, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions3 = { zoom: 15, center: myLatlng3, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions4 = { zoom: 15, center: myLatlng4, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions5 = { zoom: 15, center: myLatlng5, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions6 = { zoom: 15, center: myLatlng6, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions7 = { zoom: 15, center: myLatlng7, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions8 = { zoom: 15, center: myLatlng8, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions9 = { zoom: 15, center: myLatlng9, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      var mapOptions10 = { zoom: 15, center: myLatlng10, 
+            mapTypeId: google.maps.MapTypeId.ROADMAP 
+      } 
+      
+      var map1 = new google.maps.Map(document.getElementById('tab_map1'), mapOptions1); 
+      var map2 = new google.maps.Map(document.getElementById('tab_map2'), mapOptions2); 
+      var map3 = new google.maps.Map(document.getElementById('tab_map3'), mapOptions3); 
+      var map4 = new google.maps.Map(document.getElementById('tab_map4'), mapOptions4); 
+      var map5 = new google.maps.Map(document.getElementById('tab_map5'), mapOptions5); 
+      var map6 = new google.maps.Map(document.getElementById('tab_map6'), mapOptions6); 
+      var map7 = new google.maps.Map(document.getElementById('tab_map7'), mapOptions7); 
+      var map8 = new google.maps.Map(document.getElementById('tab_map8'), mapOptions8);     
+      var map9 = new google.maps.Map(document.getElementById('tab_map9'), mapOptions9); 
+      var map10 = new google.maps.Map(document.getElementById('tab_map10'), mapOptions10); 
+        
+        
+      var marker1 = new google.maps.Marker({ position: myLatlng1, map: map1,
+        title: '거제 해금강'   
+      });   
+      var marker2 = new google.maps.Marker({ position: myLatlng2, map: map2,
+        title: '바람의 언덕'   
+      });   
+      var marker3 = new google.maps.Marker({ position: myLatlng3, map: map3,
+        title: '신선대'   
+      });  
+      var marker4 = new google.maps.Marker({ position: myLatlng4, map: map4,
+        title: '외도보타니아'   
+      });  
+      var marker5 = new google.maps.Marker({ position: myLatlng5, map: map5,
+        title: '학동 흑진주 몽돌해변'   
+      });  
+      var marker6 = new google.maps.Marker({ position: myLatlng6, map: map6,
+        title: '거제도수용소 유적공원'   
+      }); 
+      var marker7 = new google.maps.Marker({ position: myLatlng7, map: map7,
+        title: '동백섬 지심도'   
+      }); 
+      var marker8 = new google.maps.Marker({ position: myLatlng8, map: map8,
+        title: '여차-홍포 해안비경'   
+      }); 
+      var marker9 = new google.maps.Marker({ position: myLatlng9, map: map9,
+        title: '공곶이/내도'   
+      }); 
+      var marker10 = new google.maps.Marker({ position: myLatlng10, map: map10,
+        title: '거가대교'   
+      }); 
+    } 
+    </script> 
+    <script>
+    $(document).ready(function(){
+        initialize();
+        $(".tab_con_lst li:first-child").addClass("on");
+        $(".tab_btn_lst li").click(function(){
+            $(".tab_btn_lst li").removeClass("on");
+            var tar_btn = $(this).index();
+            $(this).addClass("on");
+            $(".tab_con_lst li").removeClass("on");
+            $(this)
+                .parents(".tab_btn_lst")
+                .siblings(".tab_con_lst")
+                .find("li.item")
+                .eq(tar_btn).addClass("on");
+        }); 
+    });    
+    </script>
+</head>
+<body>
+<div class="container">
+    <header class="hd">
+        <div class="hd_wrap">
+            <nav class="tnb">
+                <ul class="t_left">
+                    <li><a href="geoje_login.html">로그인</a></li>
+                    <li><a href="geoje_join.html">회원가입</a></li>
+                    <li><a href="geoje_map.html">오시는길</a></li>
+                </ul>
+                <input type="checkbox" id="find_open_btn">
+                <div class="find_window">
+                    <form action="" id="find_form" name="find_form" class="frm">
+                        <input type="text" id="keyword" class="find_input" placeholder="검색어 입력">
+                        <input type="submit" id="find_btn" class="find_btn">
+                    </form>
+                </div>
+                <ul class="t_right">
+                    <li class="lang">
+                        <div class="lang_box">
+                            <span class="cur_lang">LANGUAGE</span>
+                            <a href="index_en.html">ENGLISH</a>
+                            <a href="#">中文</a>
+                            <a href="#">日文</a>
+                        </div>
+                    </li>
+                    <li class="ls">
+                        <a href=""></a>
+                    </li>
+                    <li class="find">
+                        <label for="find_open_btn" class="find_open"></label>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <nav class="gnb" id="gnb_nav">
+                <ul>
+                    <li class="mn">
+                        <a href="geoje11.html">한눈에 거제</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">360VR 체험&amp; 전자지도</li>
+                                <li><a href="geoje11.html#page1">360 VR영상</a></li>
+                                <li><a href="geoje11.html#page2">남산서울타워 VR체험관</a></li>
+                                <li><a href="geoje11.html#page3">거제조선해양문화관 VR체험</a></li>
+                                <li><a href="geoje_map.html">관광 전자 지도</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">거제식후경</li>
+                                <li><a href="geoje12.html#page1">거제 9경</a></li>
+                                <li><a href="geoje12.html#page2">거제 9미</a></li>
+                                <li><a href="geoje12.html#page3">거제 9품</a></li>
+                                <li><a href="">남파랑길</a></li>
+                                <li><a href="">추천여행코스</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">체험관광</li>
+                                <li><a href="">씨라인</a></li>
+                                <li><a href="">요트투어</a></li>
+                                <li><a href="">유람선/여객선 관광</a></li>
+                                <li><a href="">낚시여행</a></li>
+                                <li><a href="">드라마촬영지</a></li>
+                                <li><a href="">거제블루시티투어</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">캠핑여행</li>
+                                <li><a href="">학동자동차야영장</a></li>
+                                <li><a href="">거제문화관광농원 오토캠핑장</a></li>
+                                <li><a href="">스톤힐야영장</a></li>
+                                <li><a href="">거제글램퍼스</a></li>
+                                <li><a href="">옥계영농조합법인</a></li>
+                                <li><a href="">트로피칼드림</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">섬&amp;섬길</li>
+                                <li><a href="">칠천량 해전길</a></li>
+                                <li><a href="">맹종죽순 체험길</a></li>
+                                <li><a href="">고려촌 문화체험길</a></li>
+                                <li><a href="">계룡산 둘레길</a></li>
+                                <li><a href="">충무공이순신 만나러가는길</a></li>
+                                <li><a href="">양지암 등대길</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="geoje21.html#page1">거제여행</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">촬영유명지</li>
+                                <li><a href="geoje21.html#page1">해수욕장</a></li>
+                                <li><a href="geoje21.html#page2">섬여행</a></li>
+                                <li><a href="geoje21.html#page3">바다</a></li>
+                                <li><a href="#">등대</a></li>
+                                <li><a href="#">다리</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">즐길거리</li>
+                                <li><a href="">공원</a></li>
+                                <li><a href="">유원지</a></li>
+                                <li><a href="">관광농원</a></li>
+                                <li><a href="">유적지</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">먹거리</li>
+                                <li><a href="">지역별 음식</a></li>
+                                <li><a href="">계절별먹거리</a></li>
+                                <li><a href="">위생등급지정업소</a></li>
+                                <li><a href="">모범음식점</a></li>
+                                <li><a href="">칭찬업소</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">숙박</li>
+                                <li><a href="">지역별숙박</a></li>
+                                <li><a href="">공중위생서비스평가최우수업소</a></li>
+                                <li><a href="">칭찬업소</a></li>
+                                <li><a href="">관광숙박업</a></li>
+                                <li><a href="">청소년수련원/유스호스텔</a></li>
+                                <li><a href="">거제자연휴양림</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">살거리</li>
+                                <li><a href="">특산품안내</a></li>
+                                <li><a href="">전통시장</a></li>
+                                <li><a href="">기념품안내</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">즐거운 축제</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">지역축제</li>
+                                <li><a href="">신년해맞이축제</a></li>
+                                <li><a href="">산방산삼월삼짇날축제</a></li>
+                                <li><a href="">대금산 진달래 축제</a></li>
+                                <li><a href="">거제 맹종 대나무 축제</a></li>
+                                <li><a href="">양지암축제</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">관광축제</li>
+                                <li><a href="">거제 옥포대첩 축제</a></li>
+                                <li><a href="">남부면 수국축제</a></li>
+                                <li><a href="">바다로 세계로</a></li>
+                                <li><a href="">거제 예술제</a></li>
+                                <li><a href="">거제몽돌해변축제</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">행사</li>
+                                <li><a href="">시민의 날 행사</a></li>
+                                <li><a href="">어업인의 날 행사</a></li>
+                                <li><a href="">노인의 날 행사</a></li>
+                                <li><a href="">관광의 날 행사</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">문화/공연</li>
+                                <li><a href="">공연</a></li>
+                                <li><a href="">전시</a></li>
+                                <li><a href="">기타행사</a></li>
+                                <li><a href="">문화가 있는 날</a></li>
+                                <li><a href="">문화공간</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">역사/문화</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">국가지정문화재</li>
+                                <li><a href="">천연기념물</a></li>
+                                <li><a href="">명승</a></li>
+                                <li><a href="">사적</a></li>
+                                <li><a href="">등록문화재</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">도지정문화재</li>
+                                <li><a href="">유형문화재</a></li>
+                                <li><a href="">기념물</a></li>
+                                <li><a href="">문화재자료</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">향토문화재</li>
+                                <li><a href="">문화유적</a></li>
+                                <li><a href="">고분유적</a></li>
+                                <li><a href="">전통사찰</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">거제인물</li>
+                                <li><a href="">인물1</a></li>
+                                <li><a href="">인물2</a></li>
+                                <li><a href="">인물3</a></li>
+                                <li><a href="">대한외국인</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">여행가이드</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">여행준비</li>
+                                <li><a href="">거제 스마트관광앱</a></li>
+                                <li><a href="">관광안내지도</a></li>
+                                <li><a href="">관광안내소</a></li>
+                                <li><a href="">주요관광지 요금</a></li>
+                                <li><a href="">문화관광해설사</a></li>
+                                <li><a href="">거제투어 여행사</a></li>
+                                <li><a href="">모바일 키오스크</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">교통정보</li>
+                                <li><a href="">찾아오시는길</a></li>
+                                <li><a href="">시외버스</a></li>
+                                <li><a href="">시내버스</a></li>
+                                <li><a href="">조은섬콜택시</a></li>
+                                <li><a href="">렌터카</a></li>
+                                <li><a href="">항공편</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">여객선/유람선/도선 예약</li>
+                                <li><a href="">여객선 예약</a></li>
+                                <li><a href="">유람선 예약</a></li>
+                                <li><a href="">도선 예약</a></li>
+                                <li><a href="">투어버스 예약</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">무료 와이파이</li>
+                                <li><a href="">공공와이파이</a></li>
+                                <li><a href="">공유와이파이</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mn">
+                        <a href="">커뮤니티</a>
+                        <div class="sub">
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">커뮤니티</li>
+                                <li><a href="">새소식</a></li>
+                                <li><a href="">내가찍은거제</a></li>
+                                <li><a href="">인증샷 갤러리</a></li>
+                                <li><a href="">여행후기</a></li>
+                                <li><a href="">포토 갤러리</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">공모전</li>
+                                <li><a href="">거제관광투어 SNS 공모전</a></li>
+                                <li><a href="">제7회 거제○○여행 SNS 공모전</a></li>
+                                <li><a href="">제6회 거제관광투어 SNS 공모전</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">블로그</li>
+                                <li><a href="">제5회 거제관광투어블로그</a></li>
+                                <li><a href="">제4회 거제관광투어블로그</a></li>
+                                <li><a href="">제3회 거제관광투어블로그</a></li>
+                                <li><a href="">제2회 거제관광투어블로그</a></li>
+                                <li><a href="">제1회 거제관광투어블로그</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">신고하기</li>
+                                <li><a href="">GREAT거제캠페인</a></li>
+                                <li><a href="">관광불편신고</a></li>
+                                <li><a href="">사고/재해신고</a></li>
+                            </ul>
+                            <ul class="sub_cate">
+                                <li class="sub_cate_tit">묻고 답하기</li>
+                                <li><a href="">여행Q&amp;A</a></li>
+                                <li><a href="">웹서비스Q&amp;A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="content" id="page1">
+        <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">한눈에 거제</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">한눈에 거제</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">거제 9경</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">한눈에 거제</a></li>
+                                <li class="sub_cate_tit">거제식후경</li>
+                                <li>
+                                    <span class="cur_page">
+                                        거제 9경
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">360VR 체험&amp; 전자지도</li>
+                                    <li><a href="geoje11.html#page1">360 VR영상</a></li>
+                                    <li><a href="geoje11.html#page2">남산서울타워 VR체험관</a></li>
+                                    <li><a href="geoje11.html#page3">거제조선해양문화관 VR체험</a></li>
+                                    <li><a href="geoje_map.html">관광 전자 지도</a></li>
+                                </ul>
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">거제식후경</li>
+                                    <li class="cate1"><a href="geoje12.html#page1">거제 9경</a></li>
+                                    <li class="cate2"><a href="geoje12.html#page2">거제 9미</a></li>
+                                    <li class="cate3"><a href="geoje12.html#page3">거제 9품</a></li>
+                                    <li class="cate4"><a href="">남파랑길</a></li>
+                                    <li><a href="">추천여행코스</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">체험관광</li>
+                                    <li><a href="">씨라인</a></li>
+                                    <li><a href="">요트투어</a></li>
+                                    <li><a href="">유람선/여객선 관광</a></li>
+                                    <li><a href="">낚시여행</a></li>
+                                    <li><a href="">드라마촬영지</a></li>
+                                    <li><a href="">거제블루시티투어</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">캠핑여행</li>
+                                    <li><a href="">학동자동차야영장</a></li>
+                                    <li><a href="">거제문화관광농원 오토캠핑장</a></li>
+                                    <li><a href="">스톤힐야영장</a></li>
+                                    <li><a href="">거제글램퍼스</a></li>
+                                    <li><a href="">옥계영농조합법인</a></li>
+                                    <li><a href="">트로피칼드림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">섬&amp;섬길</li>
+                                    <li><a href="">칠천량 해전길</a></li>
+                                    <li><a href="">맹종죽순 체험길</a></li>
+                                    <li><a href="">고려촌 문화체험길</a></li>
+                                    <li><a href="">계룡산 둘레길</a></li>
+                                    <li><a href="">충무공이순신 만나러가는길</a></li>
+                                    <li><a href="">양지암 등대길</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <figure class="sub_img">
+                            <h3 class="sub_img_tit">
+                                <span class="btxt">거제</span> 9경
+                            </h3>
+                            <p class="sub_img_com">
+                                거제에서 유명한 아홉 곳의 미려한 경관을 직접 보고 즐길 수 있습니다.
+                            </p>
+                        </figure>
+                        <div class="thumb_box">
+                            <p class="thumb_com">거제에서 유명한 곳을 직접 촬영하고, 기념사진과 경관사진을 남겨 두시면 나중에도 두고 두고 보시고,<br> 인생에서도 추억할 수 있습니다.</p>
+                        </div>
+                        <div class="tab_box">
+                            <ul class="tab_btn_lst">
+                                <li class="item on">
+                                    <label for="">
+                                        <img src="./img/img_gt2.jpg" alt="거제 해금강" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 해금강</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt6.jpg" alt="바람의 언덕과 신선대" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">바람의 언덕과 신선대</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt1.jpg" alt="외도보타니아" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">외도보타니아</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt3.jpg" alt="학동 흑진주 몽돌해변" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">학동 흑진주 몽돌해변</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt9.jpg" alt="거제도수용소 유적공원" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제도수용소 유적공원</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt7.jpg" alt="동백섬 지심도" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">동백섬 지심도</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt4.jpg" alt="여차-홍포 해안비경" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">여차-홍포 해안비경</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt8.jpg" alt="공곶이/내도" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">공곶이/내도</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/img_gt10.jpg" alt="거가대교" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거가대교</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <ul class="tab_con_lst">
+                                <li class="item on">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt2.jpg" alt="거제1경" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 해금강</h3>
+                                            <p class="cate_vs_com">한류의 열풍, 진나라 서불이 이미 다녀갔던 곳!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제해금강(일명 갈곶도, 갈도)</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 남부면 갈곶리 산1번지</h3>
+                                    <p class="tab_con_txt">해금강마을 남쪽 약500m 해상에 위치한 무인도로, 지형이 칡뿌리가 뻗어 내린 형상을 하고 있다고 하여 붙인 갈도(葛島)보다는 바다의 금강산을 뜻하는 해금강이라고 널리 부르고 있다.</p>
+                                    <p class="tab_con_txt">대한민국 40곳의 명승 가운데 강원도 강릉시 명주 청학동의 소금강에 이어 두 번째로 1971년 3월 23일 명승으로 지정되었다.<br>
+                                    면적 121,488㎡, 높이 116m, 폭 67.3m로 한 송이 부용(연꽃)이 피어 있는 것 같기도 하고, 3개의 봉우리가 조화를 이뤄 신선 같다고 하여 ‘삼신봉’이라고 부르기도 한다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/caltural03_03.jpg" alt="거제해금강">
+                                    </div>
+                                    <p class="tab_con_txt">수억 년 파도와 바람에 씻긴 형상이 갖가지 모습을 연출한다.
+                                    <br>사자바위, 미륵바위, 촛대바위, 신랑바위, 신부바위, 해골바위, 돛대바위 등으로 둘러싸인 해금강은 서불(서복)이 중국 진시황제의 불로 장생초를 구하러 왔다고 하여 ‘약초 섬’이라고도 부른다.<br>
+                                    우제봉 절벽 아래 ‘서불과차’란 글씨를 써놓았으나 1959년 태풍 ‘사라’로 소실되어 지금은 글자 흔적만 희미하게 남아있다. 배를 타고 지나칠 때 찾아 과거 속으로 여행을 떠나보기를 권장한다.</p>
+                                    <p class="tab_con_txt">한편, 수십 미터 절벽에 새겨 놓은 만물상과 열십자로 드러나는 십자동굴은 가히 조물주의 작품이라고 할 만하다.<br>
+                                    사자바위 사이로 솟아오르는 일출의 모습 또한 환상적이며 선상 관광을 할 수 있다.
+                                    일출과 일몰이 아름답기도 소문난 거제해금강은 사진작가들이 자주 찾는 곳 중의 하나이다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map1">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt6.jpg" alt="바람의언덕과신선대" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">바람의 언덕 &amp; 신선대</h3>
+                                            <p class="cate_vs_com">바람과 신선이 노니는 곳! 자연이 주는 상쾌함을 즐겨라!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">바람의 언덕</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 남부면 갈곶리 14-47번지</h3>
+                                    <p class="tab_con_txt">해금강 가는 길 왼쪽으로 내려가면 도장포 마을이 나오고, 그 마을 북쪽에 자리 잡은 곳이 바로 바람의 언덕이다.<br>
+                                    원래의 지명은 ‘띠밭늘’로 불렸으나, 2002년부터 ‘바람의 언덕’으로 바뀌어 불리고 있다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc601.jpg" alt="바람의언덕">
+                                    </div>
+                                    <p class="tab_con_txt">언덕에서 바다를 바라보면 한 없이 넓고, 고즈넉하며, 시원한 바람이 상쾌함을 선사한다.<br>
+                                    여기서 보이는 것들은 하나같이 지루하지 않은 한가함을 입었다.섬도, 등대도, 유람선도, 바람마저도 한가해 보인다.<br>
+                                    짊어진 마음의 짐을 바다에 던지거나 바람에 날려 보내기에 최적의 장소이다.<br>
+                                    영국에 황량한 폭풍의 언덕이 있다면, 한국에는 넉넉한 바람의 언덕이 있다.</p>
+                                    <p class="tab_con_txt">TV드라마 ‘이브의 화원(2003년)’, ‘회전목마(2004년)’, 영화 ‘종려나무숲(2005년)’ 등의 촬영지였고, 2009년 5월에는 KBS 2TV 인기 예능프로그램 ‘1박 2일’이 촬영되기도 하였으며,
+                                    2009년 11월 풍차를 설치하여 관광객들에게 볼거리를 제공하고 있다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map2">
+                                        
+                                    </div>
+                                    <h2 class="tab_con_tit">신선대</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 남부면 갈곶리 21-19번지</h3>
+                                    <p class="tab_con_txt">바람의 언덕 맞은 편 해안에 위치하고, 신선이 내려와서 풍류를 즐겼다고 할 만큼 자연경관이 빼어난 곳으로, 주변의 해안경관과 기암괴석에 부딪히는 하얀 파도가 멋진 곳이다.<br>
+                                    전망대에서 바라보면, 수평선을 배경으로 아름다운 빛깔의 바다와 형형색색의 바위가 어우러진 다도해 풍경이 정말 일품이다.</p>
+                                    <p class="tab_con_txt">2019년 2월 TVN 드라마 ‘왕이 된 남자’에서 두 주인공이 신선대에 올라 눈앞에 펼쳐진 장관을 바라보며 앞으로 더 많은 추억을 쌓아갈 것과 백년해로를 약속한 장면이 방영되었다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc603.jpg" alt="신선대">
+                                    </div>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map3">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt1.jpg" alt="외도보타니아" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">외도보타니아</h3>
+                                            <p class="cate_vs_com">정녕 여기가 대한민국이란 말인가? 지중해를 옮겨와, 어디서 찍든 화보급!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">외도 보타니아(밖섬, 조라도)</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 일운면 외도길 17</h3>
+                                    <p class="tab_con_txt">거제도와 4㎞ 정도 떨어져 있는 외도는 지리적 여건에도 불구하고 물이 풍부하고 기후가 온난하며, 강우량이 많아서 여러 가지 난대 및 열대성 식물이 자라고 있으며, 맑고 푸른 바다에 둘러싸여 거제해금강, 홍도, 대마도 등을 관망할 수 있다.
+</p>
+                                    <p class="tab_con_txt">1969년부터 소유자 (고)이창호, 최호숙 부부가 145,002㎡의 부지에 희귀 아열대 식물 740여 종과 리스하우스 등 7동의 편의시설을 설치하였으며, 1년 내내 꽃이 지지 않는 곳으로, 지중해의 어느 한 해변을 옮겨 놓은 듯 이국적인 모습의 건물과 조경으로 가꾸어져 있다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc602.jpg" alt="외도보타니아">
+                                    </div>
+                                    <p class="tab_con_txt">한려해상국립공원 내 위치한 외도는 동도와 서도로 나뉘어져 있고, 수심이 30~50m, 해발 84m로, 서도에 식물원과 편의시설이 조성되어 있으며, 동도는 자연 상태 그대로 보존되고 있다.
+                                    </p>
+                                    <p class="tab_con_txt">2002년 3월 KBS 드라마 ‘겨울연가’ 마지막회 촬영지로 알려지면서 국내외 관광객들이 많이 찾는다.<br>
+                                    <br>1995년 4월 25일 ‘외도자연농원’이란 이름으로 개원한 지 2년 만에 연간 백만 명 이상의 관광객이 찾는 관광명소로 자리매김했고, 최근에는 한국관광공사, 네티즌에 의해 한국 최고의 관광지로 선정되기도 했다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map4">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt3.jpg" alt="학동흑진주몽돌해변" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">학동 흑진주 몽돌해변</h3>
+                                            <p class="cate_vs_com">흑진주 몽돌로 이루어진, 몽돌 굴러 가는 소리에 살포시 잠들 곳!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">학동 흑진주 몽돌해변</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 동부면 학동리 276-5번지</h3>
+                                    <p class="tab_con_txt">해변 면적은 3만㎢, 길이는 1.2㎞, 폭은 50m로 거제도 남쪽에 위치한다.<br>
+                                    흑진주 같은 검은 몽돌로 이루어진 해변으로 전국에서도 손꼽힌다.<br><br>
+                                    남해안의 맑고 깨끗한 물이 파도쳐서 몽돌을 굴리며 자글자글 아름다운 소리를 내고, 이는 우리나라 자연의 소리 100선에 선정되기도 하였다.</p>
+                                    <p class="tab_con_txt">해안을 따라 발 지압을 하며 걸으면 노자산, 가라산의 능선이 부드럽게 다가오고, 코앞에 펼쳐진 야생 동백림 군락지에서 천연기념물로 지정된 팔색조의 울음소리가 귓가를 간질인다.<br><br>
+                                    이름의 유래는 학이 날아오르는 지형이라고 하여 지어졌다.
+                                    옆 마을 수산에서는 아직껏 별신굿이 이어져 내려오고, 노자산, 가라산의 희귀식물은 한국 식물학 연구의 보고이다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc604.jpg" alt="학동흑진주몽돌해변">
+                                    </div>
+                                    <p class="tab_con_txt">입구 등 포토 존이 설치되어 기념사진을 촬영할 수 있으며, 학동의 옛 지명을 본따 이름 지은 그물 오솔길을 거닐면 소나무향과 바다의 파도소리가 공감각적으로 다가온다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map5">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt9.jpg" alt="거제도수용소 유적공원" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제도포로수용소유적공원</h3>
+                                            <p class="cate_vs_com">동족상잔의 아픔을 간직한 곳! 이제는 다크투어리즘, 역사 안보의 체험장!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제도포로수용소유적공원</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 계룡로 61(고현동)</h3>
+                                    <p class="tab_con_txt">1950년 6월 25일 새벽 4시, 북한군의 남침으로 시작된 한국전쟁으로 수많은 포로들이 생겼고, 이들을 수용하기 위한 장소가 필요하여 1951년부터 거제도 고현, 수월지구를 중심으로 포로수용소가 설치되었다.</p>
+                                    <p class="tab_con_txt">인민군 15만, 중국군 2만 등 최대 17만 3천 명의 포로를 수용하였고, 그 중 300여 명의 여자 포로도 있었다. 1951년 7월 10일 최초의 휴전회담이 개최었으나 전쟁포로 문제에서 난항을 겪었고, 특히 반공포로와 친공포로 간 유혈살상이 자주 발생하였으며, 1952년 5월 7일에는 수용소 사령관 돗드 준장이 포로에게 납치되는 등 냉전시대 이념 갈등의 축소 현장과 같은 모습이었다. 1953년 6월 18일 한국 정부의 일방적인 반공포로 석방을 계기로 1953년 7월 27일 휴전협정이 조인됨으로써 전쟁은 끝났고, 수용소는 폐쇄되었다.</p>
+                                    <p class="tab_con_txt">거제도 포로수용소는 1983년 12월 20일 경상남도 문화재 자료 제99호로 지정, 보호되고 있으며, 지금은 일부 잔존 건물과 당시 포로들의 생활상, 막사, 사진, 의복 등 생생한 자료와 기록물들을 바탕으로 거제도포로수용소유적공원으로 다시 태어나 전쟁역사의 산 교육장 및 세계적인 관광명소로 조성되었다.</p>
+                                    <p class="tab_con_txt"><br><br>거제도포로수용소유적공원 홈페이지 : http://www.pow.or.kr</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map6">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt7.jpg" alt="동백섬 지심도" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">동백섬 지심도</h3>
+                                            <p class="cate_vs_com">빨간 동백꽃이 우리에게 손짓한다! 어서 오라!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">동백섬 지심도</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 일운면 옥림리 산1번지</h3>
+                                    <p class="tab_con_txt">일운면 지세포 동쪽 6㎞ 지점에 위치하고 있고, 남북이 긴 사각형 모양으로 하늘에서 내려다본 섬의 모양이 ‘마음 심(心)’자를 닮았다고 하여 붙여진 이름이다. 장승포 동백섬 지심도 터미널에서 도선으로 15분 거리에 있고, 섬 전체가 거의 동백나무로 뒤덮여 있다. 남쪽 해안에 해식애가 발달해 있고, 면적은 0.36㎢, 해안선은 3.7㎞m이다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc607.jpg" alt="동백섬 지심도">
+                                    </div>
+                                    <p class="tab_con_txt">조선 현종 15년에 15가구가 이주하여 살았다고 문헌에 남아 있으며, 1936년 주민들이 강제이주하게 되었고, 그 이후 일본군 요새로서 1개 중대가 광복 직전까지 주둔하였으며, 광복 이후 주민들이 다시 이주하여 살게 되었다. 현재 지심도에 거주하는 주민들은 민박집을 겸하여 생활하고, 밭농사와 과수원 등 농사에 종사하고 있으며, 소량의 김, 미역, 굴도 생산한다.
+                                    <br><br>지금도 포진지, 탄약고 등의 흔적이 고스란히 남아 있으며, 그동안 지심도는 국방부 소유였다가 2016년 6월 거제시로 이전하였다.</p>
+                                    <p class="tab_con_txt">희귀종인 거제풍란을 비롯하여 후박나무, 소나무 등의 식물이 자생하고 있으며, 섬에서 동백나무 터널을 따라 산책을 즐길 수 있고, 낚시 체험관광, 그늘나무에서 휴식을 취할 수 있다.
+                                    <br><br>2009년 5월에 KBS 2TV에 방송된 ‘1박 2일’의 촬영지로 많이 알려져 있다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map7">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt4.jpg" alt="여차-홍포 해안비경" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">여차․홍포해안비경</h3>
+                                            <p class="cate_vs_com">해안의 아름다운 경치에 감탄을 금치 못할 곳!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">여차․홍포해안비경</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 남부면 다포리 산21-2번지</h3>
+                                    <p class="tab_con_txt">여차 해변을 따라 명사해수욕장으로 향하다 보면 대병대도와 소병대도 등 크고 작은 섬들이 푸른 물결 위로 춤을 추듯 나타나고, 해안 절벽의 아름다움에 감탄을 금치 못한다. 비포장길이 다소 있지만 아름다운 비경을 바라보노라면 금세 잊힌다.</p>
+                                    <p class="tab_con_txt"></p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc606.jpg" alt="여차-홍포 해안비경">
+                                    </div>
+                                    <p class="tab_con_txt">기존의 전망대 한 곳 외에 2019년 대한민국 테마여행 10선(핵심관광지육성)사업의 일환으로 추진된 전망대 한 곳이 추가되어 특색 있는 디자인의 시설을 조성하여 새로운 볼거리를 제공하고 있다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map8">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt8.jpg" alt="공곶이/내도" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">공곶이 &amp; 내도</h3>
+                                            <p class="cate_vs_com">동백터널이 안내하고, 수선화가 반기는, 아름다움을 뽐내도!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">공곶이 &amp; 내도</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 일운면 와현리 94-2</h3>
+                                    <p class="tab_con_txt">거제시의 동남쪽에 위치하며 와현해수욕장 너머, 예구마을에서도 능선을 하나 더 넘어 산비탈에서 서면 마치 산 뒤에 숨어 있는 공곶이가 보이고, 맞은편에 내도가 자리 잡고 있으며, 저 멀리 해금강이 보인다.</p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc608.jpg" alt="공곶이">
+                                    </div>
+                                    <p class="tab_con_txt">지명은 지형이 궁둥이처럼 툭 튀어나왔다고 하여 붙여진 이름이고, 1957년 강명식, 지상악 노부부의 정성과 땀으로 산비탈에 16,000㎡ 되는 밭을 일궈 동백과 수선화, 종려나무 등을 삽과 곡괭이로 수십 년 간 만들었다. 봄이 오면 빨간 동백꽃과 노란 수선화가 장관을 이루어 아름다운 자연농원 공곶이라는 입소문을 타고 전해여 오늘날 많은 사람들이 발길을 찾는 숨은 명소가 되었다.<br><br>
+                                    공곶이의 산자락은 계단식으로 정리되어 있고, 곳곳에는 종려나무, 천리향과 만리향, 설유화 등이 푸른빛 바다와 어우러져 한 폭의 수채화 같은 느낌을 준다.
+                                    </p>
+                                    <div class="sub_img_cate">
+                                        <img src="./img/img_gc605.jpg" alt="내도">
+                                    </div>
+                                    <p class="tab_con_txt">내도는 외도의 안에 있다고 하여 ‘안섬, 모자섬’이라고도 부르고, 구조라선착장에서 도선으로 배를 타고 간다. 어족이 풍부하여 낚시터로도 유명하고, 김과 굴 양식이 활발하다. 1982년 내도분교 운동장에서 선사시대의 유적인 조개무지와 토기 등이 발견되었다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map9">
+                                        
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/img_gt10.jpg" alt="거가대교" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거가대교</h3>
+                                            <p class="cate_vs_com">탁 트인 바다, 아름다운 야경, 차 타고 바다 속으로 가요!</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거가대교</h2>
+                                    <h3 class="page_cate_tit">위치 : 거제시 장목면 유호리 산85-2번지</h3>
+                                    <p class="tab_con_txt">국내 최대, 세계 최초, 세계 최고의 토목 기술의 집합체인 거가대교가 2004년 12월 착공하여 6년간의 공사기간을 거쳐 2010년 12월 13일 개통했다. 거가대교는 경남 거제시 장목면 유호리에서 부산광역시 강서구 천성동 가덕도를 잇는 다리로서 총 길이 8.2㎞의 왕복 4차선 도로로 2개의 사장교(4.5㎞)의 해저침매터널(3.7㎞)뉘어져 있다. FAST TRACK방식(설계와 시공을 병행하는 기법)을 이용하여 건설되었고, 침매터널은 48m 수심을 포함 5가지 세계신기록을 세웠다.<br><br>
+                                    거가대교 개통으로 거제와 부산 간 거리는 140㎞에서 60㎞로 줄었고, 시간은 2시간여에서 50분으로 단축되었다. 또한 대전~통영, 대구~부산 간 고속도로가 U-Type형으로 연결되어 물류비용을 획기적으로 절감하고 남해안관광벨트의 핵심인프라 구축에 기여하고 있다.</p>
+                                    <p class="tab_con_txt">낮에는 확 트인 바다풍경을, 밤에는 아름다운 야경을 감상할 수 있는 유호전망대가 설치되어 있어 사진 찍기에 최적의 장소를 제공하고 있다.</p>
+                                    <h3 class="page_cate_tit">지도</h3>
+                                    <div class="tab_map" id="tab_map10">
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm2" id="research_frm2">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research2" class="research_ra" id="research21" checked>
+                                    <label for="research21">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research22">
+                                    <label for="research22">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research23">
+                                    <label for="research23">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research24">
+                                    <label for="research24">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research2" class="research_ra" id="research25">
+                                    <label for="research25">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>       
+    <main class="content" id="page2">       
+        <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">한눈에 거제</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">한눈에 거제</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">거제 9미</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">한눈에 거제</a></li>
+                                <li class="sub_cate_tit">거제식후경</li>
+                                <li>
+                                    <span class="cur_page">
+                                        거제 9미
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">360VR 체험&amp; 전자지도</li>
+                                    <li><a href="geoje11.html#page1">360 VR영상</a></li>
+                                    <li><a href="geoje11.html#page2">남산서울타워 VR체험관</a></li>
+                                    <li><a href="geoje11.html#page3">거제조선해양문화관 VR체험</a></li>
+                                    <li><a href="geoje_map.html">관광 전자 지도</a></li>
+                                </ul>
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">거제식후경</li>
+                                    <li class="cate1"><a href="geoje12.html#page1">거제 9경</a></li>
+                                    <li class="cate2"><a href="geoje12.html#page2">거제 9미</a></li>
+                                    <li class="cate3"><a href="geoje12.html#page3">거제 9품</a></li>
+                                    <li class="cate4"><a href="">남파랑길</a></li>
+                                    <li><a href="">추천여행코스</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">체험관광</li>
+                                    <li><a href="">씨라인</a></li>
+                                    <li><a href="">요트투어</a></li>
+                                    <li><a href="">유람선/여객선 관광</a></li>
+                                    <li><a href="">낚시여행</a></li>
+                                    <li><a href="">드라마촬영지</a></li>
+                                    <li><a href="">거제블루시티투어</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">캠핑여행</li>
+                                    <li><a href="">학동자동차야영장</a></li>
+                                    <li><a href="">거제문화관광농원 오토캠핑장</a></li>
+                                    <li><a href="">스톤힐야영장</a></li>
+                                    <li><a href="">거제글램퍼스</a></li>
+                                    <li><a href="">옥계영농조합법인</a></li>
+                                    <li><a href="">트로피칼드림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">섬&amp;섬길</li>
+                                    <li><a href="">칠천량 해전길</a></li>
+                                    <li><a href="">맹종죽순 체험길</a></li>
+                                    <li><a href="">고려촌 문화체험길</a></li>
+                                    <li><a href="">계룡산 둘레길</a></li>
+                                    <li><a href="">충무공이순신 만나러가는길</a></li>
+                                    <li><a href="">양지암 등대길</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <figure class="sub_img">
+                            <h3 class="sub_img_tit">
+                                <span class="btxt">거제</span> 9미
+                            </h3>
+                            <p class="sub_img_com">
+                               <strong>거제에서만 맛볼 수 있는 향토전통음식과 간식</strong>
+                                <br>
+                                맑은 해산물을 가미한 음식이 많은 거제의 음식은 소박하지만 그 참 맛은 제일입니다.
+                            </p>
+                        </figure>
+                        <div class="thumb_box">
+                            <p class="thumb_com">거제에서 유명한 음식을 직접 드셔 보시고, <br>거제의 맛을 기억하시면서,인생에서 맛을 추억할 수 있습니다.</p>
+                        </div>
+                        <div class="tab_box">
+                            <ul class="tab_btn_lst">
+                                <li class="item on">
+                                    <label for="">
+                                        <img src="./img/food_b6_bg.jpg" alt="거제 대구탕" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 대구탕</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b7_bg.jpg" alt="거제 굴구이" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 굴구이</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b1_bg.jpg" alt="멍게&성게비빔밥" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">멍게&amp;성게비빔밥</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b2_bg.jpg" alt="거제 도다리 쑥국" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 도다리 쑥국</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b3_bg.jpg" alt="거제물메기탕" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제물메기탕</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b10_bg.jpg" alt="거제멸치쌈밥&회무침" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제멸치쌈밥&amp;회무침</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b8_bg.jpg" alt="거제생선회&물회" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제생선회&amp;물회</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b9_bg.jpg" alt="바람의 핫도그" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">바람의 핫도그</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/food_b5_bg.jpg" alt="볼락구이" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">볼락구이</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <ul class="tab_con_lst">
+                                <li class="item on">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b6_bg.jpg" alt="거제 대구탕" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 대구탕</h3>
+                                            <p class="cate_vs_com">전국 생산량의 대부분을 차지하는 대구, 맛 또한 뛰어나 바다의 귀족!<br>
+                                            제철계절 : 11월~2월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제대구탕</h2>
+                                    <p class="page_cate_com">대구는 거제가 전국 생산량의 대부분을 차지할 정도로 거제 바다가 키운 명품으로, 제철은 11월~2월이다. 흰 살 생선의 왕인 대구는 탕으로 주로 요리해 먹지만 갖은 양념으로 버무린 찜도 미식가들 사이에서 인기가 매우 좋다. 대구탕은 물메기탕과 함께 거제의 겨울을 대표하는 음식으로 겨울 바다에서 불어오는 혹독한 추위를 날려버린다.</p>
+                                    <h3 class="page_cate_tit">대구의 특징</h3>
+                                    <p class="tab_con_txt">대구는 머리가 크고 입이 커서 대구(大口) 또는 대구어(大口魚)라고 부른다. 생김새는 명태와 비슷하지만 몸 앞쪽이 보다 두툼하고 뒤쪽은 점점 납작해진다. 위턱이 아래턱보다 더 앞쪽으로 튀어나와 있어 입을 다물면 아래턱을 감싸는 형상을 하고 있어 약간 우스꽝스러워 보이기도 한다. <br>
+                                    대구는 10월에서 다음해 2월사이에 진해만에서 주로 잡히며, 한때 어획량이 급속히 감소하여 귀한 생선으로 취급되었다. 지금은 치어방류사업 등 다양한 복원사업을 통해 어획량이 많이 늘었으나 여전히 고급어종으로서 그 맛과 영양을 자랑한다.
+                                    특히 대구는 예로부터 몸이 허약한 사람들의 보신재로도 사용되었는데 젖이 부족한 임산부가 대구탕을 먹으면 젖이 많아진다고 하고 구충작용도 있어 회충에는 대구를 물로 씻지 않고 달여 먹으면 효과가 좋다고 한다. 뿐만 아니라 유종에는 대구 껍질을 물에 담갔다 붙이면 잘 듣는다고하여 민간요법에서도 대구를 자주 사용 하였다.</p>
+                                    <h3 class="page_cate_tit">대구의 영양</h3>
+                                    <p class="tab_con_txt">흰살 생선의 대표적인 대구는 기름 속에 DHA를 다량 함유하고 있는 생선으로 시력과 피부를 강화하는 효과가 있으며 감기예방, 노화방지 등에도 효과가 있다.<br>
+                                    특히 타우린 성분이 체내의 콜레스테롤 수치를 떨어뜨려 동맥 경화를 예방하며, 특히 대구의 간에서 추출한 기름인 간유는 비타민 A와 D가 풍부해 여러 가지 용도로 쓰인다.<br>
+                                    대구는 1백g당 열량이 70㎉(사과 수준)이기 때문에 다이어트를 하는 사람에게도 권장할 만하기 때문에, 지나치게 비만하거나 췌장질환을 갖고 있는 사람, 담석증이 있는 사람들도 안심하고 먹을 수 있는 식품이다.</p>
+                                    <h3 class="page_cate_tit">대구탕 조리법</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s9.jpg" alt="거제 대구탕" class="cate_inner_img">
+                                        <ol class="food_seq_lst">
+                                            <li>대구를 흐르는 물에 깨끗히 씻어내고 체에 받혀 물기를 제거한다.</li>
+                                            <li>다시마는 적당한 크기로 자르고 무도 중간크기로 잘라 준비해 둔다.</li>
+                                            <li>조리기구(냄비)에 적당량의물을 부어 준비해둔 다시마와 무를 넣고 대구와함께 끓인다. (강.중.약) 중불에 끓인다.</li>
+                                            <li>파/청.홍고추를 적당한크기로 자르고 (크지않게자른다) 마늘은 썰어서 다지거나 그대로 두고 끊여도 된다.</li>
+                                            <li>뿌옇게 우려진 후 된장 한큰술을 풀고 파와 고추 마늘을 넣고
+                                            강불에 10분~15정도끓여 주면된다.</li>
+                                            <li>그리고 소금 반큰술을 넣고 간을 본다.</li>
+                                        </ol>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b7_bg.jpg" alt="거제 굴구이" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제굴구이</h3>
+                                            <p class="cate_vs_com">남성에게는 스태미너 음식, 여성에게는 미용 음식!<br>제철계절 : 10월 ~ 4월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제굴구이</h2>
+                                    <p class="page_cate_com">미국 FDA에서도 인정하는 거제의 청정해역에서 생산되는 굴은 ‘바다의 우유’라고도 부르며, 굴에 포함된 아연 성분은 성호르몬을 활성화시키는 강장물질로 고대 로마황제들도 힘의 원천으로 굴을 즐겨 먹었다고 하여 스태미너 음식으로 각광을 받고 있다.<br>
+                                    겨울철이 본격적인 출하시기로 값 싸고 질 좋은 굴을 푸짐하게 먹을 수 있다. 굴구이는 숯불이나 일반 석쇠에 굽는 형식이 아닌 커다란 양철 솥에 굴을 한가득 채우고 불에 익혀 먹는다. 맛있게 익힌 굴은 그 입을 벌리고 하얀 속살을 드러낸다. 장갑을 끼고 굴 까는 칼로 뜨거운 굴 껍데기를 제거한 후 초장이나 소스에 발라 먹으면 향긋한 맛과 씹히는 질감을 함께 느낄 수 있다.</p>
+                                    <h3 class="page_cate_tit">굴의 영양</h3>
+                                    <p class="tab_con_txt">굴에 포함된 성분 중 칼륨은 나트륨과 마찬가지로 혈액 삼투압의 조절 작용을 할 뿐 아니라 근육의 긴장이나 장의 운동, 지각 작용 등에도 중요한 역할을 하며, 마그네슘은 자극에 의한 신경의 흥분을 억제하는 한편, 근육의 흥분을 높이는 등의 작용을 한다. 그리고 굴에 풍부하게 함유된 성분인 망간은 뼈나 간장의 효소 기능을 높여주고, 뼈의 생성을 촉진시키는 중요한 요소이며 아연은 탄산탈수효소, 유산탈수효소 등의 성분으로 피부 골격의 유지에 필요한 미네랄이다. 특히 생굴회에는 타우린 성분이 풍부하고, 기타 비타민, 무기질, 효소성분 등 생체에 유익한 물질이 다량 함유되어 있어 굴은 고혈압, 동맥강화, 심장병, 백내장, 관절염, 류마티스성 질환, 간장병, 당뇨병 등에 유효한 식품이다.</p>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b1_bg.jpg" alt="멍게&성게비빔밥" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">멍게&amp;성게비빔밥</h3>
+                                            <p class="cate_vs_com">못생겼다고, 가시가 있다고 무시하지 말라. 거제 특미!<br>
+                                            제철계절 : 연중</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">멍게&amp;성게비빔밥</h2>
+                                    <p class="page_cate_com">멍게비빔밥과 성게비빔밥은 거제 특미라고 손색이 없다. 매년 4~6월경 거제에서 채취하는 살아있는 멍게 속의 뻘을 제거하고 다진 후 약간의 양념과 간으로 버무려 저온에서 반숙성 시킨 다음 먹기 직전에 살짝 얼려 참기름, 깨소금, 김가루 등과 따끈따끈한 밥에 비벼 먹는 음식이다.<br>
+                                    성게비빔밥은 청정해역인 거제만에서 해녀들이 직접 잡은 성게의 특유한 향과 감칠맛을 그대로 살려 만든다. 성게비빔밥에서 느낄 수 있는, 성게 특유의 고소하면서 쌉쌀하며 향긋한 향은 식욕을 자극한다.</p>
+                                    <h3 class="page_cate_tit">멍게·성게 비빔밥의 유래</h3>
+                                    <p class="tab_con_txt">멍게비빔밥, 성게비빔밥의 정확한 유래는 알 수 없다. 하지만 우리가 알고 있는 일반 비빔밥의 유래와 흡사하지 않을까 추정된다. 일반 비빔밥의 유래는 다양하다. 조선시대 임금이 먹는 밥을 일컫는 수라에는 흰수라, 팥수라, 오곡수라, 비빔등 4가지가 있는데 비빔은 점심때나 종친이 입궐하였을 때 먹는 가벼운 식사였다고 유래하는 궁중음식설, 농번기에는 하루에 여러번 음식을 섭취하는데 그때마다 구색을 갖춘 상차림을 준비하기는 어려우며 또한 그릇을 충분히 가져가기도 어려웠으므로 그릇 하나에 여러 가지 음식을 섞어 먹게 되었다는 농번기음식설 등 다양한 유래가 있다. 아마도 멍게ㆍ성게 비빔밥 또한 거제, 통영지역에서 즐겨먹는 멍게젓갈, 성게젓갈을 함께 비벼먹으면서 발전한 것으로 추정된다.</p>
+                                    <h3 class="page_cate_tit">고로쇠 약수의 보관 판매</h3>
+                                    <p class="tab_con_txt">고로쇠 약수는 섭씨 0~3도에서 보관하여 얼지 않도록 하여야 하며 냉장고에서 저온으로 보관하였다가음용하는 것이 좋다. 우리지역에서는 고로쇠수액채취협의회를 구성하여 회원들이 공동작업으로 채취하였다가 현지에서직접 판매하거나 대형저장고에 보관하였다가 판매하고 있다.</p>
+                                    <h3 class="page_cate_tit">멍게·성게 비빔밥의 맛과 영양</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s1.jpg" alt="멍게·성게 비빔밥" class="cate_inner_img">
+                                        <img src="./img/food_s2.jpg" alt="멍게·성게 비빔밥" class="cate_inner_img">
+                                        <img src="./img/food_s3.jpg" alt="멍게·성게 비빔밥" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b2_bg.jpg" alt="거제 도다리 쑥국" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 도다리 쑥국</h3>
+                                            <p class="cate_vs_com">향긋한 봄의 향을 머금은 쑥과 제철 도다리의 만남!<br>
+                                            제철계절 : 3월 ~ 5월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제 도다리 쑥국</h2>
+                                    <p class="page_cate_com">겨우내 얼었던 땅을 뚫고 봄에 올라오는 쑥과 봄철 육질이 단단하고 부드러워진 도다리를 된장과 같이 넣고 끓여 만든 도다리쑥국은 구수한 향과 담백하여 봄의 나른함을 쫓고, 뚝 떨어진 식욕을 불러온다.<br>
+                                    도다리가 봄에 맛있는 이유는 바로 생선의 담백한 맛을 결정하는 지방산 때문인데, 등 푸른 생선의 고소하고 연한 맛 또한 지방의 주요 구성분인 지방산에 달렸다. 도다리는 봄에 지방 함량이 가장 많으므로 맛이 실하다.</p>
+                                    <h3 class="page_cate_tit">도다리 쑥국의 유래</h3>
+                                    <p class="tab_con_txt">도다리쑥국은 아마도 우리의 어려웠던 시절 해안가 지역을 중심으로 겨우내 먹거리 부족으로 생긴 영양결핍을 보충하기 위해 살이오른 도다리에 입맛을 돋우기 위해 쑥을 넣은 것이 시초가 되어 지금 계절음식으로 자리 잡지 않았나 생각된다.</p>
+                                    <h3 class="page_cate_tit">도다리 쑥국의 맛과 영양</h3>
+                                    <p class="tab_con_txt">도다리가 봄에 맛있는 이유는 바로 생선의 담백한 맛을 결정하는 지방산 때문인데, 등푸른 생선의 고소하고 연한 맛 또한 지방의 주요 구성분인 지방산에 달렸다. 도다리는 봄에 지방 함량이 가장 많으므로 맛이 실하다. 또한 배의 부분이 붉은빛이 돌지 않고 붉게 멍든 부분이 없어야 상태가 좋은 것이다.<br>
+                                    도다리는 영양학적으로 단백질을 많이 함유하고 있는 대표적인 흰살 생선입니다. 흰살 생선에 풍부하게 포함되어 있는 비타민 A는 감기와 같은 감염성 질환에 대한 저항력을 길러주고 시력을 보호해주는 역할을 한다.
+                                    또 도다리 속에 풍부한 비타민 B은 각기병을 막아주고, 비타민 E는 노화를 방지해 젊음을 유지해준다. 그밖에도 글루타민산, 글리신, 알라닌, 리신 등 아미노산의 균형이 뛰어나고, 아름다운 머릿결을 형성하는데 없어서는 안될 결체조직 엘라스틴과 콜라겐 성분이 풍부하게 들어있다.
+                                    또 아미노산의 일종인 타우린이 많이 함유되어 있는데, 타우린은 빈혈 방지와 시력회복에 도움이 되며 콜레스테롤치를 떨어뜨려서 고혈압을 예방하는데 큰 도움을 준다. 또한 도다리는 소화가 잘 되는 식품으로 환자나 노약자의 영양식으로도 그만이다. 게다가 고단백 저칼로리여서 다이어트 식품으로도 권장한다.
+                                    쑥 또한 영양면에서는 도다리에 뒤지지 않는 봄의 제철 영양식품으로 쑥은 그 성질이 따뜻하여 허한성(虛寒性)의 출혈병증(부녀자의 붕루), 월경통, 월경부조, 태동불안, 복통 등에 효과가 있으며, 쑥의 주성분은 칼슘, 섬유, 비타민A, 비타민B, 비타민C등이다. 봄철에 나타나는 피부건조, 호흡기 질환, 각종 알러지성 증상, 위장병 등을 예방, 치료하는 데에 비타민 A, C 성분이 들어있는 쑥이 아주 좋다.</p>
+                                    <h3 class="page_cate_tit">도다리 쑥국 조리법</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s4.jpg" alt="도다리 쑥국" class="cate_inner_img">
+                                        <ol class="food_seq_lst">
+                                            <li>신선한 도다리를 골라 비늘을 다듬고 아가미 쪽에 칼을 넣어 손질한다.</li>
+                                            <li>늙지않은 쑥으로 골라 흐르는 물에 뿌리 쪽 흙을 흐르는 물에 살살 털어 낸다.</li>
+                                            <li>준비된 쌀뜨물에 된장을 풀고 도다리를 넣어 한소큼 끓인 후 약10분 더 끓인다.</li>
+                                            <li>끓은 후 간을 보아 취향 것 소금간을 한다.</li>
+                                            <li>쑥을 넣은 후 숨만 죽으면 그릇에 담아 낸다.</li>
+                                        </ol>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b3_bg.jpg" alt="거제물메기탕" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제물메기탕</h3>
+                                            <p class="cate_vs_com">살이 흐물흐물하지만 시원한 국물과 함께 후루룩 넘기는 맛은 일품!<br>
+                                            제철계절 : 11월 ~ 3월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제물메기탕</h2>
+                                    <p class="page_cate_com">원래 물메기는 생김새가 흉측하여 잡자마자 바다에 버렸다. 강원도에서 흐물흐물한 살집과 둔한 생김새 때문에 곰치라고도 하지만 남해안 지역에서는 물메기 또는 미기(사투리)라는 이름으로 더욱 친숙하다. 물메기탕은 시원한 맛 때문에 해장국으로 유명하며, 살이 흐물흐물하지만 추운 날씨에 건조시켜서 찜을 하기도 하고, 미식가들 사이에서는 물메기를 초회무침으로 즐겨 먹기도 한다.<br>
+                                    주로 싱싱한 생선을 국을 끊일 때는 맑은탕(일명 지리)로 요리하는데 물메기 맑은탕은 부드러운 메기의 살을 시원한 국물과 함께 후루룩 넘기는 맛이 일품이다. 거제도에서는 이러한 물메기를 떡국에 넣어 별미를 즐기기도 하였는데 단백질과 칼슘이 풍부하여 떡 맛과 물메기의 담백한 맛이 잘 어울린다. 물메기의 제철은 12월부터 2월까지이며 11월부터 본격적인 물메기 조업이 시작된다.</p>
+                                    <h3 class="page_cate_tit">물메기탕의 특징</h3>
+                                    <p class="tab_con_txt">물메기는 우리나라와 동중국해에 분포하는 1년생 어류로, 수심 50~80m에서 주로 서식하다가 매년 11월 경 산란을 위해 남해안 연안으로 이동한다. 물메기는 부화후 만 1년이면 수컷의 경우 몸길이 40Cm, 암컷의 경우 32Cm로 매우 빠르게 성장한다. 연근해 어종이라 항상 신선하며, 생선 중 가장 비리지 않은 생선으로 살은 말려서 저장하였다가 국, 찜 등에 많이 이용하며, 아가미와 알은 젓갈로 이용하여 버릴 것이 없는 생선으로 유명하다.</p>
+                                    <h3 class="page_cate_tit">물메기탕의 맛과 영양</h3>
+                                    <p class="tab_con_txt">물메기 탕은 맑은국(지리)로 끊여 먹는데 시원하며, 담백한 국물맛이 일품이다. 맛뿐만 아니라 물메기에는칼슘, 철분을 비롯한 무기질 함량이 높고 비타민 B군의 함량이 풍부하여 술의 해독을 돕는다.<br>
+                                    또한 물메기에는 지방이 적어 저칼로리 이지만, 단백질 함량은 매우높아 겨울철 환절기에 가족들의 영양보충을 위해서도 적극 추천되는 음식이다. 물메기는 비린내가 적고 민물메기의 흙냄새가 나지 않는 것이 특징이다.</p>
+                                    <h3 class="page_cate_tit">물메기탕의 조리법</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s5.jpg" alt="물메기탕" class="cate_inner_img">
+                                        <ol class="food_seq_lst">
+                                            <li>물메기를 손질해서 씻는다.</li>
+                                            <li>물메기 조금과 새우, 멸치로 기본 육수를 만든 다.</li>
+                                            <li>콩나물을 씻어 다듬은 후 육수 넣어 끓인다.</li>
+                                            <li>무를 비져서 넣고 으면 물메기와 마늘을 넣고 끓인다.</li>
+                                            <li>쑥물메기가 익을 쯤 파 넣고 그릇에 담아서 미나리 넣으면 완성한다.</li>
+                                        </ol>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b10_bg.jpg" alt="거제멸치쌈밥&회무침" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제멸치쌈밥&amp;회무침</h3>
+                                            <p class="cate_vs_com">칼슘의 왕 멸치! 쌈밥과 회무침으로 보충한다!<br>
+                                            제철계절 : 연중</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제멸치쌈밥&amp;회무침</h2>
+                                    <p class="page_cate_com">멸치쌈밥은 멸치를 넣어 끓인 찌개를 밥과 각종 야채로 쌈 싸먹는 요리이고, 멸치회무침은 생멸치를 막걸리나 술지게미를 푼 물에 담갔다가 살만 발라낸 멸치살과 쑥갓, 미나리, 부추, 양파에 초고추장(고추장, 식초, 설탕, 다진 파ㆍ마늘, 통깨)을 넣어 무치기도 하며, 식성에 따라 유자청이나 산초가루를 첨가해 먹기도 한다.<br>
+                                    멸치에는 칼슘이 많아 뼈를 튼튼하게 해주고 골다공증을 예방하며, DHA, EPA가 함유되어 있어 두뇌활동 및 기억력 향상에 도움을 준다. 또한, 타우린이 다량 함유되어 있어 체내의 콜레스테롤 수치를 낮춰주어 동맥경화와 같은 성인병을 예방하는 것은 물론 노화 방지 효과가 있다.</p>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b8_bg.jpg" alt="거제생선회&물회" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제생선회&amp;물회</h3>
+                                            <p class="cate_vs_com">거제의 싱싱한 자연산 회, 남다른 식감을 느껴보라!<br>
+                                            제철계절 : 연중</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제생선회&amp;물회</h2>
+                                    <p class="page_cate_com">거제 하면 떠오르는 것이 아름다운 자연경관과 푸른 바다, 그리고 싱싱한 회 한 접시. 그만큼 거제의 푸른 청정해역에서 나는 생선의 싱싱함을 가장 맛볼 수 있는 게 생선회일 것이다.<br>
+                                    지금은 어느 지역을 가든지 생선회를 맛볼 수 있지만, 거제의 푸른 바다에서 갓 잡은 싱싱한 생선을 두툼하게 썰어 먹는 맛은 회를 좋아하지 않는 사람이라도 이 감칠맛은 잊지 못할 것이다.</p>
+                                    <h3 class="page_cate_tit">알고먹으면 더욱 맛있는 생선회</h3>
+                                    <p class="tab_con_txt">정월은 도미를 최고로 친다.<br><br>
+                                    2, 3월엔 가자미(도다리)다.<br><br>
+                                    4월은 삼치다.<br><br>
+                                    5월은 농어다.<br><br>
+                                    6월은 숭어다.<br><br>
+                                    7월은 장어다.<br><br>
+                                    8월은 꽃게다.<br><br>
+                                    9월은 전어다.<br><br>
+                                    10월은 갈치다.<br><br>
+                                    11월과 12월은 모든 생선이 다 맛있는 계절로 가려먹을 것이 없다는 뜻에서 특별한 생선을 지목하지 않고 있지만 거제에서는 대구, 물메기와 같은 생선이 유명하다.<br>
+                                    </p>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s10.jpg" alt="회" class="cate_inner_img">
+                                        <img src="./img/food_s11.jpg" alt="회" class="cate_inner_img">
+                                        <img src="./img/food_s12.jpg" alt="회" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b9_bg.jpg" alt="바람의 핫도그" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">바람의 핫도그</h3>
+                                            <p class="cate_vs_com">바람의 언덕도 구경하고, 바람의 핫도그도 드셔보세요!<br>제철계절 : 연중</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">바람의 핫도그</h2>
+                                    <p class="page_cate_com">거제의 유명 관광지 바람의 언덕과 떼려야 뗄 수 없는 음식 바람의 핫도그, 평범하게 지나칠 수 있는 음식임에도 불구하고 의미를 부여하여 많은 사람들의 관심을 불러모았고, SNS 홍보를 통해 남녀노소 거제를 찾는 사람이면 누구나 한 번쯤은 먹어봐야 하는 음식으로 입소문을 타고 있다.</p>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/food_b5_bg.jpg" alt="볼락구이" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">볼락구이</h3>
+                                            <p class="cate_vs_com">구이 중 최고의 맛 볼락구이! 한 번 먹어보면 계속 찾게 될 맛!<br>제철계절 : 연중</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">볼락구이</h2>
+                                    <p class="page_cate_com">잘 구워진 볼락의 쫄깃하고 짭짤한 껍질의 맛과 부드러우면서 고소한 하얀 속살은 어느 생선구이와도 비교할 수 없는 맛을 자랑한다. 특히 낚시를 즐기는 강태공들 사이에서는 숯불에 구운 볼락구이를 최고의 술안주로 즐겨 먹는다고 한다.<br>
+                                    몸은 방추형이고 옆으로 납작하다. 볼락에는 단백질이 다량 함유되어 있다. 하지만 다른 어류와는 달리 지방질이 거의 없는 반면에 탄수화물이 다소 포함되어 있어 고단백 저칼로리 수산식품으로 인기가 높다.</p>
+                                    <h3 class="page_cate_tit">볼락구이 조리법</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/food_s8.jpg" alt="볼락구이" class="cate_inner_img">
+                                        <ol class="food_seq_lst">
+                                            <li>가위로 지느러미를 바짝 제거 한다.</li>
+                                            <li>칼로 등을 가르고 내장과 아가미를 제거한다.</li>
+                                            <li>배 부분이 중심이 되게 넓게 펴고 깨끗이 씻는다.</li>
+                                            <li>소금 간을 한 후 30분 이상 재워둔다.</li>
+                                            <li>숯불에 소금 간을 한 볼락을 굽는다.<br>
+                                            ※ 일부에서는 볼락을 통째로 굽는 것이 더 맛있다고도 한다.</li>
+                                        </ol>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm3" id="research_frm3">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research3" class="research_ra" id="research31" checked>
+                                    <label for="research31">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research32">
+                                    <label for="research32">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research33">
+                                    <label for="research33">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research34">
+                                    <label for="research34">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research3" class="research_ra" id="research35">
+                                    <label for="research35">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>       
+    <main class="content" id="page3">
+        <div class="page">
+            <figure class="vs">
+                <h2 class="page_tit1">한눈에 거제</h2>
+                <p class="page_com1">한려수도의 해양관광도시! 거제</p>
+            </figure>
+            <section class="page_container">
+                <div class="page_header">
+                    <h2 class="page_tit2">한눈에 거제</h2>
+                    <div class="breadcrumb_box">
+                        <h2 class="cate_tit1">거제 9품</h2>
+                        <div class="bread">
+                            <ul class="bread_lst">
+                                <li><a href="index.html">홈</a></li>                         
+                                <li><a href="">한눈에 거제</a></li>
+                                <li class="sub_cate_tit">거제식후경</li>
+                                <li>
+                                    <span class="cur_page">
+                                        거제9품
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="device_lst">
+                                <li class="sns"><a href=""></a></li>
+                                <li class="print"><a href=""></a></li>
+                                <li class="edit"><a href="">정보수정요청</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content">
+                    <aside class="left_bar">
+                        <nav class="lnb">
+                            <div class="lnb_item">
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">360VR 체험&amp; 전자지도</li>
+                                    <li><a href="geoje11.html#page1">360 VR영상</a></li>
+                                    <li><a href="geoje11.html#page2">남산서울타워 VR체험관</a></li>
+                                    <li><a href="geoje11.html#page3">거제조선해양문화관 VR체험</a></li>
+                                    <li><a href="geoje_map.html">관광 전자 지도</a></li>
+                                </ul>
+                                <ul class="sub_lnb on">
+                                    <li class="sub_lnb_tit">거제식후경</li>
+                                    <li class="cate1"><a href="geoje12.html#page1">거제 9경</a></li>
+                                    <li class="cate2"><a href="geoje12.html#page2">거제 9미</a></li>
+                                    <li class="cate3"><a href="geoje12.html#page3">거제 9품</a></li>
+                                    <li class="cate4"><a href="">남파랑길</a></li>
+                                    <li class="cate5"><a href="">추천여행코스</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">체험관광</li>
+                                    <li><a href="">씨라인</a></li>
+                                    <li><a href="">요트투어</a></li>
+                                    <li><a href="">유람선/여객선 관광</a></li>
+                                    <li><a href="">낚시여행</a></li>
+                                    <li><a href="">드라마촬영지</a></li>
+                                    <li><a href="">거제블루시티투어</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">캠핑여행</li>
+                                    <li><a href="">학동자동차야영장</a></li>
+                                    <li><a href="">거제문화관광농원 오토캠핑장</a></li>
+                                    <li><a href="">스톤힐야영장</a></li>
+                                    <li><a href="">거제글램퍼스</a></li>
+                                    <li><a href="">옥계영농조합법인</a></li>
+                                    <li><a href="">트로피칼드림</a></li>
+                                </ul>
+                                <ul class="sub_lnb">
+                                    <li class="sub_lnb_tit">섬&amp;섬길</li>
+                                    <li><a href="">칠천량 해전길</a></li>
+                                    <li><a href="">맹종죽순 체험길</a></li>
+                                    <li><a href="">고려촌 문화체험길</a></li>
+                                    <li><a href="">계룡산 둘레길</a></li>
+                                    <li><a href="">충무공이순신 만나러가는길</a></li>
+                                    <li><a href="">양지암 등대길</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </aside>
+                    <div class="right_bar">
+                        <div class="thumb_box">
+                            <p class="thumb_com"><strong>거제를 대표하는 경쟁력 있는 지역 특산품</strong> <br>              맑은 공기, 깨끗한 물, 싱싱한 먹거리, 청정해역 거제가 곧 Well-being 입니다.</p>
+                        </div>
+                        <div class="tab_box">
+                            <ul class="tab_btn_lst">
+                                <li class="item on">
+                                    <label for="">
+                                        <img src="./img/sp_b3_bg.jpg" alt="거제 대구" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 대구</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b5_bg.jpg" alt="거제 멸치" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 멸치</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b8_bg.jpg" alt="거제 유자" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 유자</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b4_bg.jpg" alt="거제굴" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제굴</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b6_bg.jpg" alt="거제돌미역" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제 돌미역</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b9_bg.jpg" alt="거제맹종죽순" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제맹종죽순</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b2_bg.jpg" alt="거제표고버섯" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제표고버섯</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b7_bg.jpg" alt="거제고로쇠수액" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">거제고로쇠수액</span>
+                                    </label>
+                                </li>
+                                <li class="item">
+                                    <label for="">
+                                        <img src="./img/sp_b10_bg.jpg" alt="왕우럭조개" class="tab_btn_pic">
+                                        <span class="tab_btn_tit">왕우럭조개</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <ul class="tab_con_lst">
+                                <li class="item on">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b3_bg.jpg" alt="거제 대구" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 대구</h3>
+                                            <p class="cate_vs_com">생산지:거제연안<br> 생산시기: 10월 ~ 익년 2</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제대구</h2>
+                                    <h3 class="page_cate_tit">일반현황</h3>
+                                    <div class="tab_table_box">
+                                        <table class="tab_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>주생산지</th>
+                                                    <th>생산시기</th>
+                                                    <th>재배면적</th>
+                                                    <th>생산량</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>장목면 일대(외포항)</td>
+                                                    <td>12월~익년2월</td>
+                                                    <td>연간 8만 마리</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h3 class="page_cate_tit">대구의 유래, 문헌기록</h3>
+                                    <p class="tab_con_txt">거대구를 언제부터 먹기 시작 하였는지는 정확히 알 수 없으나 동의보감에 ‘대구는 질이 평하고 맛이 짜고 독이 없어 먹으며 기운을 보하는데 내장과 기름의 맛이 더욱 좋다’라는 표현과 산림경제의 ‘대구의 알에 간을 해두면 맛있고 담백하여 먹기 좋고 동월(冬月)에 반건(半乾)한 것이 좋다’라는 대목에서 즐겨먹기 시작한 것은 조선시대 이후 인 것으로 추정된다.<br>
+                                    또한 규합총서에서는 ‘대구는 동해에서만 나고 중국에는 없기 때문에 그 이름이 문헌에는 나오지 않으나 중국 사람들이 진미라 하였다’라고 하였으며 고종3년 궁녀들에게 지급한 월급명세서가 써있는 병인대전분료도에 대구가 궁녀들의 월급으로 지급했다’는 대목에서 대구의 가치를 엿 볼 수 있다.</p>
+                                    <h3 class="page_cate_tit">거제대구의 특징</h3>
+                                    <p class="tab_con_txt">대구는 동해와 서해에서 분포하는 한대성의 심해어로 깊은 바다에 떼를 지어 살며, 겨울철에 냉수층을 따라 남해안의 진해만까지 산란하기 위해 진해만을 찾는데 동남해안에서 잡히는 대구(50cm이상)는 서해에서 잡히는 대구(50cm미만)보다 크며 특히 진해만(거제) 에서 겨울철에 잡히는 무게 7.5kg이상 나가는 대구를 최상급으로 여겼다.<br>
+                                    조선왕조실록 (태종실록~중종실록 까지)에서도 볼 수 있듯이 매년 10월 천신 품목으로 거제 대구를 진상했다는 기록도 있을 만큼 거제 대구는 유명하고 맛있다.</p>
+                                    <h3 class="page_cate_tit">대구탕 조리법</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s10.jpg" alt="거제 대구" class="cate_inner_img">
+                                        <img src="./img/sp_s11.jpg" alt="거제 대구" class="cate_inner_img">
+                                        <img src="./img/sp_s12.jpg" alt="거제 대구" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b5_bg.jpg" alt="거제 멸치" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 멸치</h3>
+                                            <p class="cate_vs_com">생산지 : 거제연안<br>생산시기 : 7월 ~ 12월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제멸치</h2>
+                                    <h3 class="page_cate_tit">일반현황</h3>
+                                    <div class="tab_table_box">
+                                        <table class="tab_table d8">
+                                            <thead>
+                                                <tr>
+                                                    <th>Kcal</th>	
+                                                    <th>단백질(g)</th>
+                                                    <th>지방(g)</th>
+                                                    <th>탄수화물(g)</th>
+                                                    <th>칼슘(mg)</th>
+                                                    <th>철(mg)</th>
+                                                    <th>비타민(mg)</th>
+                                                    <th>섬유(g)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>270</td>
+                                                    <td>52.7</td>
+                                                    <td>4.9</td>
+                                                    <td>0.3</td>
+                                                    <td>1825</td>
+                                                    <td>7.50</td>
+                                                    <td>0.0</td>
+                                                    <td>0.0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h3 class="page_cate_tit">멸치의 구분</h3>
+                                    <p class="tab_con_txt">멸치의 종류는 일반적으로 크기를 기준으로 하며, 멸치를 잡히는 시기별로 구분하는 이름이 각각 다르다.<br>
+                                    7,8월에 나는 것을 초사리, 9,10월에 나는 것은 오사리, 11월에 나는 것은 중사리, 12~3월에 나는 것은 늦사리라고 하며 이는 다시 (7월1일-8월20일)사이에 나는 것을 하절품, (8월20일-11월20일)사이에 나는 것을 추절품, (11월20일-01월30일)사이에 나는 것을 동절품, (2월1일-3월30일)사이에 나는 것을 춘절품이라 한다. 이것을 색상별로 구분하면, 백색멸치(시로구찌) 황백색멸치(우스시로), 황색멸치(우스), 황적색 멸치(우스야까), 적색멸치(아까)로 구분한다.</p>
+                                    <h3 class="page_cate_tit">거제의 멸치</h3>
+                                    <p class="tab_con_txt">난류와 한류가 교차하는 거제 청정해역에서 갓 잡아 삶은 후 햇볕아래서 시원한 바닷바람으로 건조시킨 ‘거제멸치’는 살이 연하고 비린내가 나지 않으며 신선도가 뛰어나고 맛이 담백하여 멸치고유의 맛이 뛰어나 풋고추 멸치볶음, 멸치야채튀김, 잔멸치조림, 파멸치무침, 맥주안주 등 여러 가지 용도로 사용할 수 있다.</p>
+                                    <h3 class="page_cate_tit">멸치와 시금치</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s16.jpg" alt="거제멸치" class="cate_inner_img">
+                                        <img src="./img/sp_s17.jpg" alt="거제멸치" class="cate_inner_img">
+                                        <img src="./img/sp_s18.jpg" alt="거제멸치" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b8_bg.jpg" alt="거제 유자" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 유자</h3>
+                                            <p class="cate_vs_com">생산지 : 사등,하청,거제,장목 일대<br>생산시기 : 11월~12월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제 유자</h2>
+                                    <h3 class="page_cate_tit">일반현황</h3>
+                                    <div class="tab_table_box">
+                                        <table class="tab_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>주생산지</th>	
+                                                    <th>생산시기</th>
+                                                    <th>재배면적</th>
+                                                    <th>생산량</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>거제,사등,하청,장목</td>
+                                                    <td>11월~12월</td>
+                                                    <td>98ha</td>
+                                                    <td>연간 880톤</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h3 class="page_cate_tit">거제유자의 유래</h3>
+                                    <p class="tab_con_txt">거제에 유자가 들어온 내력은 확실하게 알려져 있지 않으나 장보고가 문두왕2년(840년)에 당나라에서 열매로 가져온 것이 남해안 지역에 퍼져서 전파된 것으로 구전 되고 있다.<br>
+                                    세종실록 세종 8년(1426년) 전라, 경상도에 유자를 심게하여 착과량을 조사하여 상납하게 하였다는 기록이 있으며, 동국여지승람에는 “유자 생산지역이 경남에는 거제, 곤양, 남해, 사천, 하동, 창원, 능천, 기장이다”라고 한 것으로 보아 그 유래를 알 수 있다</p>
+                                    <h3 class="page_cate_tit">거제유자의 특징</h3>
+                                    <p class="tab_con_txt">거제 유자는 연평균기온이 13℃ 이상의 온난한 기후에서 자라 색깔이 진하고, 과피가 두꺼우며, 과피에는 유포가 잘 발달되어 있어 향이 강하고 오래 지속되는 특징이 있다</p>
+                                    <h3 class="page_cate_tit">유자의 효능</h3>
+                                    <p class="tab_con_txt">유자에는 비타민C가 매우 풍부하여 스트레스 유발 호르몬의 생성을 억제하고 피로의 원인인 아세톤의 축적을 막아주기 때문에 스트레스 해소에 매우 효과가 있다.<br>
+                                    구연산, 수산, 능금산 등의 유기산은 통증완화, 소화와 혈액순환 촉진 등에 효과가 있으며, 헤스피리딘은 간해독과 피로회복, 병저항력증대, 신체생리 활성에 좋으며, 리모노이드는 발암억제효과가 있고, 리모넨은 유자 향을 내는 주성분으로 혈액순환 촉진, 목 염증과 기침완화, 위암, 폐암 및 피부암의 억제효과가 있다.</p>                                    
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s1.jpg" alt="거제유자" class="cate_inner_img">
+                                        <img src="./img/sp_s2.jpg" alt="거제유자" class="cate_inner_img">
+                                        <img src="./img/sp_s3.jpg" alt="거제유자" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b4_bg.jpg" alt="거제굴" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제 굴</h3>
+                                            <p class="cate_vs_com">생산지 : 거제연안<br>생산시기 : 7월 ~ 12월</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제굴</h2>
+                                    <h3 class="page_cate_tit">일반현황</h3>
+                                    <div class="tab_table_box">
+                                        <table class="tab_table">
+                                            <thead>
+                                                <tr>
+                                                    <th>주생산지</th>	
+                                                    <th>생산시기</th>
+                                                    <th>재배면적</th>
+                                                    <th>생산량</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>거제연안</td>
+                                                    <td>-</td>
+                                                    <td>908ha</td>
+                                                    <td>8,172톤</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h3 class="page_cate_tit">굴의 유래, 문헌기록</h3>
+                                    <p class="tab_con_txt">굴굴은 동서양을 통하여 그 역사가 깊은데, 우리나라의 경우는 선사시대의 여러 패총에서 출토되는 굴껍질에서 알 수 있듯이 그 역사는 오래되 보이나 기록상 으로는 1454년 단종 2년 공물용으로 사용한 기록이 처음인 것으로 알려지며, 신동국여지승람에 강원도를 제외한 7도의 토산물로 기록되어 있으며, 저이지, 자산어보 등에는 형태에 관한 기록도 있다.<br>
+                                    굴은 동양인보다 서양인이 더 좋아하고 일찍 부터 애용했다고 한다. 서양인은 굴을 정력제로 여겨서 ‘Eat oysters, love longer’(굴을 먹어라 보다오래 사랑하리라)라 하여 미신적으로 집착할 정도이다. 대작가 발자크는 한번에 12타스(1444개)의 굴을 먹었다고 하는 일화로 유명하고, 독일의 명재상인 비스마르크는 175개를 먹어서 객석의 사람들을 놀라게 한 일화도 있다.</p>
+                                    <h3 class="page_cate_tit">거제 굴의 특징</h3>
+                                    <p class="tab_con_txt">굴은 우리나라 전 해안에 분포되어 생산되나, 예부터 이름난 굴 산지로 함경북도의 황어포, 함경남도의 영흥만, 경상남도 낙동강 하구, 전라남도의 광양만 등이 유명하였으나 요즘은 무분별한 갯벌파괴 및 간척사업으로 인한 수질오염 등으로 청정해역인 거제, 통영 부근 및 여수 가막만에서 대부분 생산 되고 있다.<br>
+                                    거제에서 생산되는 굴은 미 FDA 에서 청정지역으로 지정한 거제연안에서 생산되는 굴로서 엄격한 심사를 거쳐 세계각지로 수출 될 만큼 맛과 영양 , 신선함이 단연 최고라 할 수 있다. 또한 비타민A, 칼슘이 다량함유 되어 있어 스테미너 식품 으로 단연 최고로 꼽히고 있어 전국 유명 백화점에서 판매 중에 있다.</p>
+                                    <h3 class="page_cate_tit">굴의 효능</h3>
+                                    <p class="tab_con_txt">굴에 들어있는 타우린, 아연은 성장기 어린이의 발육과 학습능력 향상에 효과가 크며 소화흡수가 뛰어나 성장기 어린이를 위한 최고의 영양식 이다. 또한 글 리코겐은 췌장에 부담을 주지 않는 천연 에너지원이다.<br>
+                                    특히 아연은 성호르몬을 활성화시키는 스테미너 식품이며 칼슘, 비타민A, B 등은 시신경을 안정시켜 피로와 스트레스를 줄여주고 또한 변비를 막고 피부를 곱게 하는 작용을 하므로 여성들의 훌륭한 건강 미용식품이다.<br>
+                                    또한 굴 중의 DHF, EPA, 아연, 비타민 A,B,C 등은 고혈압, 뇌졸증 등 성인병 예방효과가 있으며, 아연은 인슐린 분비를 촉진하고, 칼슘은 골다공증을 예방해 주는데 효과가 있다.</p>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s13.jpg" alt="거제굴" class="cate_inner_img">
+                                        <img src="./img/sp_s14.jpg" alt="거제굴" class="cate_inner_img">
+                                        <img src="./img/sp_s15.jpg" alt="거제굴" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b6_bg.jpg" alt="거제돌미역" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제돌미역</h3>
+                                            <p class="cate_vs_com">산지 : 저구, 여차, 견내량 등 <br>생산시기 : 봄</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제돌미역</h2>
+                                    <h3 class="page_cate_tit">거제의 돌미역</h3>
+                                    <p class="tab_con_txt">거제의 견내량(사등면) 및 여차(남부면) 등지에서 생산되는 거제 자연산 돌미역은 3~4월 봄철 전통방식으로 채취, 바닷바람에 건조시키는 방식으로 남해안 거제의 청정해역에서 자란 돌미역 천연 그대로를 상품화한 최고의 무공해 웰빙식품이다.<br>
+                                    특히 견내량(사등면 일대)에서 생산되는 돌미역은 대대로 이어온 전통방식 그대로 미역을 채취하는데 우선 빠른 물살에 배가 떠내려 가지 않도록 튼튼하게 닻을 내린 후 장대를 이용해 미역을 둘둘 말아 배위로 끌어 올린다. 이후 미역을 채취해 오면 뭍에선 이 미역들을 선별해 깨끗한 바닷물에 헹군 후 가지런히 널어 말린다.<br>
+                                    이렇게 생산된 돌미역은 빠른 물살과 알맞은 영양을 공급받아 맛과 영양이 뛰어난 것은 물론 짭쪼롬한 해풍과 봄 햇살이 그 맛을 더해 최고의 상품으로 꼽힌다.</p>
+                                    <h3 class="page_cate_tit">자연산 돌미역 효능</h3>
+                                    <p class="tab_con_txt">미역은 혈압을 부작용 없이 낮춰주는 강압작용을 하며, 여러 가지 암세포를 억제하는 항암 효과를 갖고 있다는 연구결과가 밝혀졌으며, 장의 운동을 원활하게 하여 직장암을 예방해 준다. 혈액 중의 지방질을 깨끗이 청소하여 혈액 중의 눈에 보이는 지방이 빨리 사라지게 하고 유해한 LDL콜레스테롤이 줄어들게 하며, 유익한 HDL 콜레스테롤을 증가시키고, 미역에 들어있는 점물질과 다당류는 콜레스테롤이나 공해 성분인 중금속과 농약의 피해를 덜어주는 효과가 있어 콜레스테롤의 체내 흡수를 방해하며 농약 등으로 오염된 식품 중의 중금속을 흡착 배설하는 효과가 매우 크다.<br>
+                                    자연산 돌미역은 해류의 이동이 심하고 물나불이 바위 기슭을 핥는 여울목 같은 곳에서 생산되어 국을 끓여도 쫄깃쫄깃하게 씹혀서 그 맛이 독특합니다.</p>
+                                    <h3 class="page_cate_tit">멸치와 시금치</h3>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s19.jpg" alt="거제굴" class="cate_inner_img">
+                                        <img src="./img/sp_s20.jpg" alt="거제굴" class="cate_inner_img">
+                                        <img src="./img/sp_s21.jpg" alt="거제굴" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b9_bg.jpg" alt="거제맹종죽순" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제맹종죽순</h3>
+                                            <p class="cate_vs_com">생산지 : -<br>생산시기 : -</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제맹종죽순</h2>
+                                    <h3 class="page_cate_tit">거제맹종죽순의 특징</h3>
+                                    <p class="tab_con_txt">죽순은 대나무류의 땅속 줄기에서 돋아나는 어리고 연한 싹이다. 성장한 대나무에서 볼 수 있는 형질을 다 갖추고 있다. 전국 생산량의 다수를 차지하는 『거제맹종죽순』은 일반 대나무와는 달리 그 품종이 식용과 약용으로 재배되어 맛이 신선하고 뛰어나며 각종 육류와 함께 조리 시 더욱 맛이 좋다. 자일로 올리고당이 들어 있어서 쾌변을 유도하고, 몸을 회복할 수 있는 성분이 가득하며, 단백질과 비타민B군의 함량이 풍부해 부족한 원기를 향상하는데 도움을 준다.</p>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b2_bg.jpg" alt="거제표고버섯" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제표고버섯</h3>
+                                            <p class="cate_vs_com">생산지 : 거제전역<br> 생산시기 : 1월 중순 ~ 3월말</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제표고버섯</h2>
+                                    <h3 class="page_cate_tit">거제의 표고버섯</h3>
+                                    <p class="tab_con_txt">거제에서 생산되는 표고버섯은 옛날 임금님의 진상품으로 올라갈 만큼 맛과 항기가 일품이다. 신선하고 단백한 최고의 무공해 식품인 표고버섯은 고급요리에 사용되며, 약리효과가 뛰어나 동맥경화증과 고혈압을 예방하고 항암작용, 항바이러스 작용 등 성인병 예방에 좋은 건강증진 식품이다. 거제표고버섯은 참나무 원목에서 재배하며 적기 수확과 선별, 규걱 출하로 소비자들의인기가 매우 높다.</p>
+                                    <h3 class="page_cate_tit">표고의 종류</h3>
+                                    <p class="tab_con_txt">화고(1등급) : 
+                                    일년 중 봄에만 수확이 가능해 성장기간이 길고 귀한 버섯이라 가격이 고가품이며 영양과 맛이 좋다. 갓이 피지 않은 상태로 고유의 모양을 갖추고 연갈색 바탕에 거북이 등처럼 흰줄 무늬가 많으며 검은 부분은 극히 적다.<br><br>
+                                    흑화고 : 버섯 등이 약간 갈라지고 갓이 예쁘게 안으로 감겨져 일년 중 봄, 가을에 채취하며 품질과가격 면에서 소비자선호도 단연 우위를 차지한다.<br><br>
+                                    동고(2등급) : 봄, 가을 수확하며 버섯의 갓이 아주 약간 퍼져 있으며 종균을 접종해서 일반적으로 가장많이 생산된다.<br><br>
+                                    향고(3등급) : 기온이 높고 습한 계절에 생긴 것은 갓이 엷고 크게 벌려져 있다. 갓이 조금 핀 상태로 약간 노란 빛을 띠고 , 고유의 형태를 갖추지 못하여 동고 보다 조금 크다.<br><br>
+                                    향신(4등급) : 향고가 크게 자라서 갓이 벌어진 것으로 여름철 우기에 생산된다. 갓이 90%이상 핀상태로 모양이 넓고 크며 두께가 얇다. 색깔은 누런빛을 띤다.<br><br>
+                                    등의(5등급) : 갓이 만개하여 옆으로 퍼지고 일정한 형재는 없으며 두께가 가장 얇다.
+                                    </p>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s4.jpg" alt="거제표고" class="cate_inner_img">
+                                        <img src="./img/sp_s5.jpg" alt="거제표고" class="cate_inner_img">
+                                        <img src="./img/sp_s5.jpg" alt="거제표고" class="cate_inner_img">
+                                    </div>
+                                    <br>
+                                    <h3 class="page_cate_tit">표고버섯이 되기까지</h3>
+                                    <p class="tab_con_txt">참나무 짜르기 : 
+                                    15~20년 자란 참나무를 단풍이 질 무렵 밑둥을 자른 후 한달 정도 나무를 말린다.<br><br>
+                                    버섯에 종균심기 : 종균(표고버섯 씨앗) 접종이후 토막 낸 참나무에 드릴을 사용해 구멍을 내고 표고 버섯에 종균을 심는다.<br><br>
+                                    버섯나무 만들기 : 종균을 심은 참나무에 표고버섯균이 자라도록 약1년 동안 세심하게 관리한다(수분공급, 뒤집기)<br><br>
+                                    버섯 내기 : 표고버섯이 잘 자란 버섯나무를 쓰러뜨린 후 물을 충분히 주어 버섯이 나게 한다.<br><br>
+                                    버섯 따기 : 마지막으로 버섯을 수확 후 30일정도 휴식을 시킨 후 재차 버섯을 생산한다. 2~3년간 버섯 수확이 가능하다.</p>
+                                    <h3 class="page_cate_tit">표고버섯 성분 및 효능</h3>
+                                    <p class="tab_con_txt">항암효과 : 
+                                    항암, 항종양 다당체 물질인 렌티난(lentinan)이 함유 되어 있어 암치료에 도움이 되어 현재 면역력 증가 및 암세포의 증식을 억제하는 의약품으로 개발되어 있다.<br><br>
+                                    고혈압 예방효과 : 에리타데닌(Eritadenine)이라는 성분이 있어 혈액중의 콜레스테롤을 제거하고 또한 혈압을 낮추는 작용을 하므로 고혈압 예방효과가 있다. 에리타데닌은 마른 버섯을 물에 우려낼 때 녹아 나오므로 즙액은 버리지 말고 조리등에 사용 하는 것이 좋다.<br><br>
+                                    성인병 예방효과 : 비타민 B1,B2가 야채보다 두배 이상 높고, 비타민D의 효과가 있는 에르고스테린이 많이 함유되어 있어 뼈를 튼튼하게 해주고 칼슘과 인의 흡수를 촉진시켜 준다있다.</p>
+                                    <h3 class="page_cate_tit">표고버섯을 이용한 민간요법</h3>
+                                    <p class="tab_con_txt">열 감기 : 감기가 들기 직전에 오한이 나면서 몸에서 열이 날때 말린 표고버섯 8개(150g)에 물 3컵을 붓고, 반으로 줄때까지 약한 불에 달여서 하루 3번씩 복용한다. 목에 통증이 있을때 소금과 함께 표고버섯을 달여 마시고, 하루정도 마시면 효과가 나타난다.<br><br>
+                                    숨이 차고 답답할 때 : 나이가 들면 노화현상이 시작되면서 가슴이 뛰거나 숨이 차는 현상이 때때로 일어나지만, 나이가 들지 않았는 데도 이런 증세가 나타나는 경우도 있다. 이럴 때는 표고버섯 2개를 잘게 썰어 컵에 담고 끓인 물을 붓고, 그 첫번째 물은 버린 후 다시 끓인 물을 부어 표고 버섯의 맛이 우러나게 1~2분 정도 담가 놓는다 여기에 소금을 약간 타서 아침 식전에 마시기를 1개월 정도 하면 효과가 나타난다.<br><br>
+                                    신경통 : 동고 30g을 14~20℃의 물 1ℓ에 담가가 하룻밤을 우린다. 이 물을 하루에 한 컵씩 계속해서 마신다. 이것이 비위에 맞지 않아서 마시기 힘든 사람은 한번 끓였다가 식힌 후에 마시면 좋다.</p>
+                                    <h3 class="page_cate_tit">표고버섯의 음식궁합</h3>
+                                    <p class="tab_con_txt">돼지고기와 표고버섯 <br>
+                                    돼지고기와 같은 콜레스테롤이 높은 음식에 표고버섯을 겻 들인다면 콜레스테롤의 피해도 줄이고 성인병 각종 성인병 예방도 가능하다.표고버섯에는 양질의 섬유질이 많아 콜레스테롤이 체내에 흡수되는 것을 억제하며 체내의 콜레스테롤의 떨어뜨리는 역할을 한다. 이외에 표고버섯은 특별한 향미와 감칠맛을 가지고 있어 돼지고기 특유의 냄새를 제거 하는데도 효과적이다.<br><br>
+                                    새우와 표고버섯<br>
+                                    새우의 단백질은 필수아미노산이 많고 글리신이라는 아미노산과 유황을 갖는 아미노산인 타우린이 많아 독특한 풍미를 가지고 있어 맛도 좋다.이렇게 좋은 새우요리를 안 먹는 사람이 의외로 많다. 콜레스테롤이 많아 걱정이 되어 안 먹는 다는 것이다. 표고버섯에는 생리적 활성화 물질인 다당체, 렌티닌을 비롯하여 독특한 감칠맛을 나타내는 구아닐산이 있다.비타민 D의 모체인 에르고스테린이 풍부하고 비타민 B1, B2도 많다 혈중 콜레스테롤치를 떨어 뜨리는 효과가 크고, 에르고스테린 때문에 새우에 들어있는 칼슘의 소화흡수를 도와준다.</p>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s7.jpg" alt="거제표고" class="cate_inner_img">
+                                        <img src="./img/sp_s8.jpg" alt="거제표고" class="cate_inner_img">
+                                        <img src="./img/sp_s9.jpg" alt="거제표고" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b7_bg.jpg" alt="거제고로쇠수액" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">거제고로쇠수액</h3>
+                                            <p class="cate_vs_com">생산지 : 거제연안<br>생산시기 : 1월 중순 ~ 3월 말</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">거제고로쇠수액</h2>
+                                    <h3 class="page_cate_tit">고로쇠 약수의 음용 유래</h3>
+                                    <p class="tab_con_txt">고로쇠 약수의 음용 유래는 통일신라말 도선 국사가 백운산에서 도를 닦는 도중 이른 봄 득도에 이르러 잠시 쉬었다 가 일어 서려고 하였으나 무릎이 펴지지 않아 나무를 잡고 일어서다 부러진 나무에서 물이 떨어지는 것을 보고 그물을 마시고 무릎이 펴졌다고 하며 뼈에 이로운 물이라고 하여 골리수(骨利水) 라고도 부르고 지방에 따라 고리수, 고로쇠 등으로 불리어지기도 한다.</p>
+                                    <h3 class="page_cate_tit">고로쇠 나무의 특징 및 분포</h3>
+                                    <p class="tab_con_txt">고로쇠 나무는 단풍나무과에 속하는 낙엽활엽수로 잎은 원형인데 다섯 갈래로 얕게 찢어져 있으며 4~5월에 담항색 꽃이 피고 9월에 열매가 익는 암수한 그루의 나무이다 우리시 관내에는 노자산, 가라산, 북병산, 계룡산 자락에 약 2만 여 그루가 자생하고 있으며 년간 고로쇠 약수 생산량은 20만ℓ 정도 이다.</p>
+                                    <h3 class="page_cate_tit">고로쇠 약수의 보관 판매</h3>
+                                    <p class="tab_con_txt">고로쇠 약수는 섭씨 0~3도에서 보관하여 얼지 않도록 하여야 하며 냉장고에서 저온으로 보관하였다가음용하는 것이 좋다. 우리지역에서는 고로쇠수액채취협의회를 구성하여 회원들이 공동작업으로 채취하였다가 현지에서직접 판매하거나 대형저장고에 보관하였다가 판매하고 있다.</p>
+                                    <h3 class="page_cate_tit">거제 고로쇠 약수는 왜 좋은가?</h3>
+                                    <p class="tab_con_txt">제에서 생산되는 고로쇠약수는 차가운 바닷바람을 맞고 깨끗한 산간 계곡에서 자란 고로쇠나무에서 1월20일경부터 3월 말까지 채취되며, 다른 지역보다 1개월 앞서 생산된다.<br>
+                                    거제 고로쇠약수의 성분을 살펴보면 산도 6.5PH, 당도 1.8%, 마그네슘 2.31PPM, 칼슘 16.23PPM이 함유되어 있어 성인병에 두루 효과가 있다고 알려져 있다.<br>
+                                    특히 이뇨, 변비, 위장병, 류마티스 관절염, 수창, 부창, 습집, 신경통, 산후통에 효험이 있어 많은 사람들이 민간요법으로 사용하고 있으며 근래에는 무공해 건강음료로 각광 받고 있다.</p>
+                                    <div class="tab_img_cate">
+                                        <img src="./img/sp_s22.jpg" alt="고로쇠약수" class="cate_inner_img">
+                                        <img src="./img/sp_s23.jpg" alt="고로쇠약수" class="cate_inner_img">
+                                        <img src="./img/sp_s24.jpg" alt="고로쇠약수" class="cate_inner_img">
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <figure class="cate_vs">
+                                        <img src="./img/sp_b10_bg.jpg" alt="왕우럭조개" class="cate_vs_pic">
+                                        <div class="cate_vs_tit_box">
+                                            <h3 class="cate_vs_tit">왕우럭조개</h3>
+                                            <p class="cate_vs_com">생산지 : -<br>생산시기 : -</p>
+                                        </div>
+                                    </figure>
+                                    <h2 class="tab_con_tit">왕우럭조개</h2>
+                                    <h3 class="page_cate_tit">왕우럭조개의 특징</h3>
+                                    <p class="tab_con_txt">왕우럭조개는 진판새목목 개량조개과의 연체동물로 살을 일부 껍데기 밖으로 내놓고 다니는 대형패류이다. 수심이 15~20m 정도의 모래가 섞인 진흙에 주로 서식한다. 주로 패류형망 등을 이용한 잠수사가 채취하며, 전복과 유사한 씹는 맛을 느낄 수 있고, 비린내가 거의 나지 않아 감칠맛이 좋아 인기가 좋다. 칼로리와 지방 함량이 낮아 다이어트에 효과적이며, 타우린이 풍부하여 콜레스테롤을 감소시키고 혈압 안정 당뇨병 예방에 뛰어난 효과가 있다.<br>
+                                    거제에서는 ‘껄구지’라고도 부르며, 1월에서 6월이 제철로 감칠맛이 나서 초밥이나 숙회로 먹는다. 브로콜리와 함께 요리하면 단백질과 섬유소를 동시에 섭취하게 된다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="research_box">
+                           <p>
+                            <span class="res1"><strong>담당부서 :</strong> 행정국 정보통신과 정보운영팀</span>
+                            <span class="res2"><strong>담당자 :</strong> 주영배</span>
+                            <span class="res3"><strong>연락처 :</strong> 055-639-4073</span>
+                            <span class="res4"><strong>최종수정일 :</strong> 2018-01-16</span>
+                           </p>
+                           <form action="" class="research_frm" name="research_frm4" id="research_frm4">
+                                <h3 class="research_tit">이 페이지에서 제공하는 정보에 대하여 만족하십니까?</h3>
+                                <div class="radio_group">
+                                    <input type="radio" name="research4" class="research_ra" id="research41" checked>
+                                    <label for="research41">
+                                        매우만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research42">
+                                    <label for="research42">
+                                        만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research43">
+                                    <label for="research43">
+                                        보통
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research44">
+                                    <label for="research44">
+                                        불만족
+                                    </label>
+                                    <input type="radio" name="research4" class="research_ra" id="research45">
+                                    <label for="research45">
+                                        매우불만족
+                                    </label>
+                                </div>
+                                <div class="research_txt_box">
+                                    <input type="text" placeholder="여러분의 소중한 의견을 주시기 바랍니다." class="input_box">
+                                    <input type="submit" value="입력" class="input_btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </main>
+    <footer class="ft">
+        <div class="ft_wrap1">
+            <nav class="fnb">
+                <ul>
+                    <li>
+                        <span class="cur_cate">관련 관/과</span>
+                        <ul class="popup">
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910001000000" target="_blank" title="기획예산담당관 새창열림">기획예산담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910002000000" target="_blank" title="감사법무담당관 새창열림">감사법무담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910003000000" target="_blank" title="홍보담당관 새창열림">홍보담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910004000000" target="_blank" title="시정혁신담당관 새창열림">시정혁신담당관</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910008000000" target="_blank" title="미래전략과 새창열림">미래전략과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910006000000" target="_blank" title="조선산업일자리과 새창열림">조선산업일자리과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910036000000" target="_blank" title="생활경제과 새창열림">생활경제과</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008910032001001" target="_blank" title="도시재생과 새창열림">도시재생과</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                       <span class="cur_cate">면/동</span>
+                       <ul class="popup">
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911001000000" target="_blank" title="일운면 새창열림">일운면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911002000000" target="_blank" title="동부면 새창열림">동부면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911003000000" target="_blank" title="남부면 새창열림">남부면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911004000000" target="_blank" title="거제면 새창열림">거제면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911005000000" target="_blank" title="둔덕면 새창열림">둔덕면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911006000000" target="_blank" title="사등면 새창열림">사등면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911007000000" target="_blank" title="연초면 새창열림">연초면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911008000000" target="_blank" title="하청면 새창열림">하청면</a></li>
+                            <li><a href="https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008911009000000" target="_blank" title="장목면 새창열림">장목면</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cur_cate">시/군청</span>
+                        <ul class="popup">
+                            <li><a href="http://www.gyeongnam.go.kr" target="_blank" title="경상남도청 새창열림">경상남도청</a></li>
+                             <li><a href="http://www.changwon.go.kr" target="_blank" title="창원시 새창열림">창원시</a></li>
+                             <li><a href="http://www.jinju.go.kr" target="_blank" title="진주시 새창열림">진주시</a></li>
+                             <li><a href="http://www.tongyeong.go.kr/main/" target="_blank" title="통영시 새창열림">통영시</a></li>
+                             <li><a href="http://www.sacheon.go.kr" target="_blank" title="사천시 새창열림">사천시</a></li>
+                             <li><a href="http://www.gimhae.go.kr" target="_blank" title="김해시 새창열림">김해시</a></li>
+                             <li><a href="http://www.miryang.go.kr" target="_blank" title="밀양시 새창열림">밀양시</a></li>
+                             <li><a href="http://www.yangsan.go.kr" target="_blank" title="양산시 새창열림">양산시</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="cur_cate">패밀리사이트</span>
+                        <ul class="popup">
+                            <li><a href="http://www.gjcl.go.kr" target="_blank" title="거제시 의회 새창열림">거제시 의회</a></li>
+                             <li><a href="http://www.geoje.go.kr/yacht" target="_blank" title="거제시 요트부 새창열림">거제시 요트부</a></li>
+                             <li><a href="https://www.peti.go.kr" target="_blank" title="공직자재산등록 새창열림">공직자재산등록</a></li>
+                             <li><a href="http://www.gw.re.kr" target="_blank" title="거제시여성인력개발센터 새창열림">거제시여성인력개발센터</a></li>
+                             <li><a href="http://www.gjyc.kr" target="_blank" title="청소년수련관 새창열림">청소년수련관</a></li>
+                             <li><a href="http://www.geojehuyang.or.kr" target="_blank" title="거제자연휴양림 새창열림">거제자연휴양림</a></li>
+                             <li><a href="http://www.cheongma.or.kr" target="_blank" title="청마기념관 새창열림">청마기념관</a></li>
+                             <li><a href="http://gev.co.kr" target="_blank" title="거제시영어마을 새창열림">거제시영어마을</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="ft_wrap2">
+            <ul class="ft_banner">
+                <li><a href=""><img src="./img/f_ban1.gif" alt="하단슬라이드배너이미지1"></a></li>
+                <li><a href=""><img src="./img/f_ban2.gif" alt="하단슬라이드배너이미지2"></a></li>
+                <li><a href=""><img src="./img/f_ban3.gif" alt="하단슬라이드배너이미지3"></a></li>
+                <li><a href=""><img src="./img/f_ban4.jpg" alt="하단슬라이드배너이미지4"></a></li>
+                <li><a href=""><img src="./img/f_ban5.gif" alt="하단슬라이드배너이미지5"></a></li>
+                <li><a href=""><img src="./img/f_ban6.jpg" alt="하단슬라이드배너이미지6"></a></li>
+                <li><a href=""><img src="./img/f_ban7.jpg" alt="하단슬라이드배너이미지7"></a></li>
+                <li><a href=""><img src="./img/f_ban8.jpg" alt="하단슬라이드배너이미지8"></a></li>
+                <li><a href=""><img src="./img/f_ban9.png" alt="하단슬라이드배너이미지9"></a></li>
+                <li><a href=""><img src="./img/f_ban10.jpg" alt="하단슬라이드배너이미지10"></a></li>
+            </ul>
+        </div>
+        <script src="./js/slider.js"></script>
+        <script>
+        /* 푸터 슬라이드 배너 slider.js */    
+        $(document).ready(function(){
+           $(".ft_banner").sliding({spd:500, intv:4500, chd:"li"}); 
+        });    
+        </script>
+        <div class="ft_wrap2">
+            <nav class="ft_link">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="copy1">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                <p class="copy1">Copyright ⓒ 2019 <span class="ortxt">GEOJE CITY</span>. All Rights Reserved.
+                </p>
+            </div>
+            <a href="" class="wamark">
+                <img src="./img/wacc-logo.png" alt="WA인증">
+            </a>
+        </div>
+    </footer>
+</div>                        
+</body>
+</html>

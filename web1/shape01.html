@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css로 shape 그리기</title>
+    <style>
+    ul { list-style:none; }  
+    .shape { min-height: 70px; }    
+    .shape li { float:left; margin:50px;  width: 0px; height: 0px; }    
+    .tri1 {
+      border-top:50px solid none;
+      border-bottom:50px solid #333;
+      border-right: 30px solid transparent;
+      border-left: 30px solid  transparent;
+    }
+    .tri2 {
+      border-top:50px solid #333;
+      border-bottom:50px solid none;
+      border-right: 30px solid transparent;
+      border-left: 30px solid  transparent;
+    }
+    .tri3 {
+      border-top:30px solid transparent;
+      border-bottom:30px solid transparent;
+      border-right: 50px solid none;
+      border-left: 50px solid #333;
+    }    
+    .tri4 {
+      border-top:30px solid transparent;
+      border-bottom:30px solid transparent;
+      border-right: 50px solid #333;
+      border-left: 50px solid none;
+    }    
+    </style>
+</head>
+<body>
+    <ul class="shape">
+        <li class="tri1"></li>
+        <li class="tri2"></li>
+        <li class="tri3"></li>
+        <li class="tri4"></li>
+    </ul>
+</body>
+</html>
