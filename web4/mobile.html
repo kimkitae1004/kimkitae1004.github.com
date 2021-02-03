@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>쿠쿠넬로 쇼핑몰</title>
+    <link rel="shortcut icon" href="./data/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./data/favicon96.png" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 				
+    <meta name="msapplication-TileImage" content="./data/favicon144.png">
+    <meta name="application-name" content="nelloshop">
+    <meta name="title" content="쿠쿠넬로">
+    <meta name="description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="keywords" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta http-equiv="refresh" content="180">
+    <meta property="og:title" content="쿠쿠넬로">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta property="og:image" content="./data/site1.png">
+    <meta property="og:url" content="http://www.nelloshop.co.kr/">
+    <meta property="og:site_name" content="쿠쿠넬로">
+    <meta name="twitter:card" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta name="twitter:title" content="쿠쿠넬로">
+    <meta name="twitter:description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="twitter:image" content="./data/site1.png">
+    <meta name="twitter:creator" content="@cortezKim">
+    <meta name="twitter:site" content="http://www.nelloshop.co.kr/">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/device.js"></script>
+    <script>
+    $(document).ready(function(){
+        //deviceCheck2(); 
+        window.addEventListener('load',function(){
+        setTimeout(scrollTo,0,0,1);
+        },false);
+    });    
+    </script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; min-width:100%; /*overflow-x:hidden; */
+        font-family: 'Noto Sans KR', "본고딕", sans-serif; } 
+    ul { list-style:none; }
+    a { text-decoration: none; }
+    button, input { background:none; outline:0; border:0; } 
+    </style>
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="./bx/jquery.bxslider.css">
+    <style></style>
+    <script src="./bx/jquery.bxslider.js"></script>
+   
+    <link rel="stylesheet" href="./owl/owl.carousel.css">
+    <style></style>
+    <script src="./owl/owl.carousel.js"></script>
+   
+    <link rel="stylesheet" href="./slick/slick.css">
+    <style></style>
+    <script src="./slick/slick.js"></script>
+    
+    <link rel="stylesheet" href="./wow/styler.css">
+    <script src="./wow/wowslider2.js"></script>
+    <style>
+    .header { clear:both; width: 100%; border-top:1px solid #ccc; z-index:999; }    
+    .con1440 { clear:both; width:100%; margin: 0 auto; position:relative; }  
+    .clrfx:after { content:""; display:block; clear: both; }
+        
+    .callap_nav { position:fixed; width: 100%; top:0; left:-100%; z-index:9990; 
+        transition:0.5s; height: 100vh; background-color:rgba(255,255,255,0.85); }
+    .callap_nav.active { left: 0; } 
+    .callap_top { clear:both; height: 58px; width: 100%; background-color:#53585a; }    
+    .logo_w { display:block; background-image:url("./data/m-logo-w.png"); width: 228px; height:36px; float:left; margin-top:11px; margin-left:15px;  
+        background-repeat: no-repeat; background-size:auto 100%; } 
+    .close_btn { display:block; height: 24px; width: 24px; float:right; 
+        background-image:url("./data/xbtn.png"); background-position:center center;
+        background-repeat:no-repeat; background-size:68%; margin-right:15px; margin-top: 17px; } 
+    .top_nav { clear:both; width: 100%; height: 68px; background-color:#f1f3f4; padding-bottom: 20px; }
+    
+    .top_nav li { float:left; width: 25%; } 
+    .top_nav li a { color:#666; display:block; padding: 1em; font-size:12px; 
+        font-weight:200; background-repeat: no-repeat; background-position: center 20px; text-align:center; 
+        background-size:30px auto; line-height:110px; height: 64px; } 
+    .top_nav li.join a { background-image: url("./data/ico-02.png"); }    
+    .top_nav li.login a { background-image: url("./data/ico-01.png"); }        
+    .top_nav li.mypage a { background-image: url("./data/ico-03.png"); }           .top_nav li.search a { background-image: url("./data/ico-04.png"); }        
+    .top_nav li a:active { color:#2ebce5; }    
+    .gnb_nav { clear: both; }
+    .gnb_nav li { line-height: 40px; border-top:1px solid #eee; border-bottom:1px solid #ccc; }    
+    .gnb_nav li a { color:#666; padding-left: 1.5em; font-size:14px; }    
+        
+    .hd_wraper { width: 100%; border-top:1px solid #ccc; border-bottom:1px solid #ccc; position:relative; }   
+    .open_btn { display:block; width: 50px; height: 50px; background-repeat: no-repeat;  background-position: center center;  position:absolute; top: 4px; 
+        left: 4px; background-image: url("./data/m_lst.png"); background-size:auto 26px; }     
+    .logo { display:block; width:158px; height: 44px; 
+        background-image:url("./data/logo.png"); text-indent:-9999px; margin: 5px auto; background-size:auto 34px; }
+    .cart { display:block; width: 50px; height: 50px; background-repeat: no-repeat;
+        background-position: center center; position:absolute; top: 4px; 
+        right: 4px; background-image: url("./data/m_cart.png"); background-size:auto 30px;  }    
+    .main_nav { clear:both; width:100%; margin-top: 1px; border-top:1px solid #ccc; }
+    .main_nav li { float:left; width: 33.33%; border-top:1px solid #ccc; }    
+    .main_nav li a { display:block; color:#777; font-size:14px; font-weight:300; padding:0em 1em; border-right:1px solid #ccc;
+        text-align: center; line-height:40px;  height: 40px; }
+    .main_nav li:nth-child(4) { clear:both; }    
+    .main_nav li:nth-child(4), .main_nav li:last-child { width: 50%; border-bottom:1px solid #ccc; }
+      
+    .footer { clear:both; margin-top: 30px; padding-top: 30px; border-top:5px solid #eee; font-size: 14px; }    
+    .footer li { float:left; } 
+    .footer li.ft1 { padding-right: 50px;   width: 38%;  } 
+    .ft_link { display:block; float:left; line-height: 40px; padding: 0.5em 1.5em; color:#333; padding-left: 0; font-weight: bold; position:relative; }
+    .footer .ft_link + .ft_link:before { content:""; display:block; width: 2px; height: 14px; background-color:#ccc; position:absolute; left: -10px; top:21px;  }  
+    .ft_link:hover { color:#2ebce5; }    
+    .copyright1 { clear:both; display:block; color:#999; line-height: 1.3; }  
+    .copyright2 { height: 60px; line-height: 60px; } 
+    .ft_tit1 { display:block; font-size:32px; line-height:38px; padding-top: 20px; } 
+    .ft_tit2 { display:block; font-size:36px; line-height:40px; font-weight: bold; }    
+    .ft_logo { display:block; background:url("./data/footer_logo.png") no-repeat center center; width: 201px; height: 43px; margin-top: 20px; margin-left:50px; }    
+    </style>
+    <script>
+    $(document).ready(function(){
+       $(".open_btn, .close_btn").click(function(){
+           $(".callap_nav").toggleClass("active");
+       }); 
+    });    
+    </script>
+    <style>
+      
+    #vs2 .owl-carousel li.item img { display:block; width: 100%; height:auto; }   
+    .owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next {
+        width:30px; height:30px; position:absolute; top:50%; margin-top: -15px; 
+        z-index:99; background-repeat:no-repeat; text-indent:-9999px; 
+        background-size:100% 100%; }
+    .owl-carousel .owl-nav .owl-prev { left: 20px; background-image:url("./data/leftArrow.png"); }
+    .owl-carousel .owl-nav .owl-next { right:20px; background-image:url("./data/rightArrow.png"); }  
+    #vs2 .owl-dots { position:absolute; bottom:15px; left: 50%; 
+        margin-left: -72px; z-index:99; }
+    #vs2 .owl-dots .owl-dot { float:left; }
+    #vs2 .owl-dots .owl-dot span { display:block; width: 16px; height: 16px; 
+        background-color:rgba(255,255,255,0.75); margin: 1em; border-radius:10px;
+        box-shadow:1px 1px 3px #000; }
+    #vs2 .owl-dots .owl-dot.active span { background-color:rgba(0,0,0,0.7); }  
+        
+    .utb_box { position:absolute; right:14%; top:50%; width: 761px; height: 428px; overflow:hidden; margin-top: -214px; z-index:50; } 
+    #vs3 div.item { position:relative; } 
+    #vs3 button.slick-prev.slick-arrow, #vs3 button.slick-next.slick-arrow {
+        display:block; 
+        width:60px; height:60px; position:absolute; top:50%; margin-top: -30px; 
+        z-index:99; background-repeat:no-repeat; text-indent:-9999px; 
+        background-size:100% 100%; cursor:pointer; }  
+    #vs3 button.slick-prev.slick-arrow { left: 30px; background-image:url("./data/leftArrow.png"); }
+    #vs3 button.slick-next.slick-arrow { right:30px; background-image:url("./data/rightArrow.png"); }  
+    #vs3 .slick-dots { position:absolute; bottom:60px; left: 50%; 
+        margin-left: -72px; z-index:99; }  
+    #vs3 .slick-dots li { float:left; }
+    #vs3 .slick-dots li button { display:block; width: 16px; height: 16px; 
+        background-color:rgba(255,255,255,0.75); margin: 1em; border-radius:10px;
+        box-shadow:1px 1px 3px #000; text-indent:-9999px; cursor:pointer; }
+    #vs3 .slick-dots li.slick-active button { background-color:rgba(28,185,230,0.85); }
+        
+    .full_img_wrapper { width: 100%; }
+    .full_img_wrapper img { display:block; width: 100%; height: auto; }  
+
+    .banner_col { width: 100%; clear:both; background-image:url("./data/prodBG.png"); background-repeat: no-repeat; background-size: cover; } 
+    .banner_col .col_data { width: 33.33333%; float:left; box-sizing:border-box; margin: 0; padding: 0; padding-top: 170px; padding-bottom:180px; }
+    .bx-wrapper { box-shadow:0px 0px 0px #fff; background:none; border:none; }   
+    .visual1 div.bx-viewport ul li { padding-bottom: 150px; }
+    .visual1 div.bx-controls.bx-has-controls-direction.bx-has-controls-auto.bx-has-pager div.bx-controls-direction .bx-prev, .visual1 div.bx-controls.bx-has-controls-direction.bx-has-controls-auto.bx-has-pager div.bx-controls-direction .bx-next { display:none; } 
+    .visual1 div.bx-viewport ul li { text-align:center; }
+    .visual1 div.bx-viewport ul li img { margin: 0 auto; }   
+    .bx-wrapper .bx-controls-auto .bx-start, .bx-wrapper .bx-controls-auto .bx-stop {display: none; }
+    .visual1 div.bx-controls.bx-has-controls-direction.bx-has-controls-auto.bx-has-pager div.bx-pager.bx-default-pager { width: 410px; position:absolute; left: 50%; margin-left: -205px; }
+    .visual1 .bx-wrapper .bx-pager-item { float:left; margin:12px; }
+    .visual1 .bx-wrapper .bx-pager.bx-default-pager a { display:block; width: 66px; height: 67px; background-repeat: no-repeat; background-position:center center;
+        background-color:transparent; }
+    .visual1 .bx-wrapper .bx-pager.bx-default-pager a.active { background-color:transparent; }    
+    #vs11 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child a { background-image:url("./data/pinkThum1.png"); }    
+    #vs11 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(2) a { background-image:url("./data/pinkThum2.png"); } 
+    #vs11 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(3) a { background-image:url("./data/pinkThum3.png"); }    
+    #vs11 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:last-child a { background-image:url("./data/pinkThum4.png"); } 
+        
+    #vs12 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child a { background-image:url("./data/mintThum1.png"); }    
+    #vs12 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(2) a { background-image:url("./data/mintThum2.png"); } 
+    #vs12 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(3) a { background-image:url("./data/mintThum3.png"); }    
+    #vs12 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:last-child a { background-image:url("./data/mintThum4.png"); }
+        
+    #vs13 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child a { background-image:url("./data/grayThum1.png"); }    
+    #vs13 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(2) a { background-image:url("./data/grayThum2.png"); } 
+    #vs13 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(3) a { background-image:url("./data/grayThum3.png"); }    
+    #vs13 .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:last-child a { background-image:url("./data/grayThum4.png"); }
+        
+    .more { display:block; width: 135px; height: 45px; position:absolute; left: 50%; margin-left:-67px; bottom:-200px; text-indent:-9999px; }    
+    </style>
+</head>
+<body>
+<div class="wraper">
+    <header class="header">
+        <div class="callap_nav active">
+            <div class="callap_top">
+                <a href="" class="logo_w"></a>    
+                <button class="close_btn"></button>
+            </div>
+            <ul class="top_nav clrfx">
+                <li class="join"><a href="">회원가입</a></li>
+                <li class="login"><a href="">로그인</a></li>
+                <li class="mypage"><a href="">마이페이지</a></li>
+                <li class="search"><a href="">배송조회</a></li>
+            </ul>
+            <ul class="gnb_nav clrfx">
+                <li><a href="">홍보 영상</a></li>
+                <li><a href="">제품 소개</a></li>
+                <li><a href="">제품 구매하기</a></li>
+                <li><a href="">브랜드 스토리</a></li>
+                <li><a href="">질문하기</a></li>
+            </ul>
+        </div>
+        <div class="hd_wraper clrfx">   
+            <div class="con1440 crlfx">
+                <button class="open_btn"></button>
+                <a href="index.html" class="logo">로고</a>
+                <a href="" class="cart"></a>
+            </div>
+            <nav class="main_nav">
+                <ul class="clrfx">
+                    <li><a href="">홍보 영상</a></li>
+                    <li><a href="">제품 소개</a></li>
+                    <li><a href="">제품 구매하기</a></li>
+                    <li><a href="">브랜드 스토리</a></li>
+                    <li><a href="">질문하기</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+    <div class="main_con">
+        <div class="owl">
+            <div class="visual2" id="vs2">
+                <ul class="owl-carousel">
+                    <li class="item">
+                        <img src="./data/main_top1.png" title="넬로 브랜드 론칭" alt="넬로 브랜드 론칭">
+                    </li>
+                    <li class="item">
+                        <img src="./data/main_top2.png" title="에어샤워&드라이룸" alt="에어샤워&드라이룸">
+                    </li>
+                    <li class="item">
+                        <img src="./data/main_top3.png" title="단기대여서비스오픈" alt="단기대여서비스오픈">
+                    </li>
+                </ul>
+            </div>
+            <script src="./owl/owl.carousel.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.owl-carousel').owlCarousel({
+                        autoplay: true, //자동 실행
+                        loop: true, //순환 구조
+                        margin: 0, //아이템간 여백
+                        nav: true, //제어바 추가
+                        mouseDrag: true, //마우스 드래그 허용
+                        dots: true, //번호별 버튼 추가
+                    });
+                });
+            </script>
+        </div>
+        <div class="slick">
+            <div class="visual3" id="vs3">
+                <div class="slider single-item">
+                    <div class="item">
+                        <img src="./data/movie1.png" title="브랜드 넬로는?" alt="브랜드 넬로는?">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/TsWycP2vIgo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./data/movie2.png" title="수의사 선생님이 추천하는 펫드라이룸" alt="수의사 선생님이 추천하는 펫드라이룸">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/6woKtlnmoHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./data/movie3.png" title="넬로 펫드라이룸" alt="넬로 펫드라이룸">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/LV27cHGzCxs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('.single-item').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    speed: 300,
+                    autoplay: true,
+                    autoplaySpeed: 3500,
+                });
+            });
+        </script>
+        <div class="full_img_wrapper clrfx">
+            <img src="./data/productInfo.png" alt="쿠쿠넬로 대표이미지">
+        </div>
+        <div class="banner_col clrfx">
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs11">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/pink_1.png" title="핑크 펫드라이룸1" alt="핑크 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_2.png" title="핑크 펫드라이룸2" alt="핑크 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_3.png" title="핑크 펫드라이룸3" alt="핑크 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_4.png" title="핑크 펫드라이룸4" alt="핑크 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs12">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/mint_1.png" title="민트 펫드라이룸1" alt="민트 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_2.png" title="민트 펫드라이룸2" alt="민트 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_3.png" title="민트 펫드라이룸3" alt="민트 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_4.png" title="민트 펫드라이룸4" alt="민트 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs13">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/gray_1.png" title="그레이 펫드라이룸1" alt="그레이 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_2.png" title="그레이 펫드라이룸2" alt="그레이 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_3.png" title="그레이 펫드라이룸3" alt="그레이 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_4.png" title="그레이 펫드라이룸4" alt="그레이 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+        </div>
+        
+        <script>
+        $(document).ready(function() {
+            $('.bxslider').bxSlider({
+                auto: true, //자동 슬라이딩
+                speed: 500, //슬라이딩 시간
+                pause: 4000, //슬라이딩 주기
+                mode: 'horizontal', //슬라이딩 효과(fade, horizontal, vertical)
+                autoControls: true, //시작/중지 버튼 활성화/비활성화
+                pager: true, //페이지 바로가기 버튼
+                captions: false, //이미지의 캡션 보이기(img 요소에 title 속성이 있어야 함)
+            });
+        });
+        </script>
+        <div class="full_img_wrapper">
+            <img src="./data/flanders.png" alt="쿠쿠넬로 대표이미지">
+        </div>
+    </div>
+    <footer class="footer">
+        <ul class="con1440">
+            <li class="ft_col ft1">
+                <div>
+                    <a href="" class="ft_link">회사소개</a>
+                    <a href="" class="ft_link">이용안내</a>
+                    <a href="" class="ft_link">개인정보처리방침</a>
+                    <a href="" class="ft_link">이용약관</a>
+                    <span class="copyright1">
+                        회사명 : 쿠쿠전자(주)  대표이사 : 구본학  개인정보관리책임자 : 온라인유통팀 임현석<br>
+본사 : 경상남도 양산시 유산공단2길 14  E-mail : webmaster@cuckoo.co.kr<br>
+사업자등록번호 : 337-87-00918 통신판매신고번호:제2017-경남양산-00367호
+                    </span>
+                    <span class="copyright2">COPYRIGHT (C) CUCKOO ELECTRONICS. ALL RIGHTS RESERVED.</span>
+                </div>
+            </li>
+            <li class="ft_col ft2">
+                <div>
+                    <span class="ft_tit1">상담신청</span>
+                    <span class="ft_tit2">02-2017-6047</span>
+                    <span class="copyright1">업무시간 AM 09:00~PM 18:00 | 점심시간 PM 12:00 ~ PM 13:00<br>(주말 및 공휴일 휴무)</span>
+                </div>
+            </li>
+            <li class="ft_col ft3">
+                <a href="" class="ft_logo"></a>
+            </li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>

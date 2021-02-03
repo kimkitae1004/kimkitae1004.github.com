@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>쿠쿠넬로 쇼핑몰</title>
+    <link rel="shortcut icon" href="./data/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./data/favicon96.png" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 				
+    <meta name="msapplication-TileImage" content="./data/favicon144.png">
+    <meta name="application-name" content="nelloshop">
+    <meta name="title" content="쿠쿠넬로">
+    <meta name="description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="keywords" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta http-equiv="refresh" content="180">
+    <meta property="og:title" content="쿠쿠넬로">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta property="og:image" content="./data/site1.png">
+    <meta property="og:url" content="http://www.nelloshop.co.kr/">
+    <meta property="og:site_name" content="쿠쿠넬로">
+    <meta name="twitter:card" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta name="twitter:title" content="쿠쿠넬로">
+    <meta name="twitter:description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="twitter:image" content="./data/site1.png">
+    <meta name="twitter:creator" content="@cortezKim">
+    <meta name="twitter:site" content="http://www.nelloshop.co.kr/">
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/device.js"></script>
+    <script>
+    $(document).ready(function(){
+       //deviceCheck2(); 
+    });    
+    </script>
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./bx/jquery.bxslider.css">
+    <style></style>
+    <script src="./bx/jquery.bxslider.js"></script>
+   
+    <link rel="stylesheet" href="./owl/owl.carousel.css">
+    <style></style>
+    <script src="./owl/owl.carousel.js"></script>
+   
+    <link rel="stylesheet" href="./slick/slick.css">
+    <style></style>
+    <script src="./slick/slick.js"></script>
+    
+<!--    <link rel="stylesheet" href="./wow/styler.css">
+    <script src="./wow/wowslider2.js"></script>-->
+    <link rel="stylesheet" href="cross.css">
+    <link rel="stylesheet" href="main.css">
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var pageTop = $(window).scrollTop();
+            if(pageTop>=350) {
+                $(".header").addClass("active");
+            } else {
+                $(".header").removeClass("active");
+            }
+        });
+    });    
+    </script>
+</head>
+<body>
+<div class="wraper">
+    <header class="header">
+        <div class="con1440 clrfx">
+            <ul class="top_nav clrfx">
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+                <li><a href="cart.html">장바구니(<span class="cart_num">0</span>)</a></li>
+                <li><a href="search.html">배송조회</a></li>
+            </ul>
+        </div>
+        <div class="hd_wraper clrfx">   
+            <div class="con1440 crlfx">
+                <a href="index.html" class="logo">로고</a>
+                <nav class="main_nav">
+                    <ul class="clrfx">
+                        <li><a href="pr_movie.html">홍보 영상</a></li>
+                        <li><a href="product.html">제품 소개</a></li>
+                        <li><a href="sales.html">제품 구매하기</a></li>
+                        <li><a href="brand_story.html">브랜드 스토리</a></li>
+                        <li><a href="qanda.html">질문하기</a></li>
+                    </ul>
+                </nav>
+                <a href="index.html" class="pro_logo">상품로고</a>
+            </div>
+        </div>    
+    </header>
+    <div class="main_con">
+        <div class="owl">
+            <div class="visual2" id="vs2">
+                <ul class="owl-carousel">
+                    <li class="item">
+                        <img src="./data/main_top1.png" title="넬로 브랜드 론칭" alt="넬로 브랜드 론칭">
+                    </li>
+                    <li class="item">
+                        <img src="./data/main_top2.png" title="에어샤워&드라이룸" alt="에어샤워&드라이룸">
+                    </li>
+                    <li class="item">
+                        <img src="./data/main_top3.png" title="단기대여서비스오픈" alt="단기대여서비스오픈">
+                    </li>
+                </ul>
+            </div>
+            <script src="./owl/owl.carousel.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.owl-carousel').owlCarousel({
+                        autoplay: true, //자동 실행
+                        loop: true, //순환 구조
+                        margin: 0, //아이템간 여백
+                        nav: true, //제어바 추가
+                        mouseDrag: true, //마우스 드래그 허용
+                        dots: true, //번호별 버튼 추가
+                    });
+                });
+            </script>
+        </div>
+        <div class="slick">
+            <div class="visual3" id="vs3">
+                <div class="slider single-item">
+                    <div class="item">
+                        <img src="./data/movie1.png" title="브랜드 넬로는?" alt="브랜드 넬로는?">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/TsWycP2vIgo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./data/movie2.png" title="수의사 선생님이 추천하는 펫드라이룸" alt="수의사 선생님이 추천하는 펫드라이룸">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/6woKtlnmoHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./data/movie3.png" title="넬로 펫드라이룸" alt="넬로 펫드라이룸">
+                        <div class="utb_box">
+                            <iframe width="761" height="428" src="https://www.youtube.com/embed/LV27cHGzCxs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('.single-item').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    speed: 300,
+                    autoplay: true,
+                    autoplaySpeed: 3500,
+                });
+            });
+        </script>
+        <div class="full_img_wrapper clrfx">
+            <img src="./data/productInfo.png" alt="쿠쿠넬로 대표이미지">
+        </div>
+        <div class="banner_col clrfx">
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs11">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/pink_1.png" title="핑크 펫드라이룸1" alt="핑크 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_2.png" title="핑크 펫드라이룸2" alt="핑크 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_3.png" title="핑크 펫드라이룸3" alt="핑크 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/pink_4.png" title="핑크 펫드라이룸4" alt="핑크 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs12">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/mint_1.png" title="민트 펫드라이룸1" alt="민트 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_2.png" title="민트 펫드라이룸2" alt="민트 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_3.png" title="민트 펫드라이룸3" alt="민트 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/mint_4.png" title="민트 펫드라이룸4" alt="민트 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+            <div class="bx-wrapper col_data">
+                <figure class="bx-viewport visual1" id="vs13">
+                    <ul class="bxslider">
+                        <li class="item">
+                            <img src="./data/gray_1.png" title="그레이 펫드라이룸1" alt="그레이 펫드라이룸1">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_2.png" title="그레이 펫드라이룸2" alt="그레이 펫드라이룸2">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_3.png" title="그레이 펫드라이룸3" alt="그레이 펫드라이룸3">
+                        </li>
+                        <li class="item">
+                            <img src="./data/gray_4.png" title="그레이 펫드라이룸4" alt="그레이 펫드라이룸4">
+                        </li>
+                    </ul>
+                    <a href="" class="more">더보기</a>
+                </figure>
+            </div>
+        </div>
+        
+        <script>
+        $(document).ready(function() {
+            $('.bxslider').bxSlider({
+                auto: true, //자동 슬라이딩
+                speed: 500, //슬라이딩 시간
+                pause: 4000, //슬라이딩 주기
+                mode: 'horizontal', //슬라이딩 효과(fade, horizontal, vertical)
+                autoControls: true, //시작/중지 버튼 활성화/비활성화
+                pager: true, //페이지 바로가기 버튼
+                captions: false, //이미지의 캡션 보이기(img 요소에 title 속성이 있어야 함)
+            });
+        });
+        </script>
+        <div class="full_img_wrapper">
+            <img src="./data/flanders.png" alt="쿠쿠넬로 대표이미지">
+        </div>
+    </div>
+    <footer class="footer">
+        <ul class="con1440">
+            <li class="ft_col ft1">
+                <div>
+                    <a href="company.html" class="ft_link">회사소개</a>
+                    <a href="use_guid.html" class="ft_link">이용안내</a>
+                    <a href="info1.html" class="ft_link">개인정보처리방침</a>
+                    <a href="info2.html" class="ft_link">이용약관</a>
+                    <span class="copyright1">
+                        회사명 : 쿠쿠전자(주)  대표이사 : 구본학  개인정보관리책임자 : 온라인유통팀 임현석<br>
+본사 : 경상남도 양산시 유산공단2길 14  E-mail : webmaster@cuckoo.co.kr<br>
+사업자등록번호 : 337-87-00918 통신판매신고번호:제2017-경남양산-00367호
+                    </span>
+                    <span class="copyright2">COPYRIGHT (C) CUCKOO ELECTRONICS. ALL RIGHTS RESERVED.</span>
+                </div>
+            </li>
+            <li class="ft_col ft2">
+                <div>
+                    <span class="ft_tit1">상담신청</span>
+                    <span class="ft_tit2">02-2017-6047</span>
+                    <span class="copyright1">업무시간 AM 09:00~PM 18:00 | 점심시간 PM 12:00 ~ PM 13:00<br>(주말 및 공휴일 휴무)</span>
+                </div>
+            </li>
+            <li class="ft_col ft3">
+                <a href="index.html" class="ft_logo"></a>
+            </li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>

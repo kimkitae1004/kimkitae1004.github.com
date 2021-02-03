@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>쿠쿠넬로 쇼핑몰</title>
+    <link rel="shortcut icon" href="./data/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./data/favicon96.png" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#FFFFFF"> 				
+    <meta name="msapplication-TileImage" content="./data/favicon144.png">
+    <meta name="application-name" content="nelloshop">
+    <meta name="title" content="쿠쿠넬로">
+    <meta name="description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="keywords" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta http-equiv="refresh" content="180">
+    <meta property="og:title" content="쿠쿠넬로">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta property="og:image" content="./data/site1.png">
+    <meta property="og:url" content="http://www.nelloshop.co.kr/">
+    <meta property="og:site_name" content="쿠쿠넬로">
+    <meta name="twitter:card" content="애견, 펫, 에어샤워, 드라이, 아로마테라피">
+    <meta name="twitter:title" content="쿠쿠넬로">
+    <meta name="twitter:description" content="쿠쿠넬로 공식쇼핑몰">
+    <meta name="twitter:image" content="./data/site1.png">
+    <meta name="twitter:creator" content="@cortezKim">
+    <meta name="twitter:site" content="http://www.nelloshop.co.kr/">
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/device.js"></script>
+    <script>
+    $(document).ready(function(){
+       //deviceCheck2(); 
+    });    
+    </script>
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./bx/jquery.bxslider.css">
+    <style></style>
+    <script src="./bx/jquery.bxslider.js"></script>
+   
+    <link rel="stylesheet" href="./owl/owl.carousel.css">
+    <style></style>
+    <script src="./owl/owl.carousel.js"></script>
+   
+    <link rel="stylesheet" href="./slick/slick.css">
+    <style></style>
+    <script src="./slick/slick.js"></script>
+    
+<!--    <link rel="stylesheet" href="./wow/styler.css">
+    <script src="./wow/wowslider2.js"></script>-->
+    <link rel="stylesheet" href="cross.css">
+    <link rel="stylesheet" href="sub_cross.css">
+    <style>
+    .full_img_wrapper { width: 100%; clear: both;  padding-top: 10px; }
+    .full_img_wrapper img { display:block; width:860px; height: auto;  
+        margin: 20px auto; }  
+    .full_img_wrapper:first-child { background-color:#f1f1f1; }
+    .pro_lst { clear:both; width: 1440px; margin: 0 auto; border-top:1px solid #ccc; padding: 1em 0em; }
+    .pro_lst:after { content:""; clear:both; display:block; }    
+    .pro_data { clear:both; }
+    .pro_vs { float:left; width:700px;  padding-bottom: 1em; }
+    .pro_box { float:right; width: 480px; color:#999; }  
+    .pro_box .btn, .pro_box .wbtn { width: 478px; box-sizing:border-box; } 
+    .pro_event_img { clear:both; width: 100%; height: 16px; text-align: left; }
+    .pro_tit { font-weight:300; line-height: 2; color:#333; }    
+    .pro_price { clear:both; font-weight:100; font-size:13px; line-height: 48px; padding-top: 6px; padding-bottom: 6px; border-bottom:1px solid #ccc; height: 48px; }
+    .lb_txt, .price_txt { display:block; }
+    .lb_txt { float:left; }
+    .price_txt { float:right; font-weight: 300; font-size:20px; line-height: 48px;
+        color:#333; }
+    .pro_com { clear:both; font-size:13px; padding-right: 60%; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; font-weight:100; line-height: 22px; height: 22px; padding-top: 1em; }    
+    .price_count { clear:both; padding: 1em 0em; border-bottom:1px solid #ccc; height: 24px; }    
+    .in_data { display:block; float:left; width: 55px; height: 24px; border:1px solid #ccc; line-height: 24px; text-align:center; margin-right: 10px; }
+    .in_btn { display:block; width: 26px; height: 26px;  margin-right:6px; background-repeat: no-repeat;  overflow:hidden;    float:left;  
+        background-image:url("./data/sp_qty.gif"); }
+    .plus_btn { background-position:0px 0px; }
+    .minus_btn { background-position:0px -26px; }    
+    .txt1 { float:right; }   
+    .res_price { color:#333; display:block; float:right; }  
+    .res_price.txt2 { font-size:24px; }    
+    .tot_price { clear:both; height: 24px;  padding: 1em 0em; }   
+    .detail_tit { text-align:center; line-height:3.6; font-size:36px;
+        border-bottom:1px solid #ccc; border-top:1px solid #ccc; 
+        background-color:#f1f1f1; color:#999; } 
+        
+    </style>
+    
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var pageTop = $(window).scrollTop();
+            if(pageTop>=350) {
+                $(".header").addClass("active");
+            } else {
+                $(".header").removeClass("active");
+            }
+        });
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+        $(".pro_box").each(function(){
+            if($(this).hasClass("new")) {
+                $(this).find(".pro_event_img").append("<img src='./data/new2.gif' alt='new'>");
+            }
+            if($(this).hasClass("best")) {
+                $(this).find(".pro_event_img").prepend("<img src='./data/best1.gif' alt='new'>");
+            }
+        }); 
+
+        $(".pro_lst").css("display", "none");
+        $(".pro_lst").each(function(){  //producId가 일치하는 아이템만 보이기
+            var url = location.href;
+            var len = url.length;
+            var tar = url.substr(len-3, 3);            
+            var proLst = $(this).attr("product_id");
+            if(proLst == tar){
+                $(this).css("display", "block");
+            } else {
+                $(this).css("display", "none");
+            }
+            var tot = parseInt($(this).find(".price_val").val()) * parseInt($(this).find(".price_txt").attr("price"));
+            $(this).find(".res_price").text(numberWithCommas(tot)+"원");
+        });
+        
+        $(".plus_btn").click(function(){
+            var cnt = parseInt($(this).siblings(".price_val").val()) + 1;
+            if(cnt<=100) {
+                $(this).siblings(".price_val").val(cnt);
+            } else {
+                alert("구매수량은 100 이하어야 합니다.");
+            }
+            var tot = parseInt($(this).parents(".pro_box").find(".price_val").val()) * parseInt($(this).parents(".pro_box").find(".price_txt").attr("price"));
+             $(this).parents(".pro_box").find(".res_price").text(numberWithCommas(tot)+"원");
+        });
+        $(".minus_btn").click(function(){
+            var cnt = parseInt($(this).siblings(".price_val").val()) - 1;
+            if(cnt>=1) { 
+                $(this).siblings(".price_val").val(cnt);
+            } else {
+                alert("구매수량은 1이상이어야 합니다.");
+            }
+            var tot = parseInt($(this).parents(".pro_box").find(".price_val").val()) * parseInt($(this).parents(".pro_box").find(".price_txt").attr("price"));
+           $(this).parents(".pro_box").find(".res_price").text(numberWithCommas(tot)+"원");
+        });
+    });   
+    function comma(num){
+        var len, point, str; 
+
+        num = num + ""; 
+        point = num.length % 3 ;
+        len = num.length; 
+
+        str = num.substring(0, point); 
+        while (point < len) { 
+            if (str != "") str += ","; 
+            str += num.substring(point, point + 3); 
+            point += 3; 
+        }      
+        return str;
+    }
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    </script>
+</head>
+<body>
+<div class="wraper">
+    <header class="header">
+        <div class="con1440 clrfx">
+            <ul class="top_nav clrfx">
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+                <li><a href="cart.html">장바구니(<span class="cart_num">0</span>)</a></li>
+                <li><a href="search.html">배송조회</a></li>
+            </ul>
+        </div>
+        <div class="hd_wraper clrfx">   
+            <div class="con1440 crlfx">
+                <a href="index.html" class="logo">로고</a>
+                <nav class="main_nav">
+                    <ul class="clrfx">
+                        <li><a href="pr_movie.html">홍보 영상</a></li>
+                        <li><a href="product.html">제품 소개</a></li>
+                        <li class="active"><a href="sales.html">제품 구매하기</a></li>
+                        <li><a href="brand_story.html">브랜드 스토리</a></li>
+                        <li><a href="qanda.html">질문하기</a></li>
+                    </ul>
+                </nav>
+                <a href="index.html" class="pro_logo">상품로고</a>
+            </div>
+        </div>    
+    </header>
+    <div class="main_con">
+        <div class="bread_box">
+            <p class="breadcrumb">
+                <a href="">홈</a> &gt; <a href="sales.html">제품 구매하기</a> &gt; <span class="cur_page">구매상세</span>
+            </p>
+        </div>
+        <div class="pro_lst clrfx" product_id="a01" id="a01">
+            <article class="pro_data">
+                <figure class="pro_vs clrfx">
+                    <img src="./data/pro_detail_thumb_01.jpg" alt="넬로 펫 스마트 급수기 필터유닛 NWF-A10W">
+                </figure> 
+                <section class="pro_box new">
+                    <div class="pro_event_img"></div>
+                    <h3 class="pro_tit">넬로 펫 스마트 급수기 필터유닛 NWF-A10W</h3>
+                    <p class="pro_price">
+                        <span class="lb_txt">판매가격</span>
+                        <span class="price_txt" price="22000">22,000원</span>
+                    </p>
+                    <p class="pro_com">
+                        <span class="com_txt">넬로 펫 스마트 급수기 필터유닛 NWF-A10W</span>
+                    </p>
+                    <div class="price_count">
+                        <input type="text" id="pcs1" class="in_data price_val" value="1" min="1" max="100">
+                        <button class="in_btn plus_btn"></button>
+                        <button class="in_btn minus_btn"></button>
+                        <span class="res_price txt1"></span>
+                    </div>
+                    <p class="tot_price">
+                        <span class="lb_txt">총 상품 금액</span>
+                        <span class="res_price txt2"></span>
+                    </p>
+                    <a href="" class="btn">BUY IT NOW</a>
+                    <a href="" class="wbtn">ADD TO CART</a>
+                    <a href="" class="wbtn">WISH LIST</a>
+                </section>
+            </article>
+            <div class="full_img_wrapper">
+                <h2 class="detail_tit">DETAIL PRODUCT</h2>
+                <img src="./data/pro01_detail01.jpg" alt="제품 상세 내역">
+            </div>                  
+        </div>
+        <div class="pro_lst clrfx" product_id="a02" id="a02">
+            <article class="pro_data">
+                <figure class="pro_vs clrfx">
+                    <img src="./data/pro_detail_thumb_02.jpg" alt="넬로 스마트 펫 급식기 NF-A10W">
+                </figure> 
+                <section class="pro_box new">
+                    <div class="pro_event_img"></div>
+                    <h3 class="pro_tit">넬로 스마트 펫 급식기 NF-A10W</h3>
+                    <p class="pro_price">
+                        <span class="lb_txt">판매가격</span>
+                        <span class="price_txt" price="298000">298,000원</span>
+                    </p>
+                    <p class="pro_com">
+                        <span class="com_txt">넬로 스마트 펫 급식기 NF-A10W</span>
+                    </p>
+                    <div class="price_count">
+                        <input type="text" id="pcs2" class="in_data price_val" value="1" min="1" max="100">
+                        <button class="in_btn plus_btn"></button>
+                        <button class="in_btn minus_btn"></button>
+                        <span class="res_price txt1"></span>
+                    </div>
+                    <p class="tot_price">
+                        <span class="lb_txt">총 상품 금액</span>
+                        <span class="res_price txt2"></span>
+                    </p>
+                    <a href="" class="btn">BUY IT NOW</a>
+                    <a href="" class="wbtn">ADD TO CART</a>
+                    <a href="" class="wbtn">WISH LIST</a>
+                </section>
+            </article>
+            <div class="full_img_wrapper">
+                <h2 class="detail_tit">DETAIL PRODUCT</h2>
+                <img src="./data/pro02_detail01.gif" alt="제품 상세 내역">
+                <img src="./data/pro02_detail02.jpg" alt="제품 상세 내역">
+            </div>                  
+        </div>
+        <div class="pro_lst clrfx" product_id="a03" id="a03"></div>
+    </div>
+    <footer class="footer">
+        <ul class="con1440">
+            <li class="ft_col ft1">
+                <div>
+                    <a href="company.html" class="ft_link">회사소개</a>
+                    <a href="use_guid.html" class="ft_link">이용안내</a>
+                    <a href="info1.html" class="ft_link">개인정보처리방침</a>
+                    <a href="info2.html" class="ft_link">이용약관</a>
+                    <span class="copyright1">
+                        회사명 : 쿠쿠전자(주)  대표이사 : 구본학  개인정보관리책임자 : 온라인유통팀 임현석<br>
+본사 : 경상남도 양산시 유산공단2길 14  E-mail : webmaster@cuckoo.co.kr<br>
+사업자등록번호 : 337-87-00918 통신판매신고번호:제2017-경남양산-00367호
+                    </span>
+                    <span class="copyright2">COPYRIGHT (C) CUCKOO ELECTRONICS. ALL RIGHTS RESERVED.</span>
+                </div>
+            </li>
+            <li class="ft_col ft2">
+                <div>
+                    <span class="ft_tit1">상담신청</span>
+                    <span class="ft_tit2">02-2017-6047</span>
+                    <span class="copyright1">업무시간 AM 09:00~PM 18:00 | 점심시간 PM 12:00 ~ PM 13:00<br>(주말 및 공휴일 휴무)</span>
+                </div>
+            </li>
+            <li class="ft_col ft3">
+                <a href="index.html" class="ft_logo"></a>
+            </li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>
