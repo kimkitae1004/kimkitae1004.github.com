@@ -7,5 +7,7 @@
 .bread_box { clear:both; width: 1440px; margin: 1em auto; }
 .breadcrumb {  text-align:right;  color:#999; font-size:14px; word-spacing:8px; }
 .breadcrumb a { color:#999; }
-.btn { display:block; width:120px; padding:1.2em; background-color:#333; color:#fff; margin: 1em auto; text-align: center; }
+.btn { display:block; width:120px; padding:1.2em; background-color:#333; color:#fff; margin: 1em auto; text-align: center; border:1px solid #333; }
+.btn:hover { background-color:#fff; color:#333;  }
 .wbtn { display:block; width:120px; padding:1.2em; color:#333; background-color:#fff; margin: 1em auto; text-align: center; border:1px solid #333; }
+.wbtn:hover { color:#fff; background-color:#333; }
