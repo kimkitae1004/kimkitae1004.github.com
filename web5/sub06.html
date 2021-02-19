@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>LIG 그룹</title>
+    <!-- 메타 데이터 -->
+    <!-- 바로가기 아이콘(Shortcut icon), 문서 제목, 설명, 검색어, 오픈 그래프 등 -->
+    <!-- IE를 위한 조건부 주석(html5shiv.js) -->
+    <!-- jQuery와 사용하고자 하는 플러그인 연결(jquery.js, bxslider, owl-slider...) -->
+    <!-- 크로스브라우징을 위한 내용 연결(prefixfree.min.js, respond.js, modernizr.js) -->
+    <script src="./js/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/jquery-1.10.0.js"></script>
+    <script src="./js/respond/src/respond.js"></script>
+    <link rel="stylesheet" href="./css/typo.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/sub_common.css">
+    <style>
+    /* 메인 전용 스타일 영역 */   
+    .vs, .pg { clear:both; }  
+    .tb_fr { width: 1200px; margin: 0 auto; }
+    .tb { display:table; border-collapse: collapse; width: 1200px; }
+    .tb tr { display:table-row; }
+    .tb th, .tb td { display:table-cell; border-bottom:1px solid #333;  }
+    .tb th { line-height: 48px; font-size: 24px; border-top:2px solid #333; }    
+    .tb td { cursor:pointer; vertical-align:top; }    
+    .tb .img_fr { width: 330px; height: 220px; margin:20px; 
+        background-repeat: no-repeat; background-position: center center; 
+        background-size:100% auto; transition:0.5s; cursor:pointer; }
+    .tb td:hover .img_fr { background-size:150% auto; }    
+    .tb .pic01 { background-image:url("./source/new01.jpg"); }    
+    .tb .pic02 { background-image:url("./source/news02.jpg"); }        
+    .tb .pic03 { background-image:url("./source/news03.png"); }    
+    .tb .pic04 { background-image:url("./source/news04.png"); }    
+    .tb .pic05 { background-image:url("./source/news05.png"); }  
+    .tb .nt_type { display:block; clear:both; margin: 20px; border:1px solid #333; color:#333; padding: 10px 15px; width: 100px; text-align:center;
+        border-radius:30px;  }  
+    .tb td:hover .nt_type { background-color:#333; color:#fff; } 
+    .tb .nt_tit { padding-left: 20px; font-size:24px; width: 600px; padding-right: 20px; overflow:hidden; text-overflow: ellipsis; white-space:nowrap; padding-top: 30px; } 
+    .tb td.c3 { vertical-align: middle; }    
+    .tb .nt_date { font-size: 20px; color:#888; }
+        
+    .pg { border-bottom:3px solid #eee; padding-bottom:110px; }
+    .tb { display:table; }    
+    .tb ul { display:table-row; }
+    .tb li { display:table-cell; cursor:pointer; border-bottom:1px solid #333; }
+    .tb li.c1 { vertical-align:middle; }    
+    .tb li.c2 { vertical-align:top; }
+    .tb li.c3 { vertical-align:middle; }
+    .tb .thead li { line-height: 48px; font-size: 24px; border-top:2px solid #333; 
+        text-align:center; font-weight:bold; }    
+    .tb .thead li:first-child { width: 900px; }
+    .tb .thead li:last-child { width: 300px; }    
+    .tb li:hover .img_fr { background-size:150% auto; }        
+    .tb li:hover .nt_type { background-color:#333; color:#fff; } 
+        
+    .form_frame { width: 1200px; margin:20px auto; position:relative;
+        padding-top: 10px; padding-bottom: 10px; }  
+    .form_frame:after { content:""; clear:both; display:block; }  
+    .form { width: 1200px; margin: 0 auto; }    
+    .sel { display:block; width: 150px; line-height: 40px; border:1px solid #333; 
+        font-size:20px; height: 44px; float:left; text-align:center; }
+    .in_data { display:block; float:left; width: 800px; line-height: 40px; 
+        height: 40px; font-size:18px; margin-left: 203px; text-indent:14px; }   
+    .in_btn { display:block; width: 40px; height: 40px;  
+        float:right;  text-indent:-9999px; } 
+    #join_form .in_btn2 { display:block; width:120px; height: 40px;  
+        float:left;  color:#fff; background-color:#000; text-align: center; 
+        line-height: 40px; margin-left: 100px; margin-top:15px; } 
+    #search_btn { background-image:url("./source/button_warmap_open.png");
+        background-repeat: no-repeat; background-position:center center; 
+        background-color:#000; border:1px solid #000; box-sizing: content-box; 
+        height: 44px; }    
+    #join_form td, #join_form th { line-height: 60px; }
+    #join_form td:nth-child(2) { vertical-align:middle; } 
+    #join_form tbody tr:last-child td { border:0; }  
+    #join_form legend { display:block; text-align:center; font-size:20px; 
+        line-height: 60px; } 
+    #join_form tr:first-child td { border-top:2px solid #000; }
+        
+    .detailConetnt {
+        position: relative;
+        overflow: hidden;
+        background: #333;
+        padding-bottom: calc(160px + 2.6vw);
+        padding-top: 2.6vw;
+        clip-path: polygon(0 0, 100% 2.6vw, 100% 100%, 0 calc(100% - 2.6vw));
+        z-index: 2;
+    }    
+    </style>
+    
+<link href="http://apis.map.daum.net/favicon.ico" rel="shortcut icon"> 
+
+<meta name="viewport" content="width=720">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Daum 지도 API">
+
+<link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
+
+<style>
+
+body { background:white; }
+
+</style>
+
+<script type="text/javascript" src="http://dmaps.daum.net/map_js_init/v3.js"></script>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.0.js"></script>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+
+</head>
+<!--[if gte IE 10]><!-->
+
+<body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+
+<!--<![endif]-->
+
+<!--[if lte IE 7]>
+
+<body class="very_low web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+
+<![endif]-->
+
+<!--[if lte IE 9]>
+
+<body class="low web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
+
+<![endif]-->
+    <header class="header">
+        <a href="index.html" class="logo"></a>
+        <nav class="gnb">
+            <ul class="menu">
+                <li>
+                    <a href="sub01.html" class="dp1">기업소개</a>
+                    <ul class="sub">
+                        <li><a href="sub01.html#pg1">VISION</a></li>
+                        <li><a href="sub01.html#pg2">연혁</a></li>
+                        <li><a href="sub01.html#pg3">CEO인사말</a></li>
+                        <li><a href="sub01.html#pg4">사업장안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sub02.html" class="dp1">사업영역</a>
+                    <ul class="sub">
+                        <li><a href="sub02.html#pg1">유도무기</a></li>
+                        <li><a href="sub02.html#pg2">감시정찰</a></li>
+                        <li><a href="sub02.html#pg3">지휘통제통신</a></li>
+                        <li><a href="sub02.html#pg4">항공전자</a></li>
+                        <li><a href="sub02.html#pg5">전자전</a></li>
+                        <li><a href="sub02.html#pg6">무인체계</a></li>
+                        <li><a href="sub02.html#pg7">미래기술</a></li>
+                        <li><a href="sub02.html#pg8">MRO</a></li>
+                        <li><a href="sub02.html">제품 전체보기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sub03.html" class="dp1">지속가능경영</a>
+                    <ul class="sub">
+                        <li><a href="sub03.html#pg1">윤리/준법</a></li>
+                        <li><a href="sub03.html#pg2">상생경영</a></li>
+                        <li><a href="sub03.html#pg3">사회공헌</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sub04.html" class="dp1">투자정보</a>
+                    <ul class="sub">
+                        <li><a href="sub04.html#pg1">재무정보</a></li>
+                        <li><a href="sub04.html#pg2">IR정보</a></li>
+                        <li><a href="sub04.html#pg3">공시</a></li>
+                        <li><a href="sub04.html#pg4">공고</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sub05.html" class="dp1">인재채용</a>
+                    <ul class="sub">
+                        <li><a href="sub05.html#pg1">인사제도</a></li>
+                        <li><a href="sub05.html#pg3">직무소개</a></li>
+                        <li><a href="sub05.html#pg3">채용전형</a></li>
+                        <li><a href="sub05.html#pg4">채용공고</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="sub06.html" class="dp1">홍보센터</a>
+                    <ul class="sub">
+                        <li><a href="sub06.html#pg1">넥스원 뉴스</a></li>
+                        <li><a href="sub06.html#pg2">TRADE SHOW</a></li>
+                        <li><a href="sub06.html#pg3">PR 자료실</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <ul class="collap_item">
+            <li class="item1">
+                <a href="index.html" class="kor">KOR</a>
+                <a href="index_en.html" class="eng">ENG</a>
+            </li>
+            <li class="item2">
+                <a href="">신고센터</a>
+            </li>
+        </ul>
+    </header>
+    <figure class="vs">
+        <h2 class="vs_tit wtxt">홍보센터</h2>
+    </figure>
+    <section class="pg" id="pg1">
+        <h2 class="pg_tit">넥스원 뉴스</h2>
+        <div class="pg_wrap">
+            <div class="nt_box">
+                <div class="form_frame">
+                    <form name="search_form" id="search_form" class="form">   
+                        <select name="search_method" id="sel1" class="sel">
+                            <option value="" selected>전체</option>
+                            <option value="">제목</option>
+                            <option value="">내용</option>
+                        </select>
+                        <input type="text" id="keyword" class="in_data" placeholder="검색어 입력">
+                        <input type="submit" value="검색" class="in_btn" id="search_btn">
+                    </form>    
+                </div>
+                <div class="tb_fr">
+                    <table class="tb">
+                        <thead>
+                            <tr>
+                                <th colspan="2">제목 및 설명</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="c1">
+                                    <div class="img_fr pic01">
+                                    </div>
+                                </td>
+                                <td class="c2">
+                                    <span class="nt_type">언론보도</span>
+                                    <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                                </td>
+                                <td class="c3">
+                                    <span class="nt_date">2021-02-02</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c1">
+                                    <div class="img_fr pic02">
+                                    </div>
+                                </td>
+                                <td class="c2">
+                                    <span class="nt_type">언론보도</span>
+                                    <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결, KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                                </td>
+                                <td class="c3">
+                                    <span class="nt_date">2021-02-02</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c1">
+                                    <div class="img_fr pic03">
+                                    </div>
+                                </td>
+                                <td class="c2">
+                                    <span class="nt_type">언론보도</span>
+                                    <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                                </td>
+                                <td class="c3">
+                                    <span class="nt_date">2021-02-02</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c1">
+                                    <div class="img_fr pic04">
+                                    </div>
+                                </td>
+                                <td class="c2">
+                                    <span class="nt_type">언론보도</span>
+                                    <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                                </td>
+                                <td class="c3">
+                                    <span class="nt_date">2021-02-02</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c1">
+                                    <div class="img_fr pic05">
+                                    </div>
+                                </td>
+                                <td class="c2">
+                                    <span class="nt_type">언론보도</span>
+                                    <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                                </td>
+                                <td class="c3">
+                                    <span class="nt_date">2021-02-02</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pg" id="pg2">
+        <h2 class="pg_tit">TRADE SHOW</h2>
+        <div class="pg_wrap">
+           <div class="tb_fr">
+                <div class="tb">
+                    <div class="thead">
+                        <ul>
+                            <li class="colspan2">제목 및 설명</li>
+                            <li>작성일</li>
+                        </ul>
+                    </div>    
+                    <div class="tbody">
+                        <ul>
+                            <li class="c1">
+                                <div class="img_fr pic01">
+                                </div>
+                            </li>
+                            <li class="c2">
+                                <span class="nt_type">언론보도</span>
+                                <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                            </li>
+                            <li class="c3">
+                                <span class="nt_date">2021-02-02</span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="c1">
+                                <div class="img_fr pic02">
+                                </div>
+                            </li>
+                            <li class="c2">
+                                <span class="nt_type">언론보도</span>
+                                <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결, KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                            </li>
+                            <li class="c3">
+                                <span class="nt_date">2021-02-02</span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="c1">
+                                <div class="img_fr pic03">
+                                </div>
+                            </li>
+                            <li class="c2">
+                                <span class="nt_type">언론보도</span>
+                                <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                            </li>
+                            <li class="c3">
+                                <span class="nt_date">2021-02-02</span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="c1">
+                                <div class="img_fr pic04">
+                                </div>
+                            </li>
+                            <li class="c2">
+                                <span class="nt_type">언론보도</span>
+                                <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                            </li>
+                            <li class="c3">
+                                <span class="nt_date">2021-02-02</span>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="c1">
+                                <div class="img_fr pic05">
+                                </div>
+                            </li>
+                            <li class="c2">
+                                <span class="nt_type">언론보도</span>
+                                <h3 class="nt_tit">KAIST와 ‘양자기술 발전을 위한 산학협력 MOU’ 체결</h3>
+                            </li>
+                            <li class="c3">
+                                <span class="nt_date">2021-02-02</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pg" id="pg3">
+        <h2 class="pg_tit">PR 자료실</h2>            
+        <div class="pg_wrap">
+            <form action="" class="form" id="join_form">
+                <table class="tb join_tb">
+                    <legend>회원가입</legend>
+                    <tbody>
+                        <tr>
+                            <td><label for="m_id">* 아이디</label></td>
+                            <td>
+                                <input type="text" class="in_data" id="m_id" name="m_id" placeholder="아이디 입력" autofocus required>
+                                <input type="button" class="in_btn" value="중복" id="double_compare_btn">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="m_pw">* 비밀번호</label></td>
+                            <td>
+                                <input type="password" class="in_data" id="m_pw" name="m_pw" placeholder="영문소문자,숫자 혼합 비밀번호 입력" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="m_pw2">* 비밀번호 확인</label></td>
+                            <td>
+                                <input type="password" class="in_data" id="m_pw2" name="m_pw2" placeholder="영문소문자,숫자 혼합 비밀번호 입력" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="m_irum">* 이름(영문)</label></td>
+                            <td>
+                                <input type="password" class="in_data" id="m_irum" name="m_irum" placeholder="이름 입력" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;</td>
+                            <td>
+                                <input type="submit" class="in_btn2" value="회원가입">
+                                &nbsp;&nbsp;
+                                <input type="reset" class="in_btn2" value="취소">
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            </form>
+            <div class="map_area">
+<div id="map" style="margin-left:120px;	margin-top:50px; width:800px;height:600px; background:white; ">
+
+</div>
+
+<script>
+
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+
+    mapOption = { 
+
+        center: new daum.maps.LatLng(36.3491563,127.3776857), // 지도의 중심좌표
+
+        level: 3 // 지도의 확대 레벨
+
+    };
+
+ 
+
+var map = new daum.maps.Map(mapContainer, mapOption);
+
+ 
+
+// 마커가 표시될 위치입니다 
+
+var markerPosition  = new daum.maps.LatLng(36.3491563,127.3776857); 
+
+ 
+
+// 마커를 생성합니다
+
+var marker = new daum.maps.Marker({
+
+    position: markerPosition
+
+});
+
+ 
+
+// 마커가 지도 위에 표시되도록 설정합니다
+
+marker.setMap(map);
+
+ 
+
+var iwContent = '<div style="padding:5px;">그린컴퓨터아트학원 <br><a href="" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+    iwPosition = new daum.maps.LatLng(36.3491563,127.3776857); //인포윈도우 표시 위치입니다
+
+ 
+
+// 인포윈도우를 생성합니다
+
+var infowindow = new daum.maps.InfoWindow({
+
+    position : iwPosition, 
+
+    content : iwContent 
+
+});
+
+  
+
+// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+
+infowindow.open(map, marker);
+
+</script>
+
+<script type="text/javascript" src="http://m1.daumcdn.net/tiara/js/td.min.js"></script>
+
+<script type="text/javascript">
+
+var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
+
+    window._tiq = _tiq;
+
+    _tiq.push(['__trackPageview']);
+
+</script>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.js">
+
+</script>
+            </div>
+        </div>
+    </section>
+    <section class="pg" id="pg4">
+        <h2 class="pg_tit">PR 자료실</h2>
+        <div class="detailConetnt">
+            
+        </div>  
+    </section>
+    <footer class="footer">
+        <div class="ft_wrap">
+            <ul class="ft_col_box">
+                <li class="left_ft">
+                    <img src="./source/logo_footer.png" alt="하단로고" class="ft_logo">
+                    <ul class="fnb">
+                        <li><a href="sub01.html">기업소개</a></li>
+                        <li><a href="sub02.html">사업영역</a></li>
+                        <li><a href="sub03.html">지속가능경영</a></li>
+                        <li><a href="sub04.html">투자정보</a></li>
+                        <li><a href="sub05.html">인재채용</a></li>
+                        <li><a href="sub06.html">홍보센터</a></li>
+                    </ul>
+                    <ul class="ft_link">
+                        <li><a href="service01.html">개인정보취급방침</a></li>
+                        <li><a href="service02.html">이메일무단수집거부</a></li>
+                        <li><a href="qna.html">고객문의</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="copyright_box">
+                        <p class="addr">경기도 용인시 기흥구 마북로 207(마북동) 16911 &nbsp;&nbsp;&nbsp;  T 1644-2005 &nbsp;&nbsp;&nbsp;   F 031-8026-7100</p>
+                        <p class="copyright">COPYRIGHT 2020 © LIG Nex1 ALL RIGHTS RESERVED.</p>
+                    </div>
+                </li>
+                <li class="right ft">
+                    <div class="collap item1">
+                        <span class="collap_tit">주요 계열사 바로가기</span>
+                        <ul class="collap_lst">
+                            <li><a href="">(주)LIG</a></li>
+                            <li><a href="">LIG시스템</a></li>
+                            <li><a href="">휴세코</a></li>
+                            <li><a href="">LIG정밀기술</a></li>
+                            <li><a href="">이노와이어리스</a></li>
+                            <li><a href="">서빅</a></li>
+                        </ul>
+                    </div>
+                    <div class="collap item2">
+                        <span class="collap_tit">관련 시스템 바로가기</span>
+                        <ul class="collap_lst">
+                            <li><a href="">전자세금계산서</a></li>
+                            <li><a href="">ONLINE PURCHASHING</a></li>
+                            <li><a href="">전자 계약 시스템</a></li>
+                            <li><a href="">LIG Nex1 교정시스템</a></li>
+                            <li><a href="">성적서 진위확인시스템</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark_box">
+                        <img src="./source/logo_wa.png" alt="웹접근성마크" class="wa_mark">
+                        <img src="./source/logo_ipc.png" alt="국제특허분류인증마크" class="ipc_mark">
+                    </div>
+                </li>
+            </ul>
+            <script src="./js/main2.js"></script>
+        </div>
+    </footer>
+    <div class="to_top">
+        <img src="./source/button_warmap_slideUp.png" alt="위로 화살표">
+        <span class="to_top_txt">TOP</span>
+    </div>
+    <div class="metering_box">
+        <ul class="meter_fr">
+            <li class="cate0"><button data-target="header"></button></li>
+            <li class="cate1"><button data-target="pg1"></button></li>
+            <li class="cate2"><button data-target="pg2"></button></li>
+            <li class="cate3"><button data-target="pg3"></button></li>
+            <li class="cate4"><button data-target="pg4"></button></li>
+            <li class="cate5"><button data-target="footer"></button></li>
+        </ul>
+        <div class="cur_page"></div>
+    </div>
+</body>
+</html>

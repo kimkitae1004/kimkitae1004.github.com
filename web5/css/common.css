@@ -1,0 +1,303 @@
+@charset "utf-8";
+
+.wtxt {
+    color: #fff;
+}
+
+.btxt {
+    color: #111;
+}
+
+.htxt {
+    display: none;
+}
+
+.pg {
+    clear: both;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+}
+
+.pg:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.pg_wrap {
+    clear: both;
+    width: calc(100% - 200px);
+    margin: 0 auto;
+}
+
+.pg_tit {
+    font-size: 48px;
+    text-align: center;
+    line-height: 3;
+    padding-top: 0.5em;
+}
+
+.footer {
+    clear: both;
+    height: 340px;
+    width: 100%;
+    background-color: #262626;
+    position: relative;
+}
+
+.ft_wrap {
+    clear: both;
+    width: calc(100% - 200px);
+    margin: 0px auto;
+    color: #666;
+    padding-top: 30px;
+    position: relative;
+}
+
+.ft_wrap:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.ft_col_box {
+    clear: both;
+    width: 100%;
+}
+
+.ft_col_box .left_ft {
+    float: left;
+    width: 60%;
+}
+
+.ft_col_box .right_ft {
+    float: right;
+    width: 38%;
+}
+
+.fnb {
+    clear: both;
+}
+
+.fnb li {
+    float: left;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.fnb li a {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    padding: 5px;
+    padding-left: 0;
+    border-bottom: 1px solid transparent;
+}
+
+.fnb li a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.ft_link {
+    clear: both;
+}
+
+.ft_link li {
+    float: left;
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+.ft_link li a {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    padding: 3px;
+    padding-left: 0;
+    font-weight: 200;
+}
+
+.ft_link li + li a:before {
+    content: "|";
+    padding-right: 15px;
+    color: #666;
+}
+
+.ft_link li a:hover {
+    color: #fff;
+}
+
+.copyright_box {
+    clear: both;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 2;
+}
+
+.collap {
+    float: right;
+    position: relative;
+}
+
+.collap_tit {
+    display: block;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0px 10px;
+    margin: 14px;
+    cursor: pointer;
+    border: 1px solid #666;
+    font-size: 14px;
+}
+
+.collap_tit:after {
+    content: "▼";
+    padding-left: 10px;
+}
+
+.collap_tit.on:after {
+    content: "▲";
+}
+
+.collap_lst {
+    position: absolute;
+    bottom: 52px;
+    left: 14px;
+    border: 1px solid #666;
+    background-color: #888;
+    display: none;
+}
+
+.collap_lst.on {
+    display: block;
+}
+
+.collap_lst li {
+    clear: both;
+    padding: 0;
+    line-height: 36px;
+    width: 170px;
+}
+
+.collap_lst li a {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    color: #333;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.collap_lst li a:hover {
+    background-color: #333;
+    color: #ccc;
+}
+
+.mark_box {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+.to_top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 993;
+    width: 70px;
+    height: 58px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+    border: 3px solid #444;
+    display: none;
+    cursor: pointer;
+}
+
+.metering_box {
+    position: fixed;
+    right: 10px;
+    top: 45%;
+    z-index: 994;
+    width: 80px;
+}
+
+.meter_fr {
+    clear: both;
+    width: 30px;
+    float: right;
+    height: 80px;
+}
+
+.metering_box li {
+    float: right;
+    width: 29px;
+    height: 20px;
+    background-image: url("../source/bg_mainNav.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    position: relative;
+}
+
+.metering_box li.cate0,
+.metering_box li.cate5 {
+    width: 41px;
+    height: 35px;
+}
+
+.metering_box li.cate0 {
+    background-image: url("../source/button_mainNav_top.png");
+}
+
+.metering_box li.cate5 {
+    background-image: url("../source/button_mainNav_end.png");
+}
+
+.metering_box li button {
+    display: block;
+    width: 29px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url("../source/bg_mainNav_hover.png");
+    background-repeat: no-repeat;
+    background-position: 29px center;
+    transition: 0.4s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+}
+
+.metering_box li button:hover {
+    background-position: -5px center;
+}
+
+.metering_box li.cate0 button,
+.metering_box li.cate5 button {
+    width: 41px;
+    height: 35px;
+}
+
+.metering_box li.cate0 button:hover,
+.metering_box li.cate5 button:hover {
+    background-image: none;
+}
+
+.cur_page {
+    width: 60px;
+    height: 28px;
+    position: absolute;
+    right: 0;
+    background-image: url("../source/bg_mainNav_on.png");
+    top: 35px;
+    z-index: 89;
+    background-position: right center;
+    transition: 0.4s;
+} 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JUST 쇼핑몰</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>    
+    .vs { width: 1200px; height: 300px; overflow:hidden; position:relative; }
+    .img_box { width:1200px; height: 900px; } 
+    .img_box li { width: 1200px; height: 300px; }
+    .img_box li a { display:block; width: 1200px; height: 300px; }
+    .img_box li a img { display:block; width:1200px; height: 300px; }
+    .btn_box button { position:absolute; display:block; width: 40px; height: 40px; 
+        line-height: 40px; text-align:center; top:60%;  left:80px; border-radius:22px; background-color:rgba(255,255,255,0.6); }
+    .btn_box button.prev { top:30%; }
+    #pop { border:1px solid #333; position:fixed; left:25%; width: 50%; top:25%; height: 50%; display:none; background-color: #fff; }    
+    </style>
+    <script>
+    $(document).ready(function(){
+       function ani1() {
+           $(".img_box").not(":animated").animate({"margin-top":"-300px"}, 600, function(){
+               $(".img_box li").eq(0).appendTo($(".img_box"));
+               $(".img_box").css("margin-top","0px");
+           });
+       }
+       var intv = setInterval(function(){ ani1(); }, 2950); 
+       function ani2() {
+           $(".img_box li").eq(2).prependTo($(".img_box"));
+           $(".img_box").css("margin-top","-300px");
+           $(".img_box").not(":animated").animate({"margin-top":"0px"}, 600);
+       } 
+        
+        $("button.prev").click(function(){
+            clearInterval(intv);
+            ani2();
+            intv = setInterval(function(){ ani1(); }, 2950);
+        });
+        $("button.next").click(function(){
+            clearInterval(intv);
+            ani1();
+            intv = setInterval(function(){ ani1(); }, 2950);
+        });
+    });
+    </script>
+</head>
+<body>
+<header class="hd clr">
+    <a href="index.html" class="logo">
+        <img src="https://placehold.it/200x40/333/fff" alt="로고">
+    </a>
+    <nav class="gnb">
+        <ul>
+            <li>
+                <a href="" class="dp1">MENU-1</a>
+                <ul class="sub">
+                    <li><a href="">Submenu-1</a></li>
+                    <li><a href="">Submenu-2</a></li>
+                    <li><a href="">Submenu-3</a></li>
+                    <li><a href="">Submenu-4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dp1">MENU-2</a>
+                <ul class="sub">
+                    <li><a href="">Submenu-1</a></li>
+                    <li><a href="">Submenu-2</a></li>
+                    <li><a href="">Submenu-3</a></li>
+                    <li><a href="">Submenu-4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dp1">MENU-3</a>
+                <ul class="sub">
+                    <li><a href="">Submenu-1</a></li>
+                    <li><a href="">Submenu-2</a></li>
+                    <li><a href="">Submenu-3</a></li>
+                    <li><a href="">Submenu-4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="" class="dp1">MENU-4</a>
+                <ul class="sub">
+                    <li><a href="">Submenu-1</a></li>
+                    <li><a href="">Submenu-2</a></li>
+                    <li><a href="">Submenu-3</a></li>
+                    <li><a href="">Submenu-4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>    
+<figure class="vs clr">
+    <ul class="img_box">
+        <li class="item"><a href=""><img src="https://placehold.it/1200x300/999/fff" alt=""></a></li>
+        <li class="item"><a href=""><img src="https://placehold.it/1200x300/369/fff" alt=""></a></li>
+        <li class="item"><a href=""><img src="https://placehold.it/1200x300/936/fff" alt=""></a></li>
+    </ul>
+    <ul class="btn_box">
+        <li><button class="prev">∧</button></li>
+        <li><button class="next">∨</button></li>
+    </ul>
+</figure>
+<div class="content clr">
+    <div class="col_item item1">
+        <div class="btn_fr">
+            <button class="btn1 active">공지사항</button>
+            <button class="btn2">갤러리</button>
+        </div>
+        <div class="con_fr">
+            <div class="con1 notice">
+                <table class="tb">
+                    <thead>
+                        <tr>
+                            <th class="tb_col1">번호</th>
+                            <th class="tb_col2">제목</th>
+                            <th class="tb_col3">등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tb_col1">1</td>
+                            <td class="tb_col2"><a href="javascript:;">봄 맞이 이벤트</a></td>
+                            <td class="tb_col3">2019-02-12</td>
+                        </tr>
+                        <tr>
+                            <td class="tb_col1">2</td>
+                            <td class="tb_col2">
+                                <a href="">창립10주년 기념행사 변경 안내</a>
+                            </td>
+                            <td class="tb_col3">2019-02-11</td>
+                        </tr>
+                        <tr>
+                            <td class="tb_col1">3</td>
+                            <td class="tb_col2">
+                                <a href="">크리에이터 모집 TV홈쇼핑 신제품 출시에 대한 영상광고 </a>
+                            </td>
+                            <td class="tb_col3">2019-02-10</td>
+                        </tr>
+                        <tr>
+                            <td class="tb_col1">4</td>
+                            <td class="tb_col2">
+                                <a href="">사내 회식과 동아리 지원 개선 안내</a>
+                            </td>
+                            <td class="tb_col3">2019-02-09</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="con2 gallery">
+                <a href=""><img src="https://placehold.it/140x120/369" alt=""></a>
+                <a href=""><img src="https://placehold.it/140x120/333" alt=""></a>
+                <a href=""><img src="https://placehold.it/140x120/909" alt=""></a>
+            </div>
+        </div>
+        <script>
+        $(function(){
+            $(".btn_fr button").click(function(){
+                var idx = $(this).index();
+                $(".btn_fr button").removeClass("active");
+                $(this).addClass("active");
+                $(".con_fr > div").css("display","none");
+                $(".con_fr > div").eq(idx).css("display", "block");
+            });
+            $(".notice tbody tr:first-child .tb_col2 a").click(function(){
+                $("#pop").fadeIn();
+            });
+            $("#close_btn").click(function(){
+                $("#pop").fadeOut();
+            });
+        });    
+        </script>
+    </div>
+    <div class="col_item item2">
+        <h4 class="col_tit">배너</h4>
+        <img src="https://placehold.it/300x120" alt="배너" class="ban_pic">
+    </div>
+    <div class="col_item item3">
+        <h4 class="col_tit">바로가기</h4>
+        <ul class="sh_lst">
+            <li><a href=""><img src="https://placehold.it/100x120/333" alt=""></a></li>
+            <li><a href=""><img src="https://placehold.it/100x120/936" alt=""></a></li>
+            <li><a href=""><img src="https://placehold.it/100x120/639" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<footer class="ft clr">
+    <div class="ft_col item1">
+        <a href="" class="ft_logo">
+            <img src="https://placehold.it/200x40/ccc" alt="로고">
+        </a>
+    </div>
+    <div class="ft_col item2">
+        <p class="copyright">COPYRIGHTⓒ 2018 JUST Shoppingmall ALL RIGHTS RESERVED.</p>
+    </div>
+    <div class="ft_col item3">
+        <ul class="sns_lst">
+            <li><a href=""><img src="https://placehold.it/40x40/369/fff" alt=""></a></li>
+            <li><a href=""><img src="https://placehold.it/40x40/933/fff" alt=""></a></li>
+            <li><a href=""><img src="https://placehold.it/40x40/639/fff" alt=""></a></li>
+        </ul>
+    </div>
+</footer>
+<div id="pop">
+    <h2>여기는 팝업창</h2>
+    <button id="close_btn">닫기</button>
+</div>
+</body>
+</html>
