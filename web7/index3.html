@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>각 페이지의 높이가 일정하지 않을 경우의 부드러운 스크롤링과 처음과 마지막 페이지 처리</title>
+    <style>
+    * { margin: 0; padding: 0; }    
+    html, body{ margin:0; padding:0; width:100%;  -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    .page { width:100%; clear:both; min-height:800px; position:relative; 
+        background-position:center center; background-repeat: no-repeat; 
+        background-size:cover; font-size:24pt; color:#fff; }
+    #page1 { background-color:#333; background-image:url("idle01.png"); }
+    #page2 { background-color:#2c8; background-image:url("idle02.jpg"); 
+        background-size:100% auto;  background-attachment: fixed; }    
+    #page3 { background-color:#82c; background-image:url("idle07.jpg"); 
+        background-size:100% auto;  }    
+    #page4 { background-color:#c82; background-image:url("idle08.jpg"); 
+        background-size:100% auto;  }
+    .page_tit { font-size:70px; line-height:3; padding-top: 1em; 
+        text-align:center; color:#fff; -webkit-text-stroke:2px #333; opacity:0; 
+        height: 280px;   box-sizing:border-box;  transition:0.5s;  }
+    .page.on .page_tit { opacity:1;  }  
+    .page_wrap { width: 1200px; margin: 0 auto; } 
+    #page1 .page_wrap { height: 900px; }
+    #page2 .page_wrap { height: 600px; }    
+    #page3 .page_wrap { height: 800px; }    
+    #page4 .page_wrap { height: 700px; } 
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        window.onload = function () {
+//            var elm = ".page";
+            $(".page").each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(".page").eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {  //다음 페이지가 있으면
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) { //이전 페이지가 있으면
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("body, html").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 500, complete: function () {
+
+                        }
+                    });
+                });
+            });
+            $(".page").mouseenter(function(){
+                $(this).addClass("on");    
+            });
+            $(".page").mouseleave(function(){
+                $(this).removeClass("on");    
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="page on" style="background-color:red;" id="page1">
+        <h2 class="page_tit">페이지 제목1</h2>
+        <div class="page_wrap"></div>
+    </div>
+    <div class="page" style="background-color:orange;" id="page2">
+        <h2 class="page_tit">페이지 제목2</h2>
+        <div class="page_wrap"></div>
+    </div>
+    <div class="page" style="background-color:yellow;" id="page3">
+        <h2 class="page_tit">페이지 제목3</h2>
+        <div class="page_wrap"></div>
+    </div>
+    <div class="page" style="background-color:green;" id="page4">
+        <h2 class="page_tit">페이지 제목4</h2>
+        <div class="page_wrap"></div>
+    </div>
+    <div class="page" style="background-color:blue;" id="page5">5</div>
+    <div class="page" style="background-color:indigo;" id="page6">6</div>
+    <div class="page" style="background-color:violet;" id="page7">7</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>각 페이지의 높이가 일정하지 않을 경우의 스크롤링</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; -ms-overflow-style: none; }
+    ul { list-style: none; }    
+    a { text-decoration: none; }  
+    ::-webkit-scrollbar { display: none; }    
+    .page { clear:both; width:100%; clear:both; position:relative; 
+        background-position:center center; background-repeat: no-repeat;  }
+    .page:after { content:""; clear:both; display:block; }    
+    #page1 { background-color:#333; background-image:url("idle01.png"); 
+        background-size:auto 100%; }
+    #page2 { background-color:#2c8; background-image:url("idle02.jpg"); 
+        background-attachment: fixed;  background-size:100% auto; }    
+    #page3 { background-color:#82c; background-image:url("idle07.jpg"); 
+        background-size:100% auto; }    
+    #page4 { background-color:#c82; background-image:url("idle08.jpg"); 
+        background-size:100% auto; }    
+    .page_tit { font-size:70px; line-height:3; padding-top: 1em; 
+        text-align:center; color:#fff; -webkit-text-stroke:2px #333; opacity:0; 
+        transition:0.8s; transition-delay:0.5s; }
+    .page.on .page_tit { opacity:1; }  
+    .page_wrap { width: 1200px; margin: 0 auto; }    
+    #page1 .page_wrap { height: 900px; }
+    #page2 .page_wrap { height: 600px; }    
+    #page3 .page_wrap { height: 800px; }    
+    #page4 .page_wrap { height: 700px; }    
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+</head>
+<body>
+<div class="page on" id="page1">
+    <h2 class="page_tit">페이지 제목1</h2>
+    <div class="page_wrap"></div>
+</div>
+<div class="page" id="page2">
+    <h2 class="page_tit">페이지 제목2</h2>
+    <div class="page_wrap"></div>
+</div>
+<div class="page" id="page3">
+    <h2 class="page_tit">페이지 제목3</h2>
+    <div class="page_wrap"></div>
+</div>
+<div class="page" id="page4">
+    <h2 class="page_tit">페이지 제목4</h2>
+    <div class="page_wrap"></div>
+</div>
+<script>
+$(document).ready(function(){
+    // 1. 각 페이지에 위치 값을 계산하여 사용자 정의 속성으로 지정한다.
+    $(".page").each(function(index){
+        var pg_t = parseInt($(this).offset().top);
+        $(this).attr("data-index", pg_t);
+    });
+    
+    //2. .page를 스크롤할 때 on 메서드의 mousewheel(DOMMouseScroll) 이벤트로 스크롤 모션을 기술한다.
+    $(".page").on("mousewheel DOMMouseScroll", function(e){
+        
+        //4. 이전/다음 페이지의 사용자 정의 속성을 정수로 저장한다.
+        var next_len = parseInt($(this).next(".page").attr("data-index"));
+        var prev_len = parseInt($(this).prev(".page").attr("data-index"));
+        
+        //5. e.originalEvent.wheelDelta 값을 활용하여 0보다 크거나 같으면 이전 페이지로 스크롤되게
+        //0보다 작으면 다음 페이지로 스크롤되게 한다.
+        if(e.originalEvent.wheelDelta >= 0) {
+            $("body, html").not(":animated").animate({"scrollTop":prev_len}, 500, 'easeOutCubic');
+            $(this).prev(".page").addClass("on");
+            return false;
+        } else if(e.originalEvent.wheelDelta < 0) {
+            $("body, html").not(":animated").animate({"scrollTop":next_len}, 500, 'easeOutCubic');
+            $(this).next(".page").addClass("on");
+            return false;
+        }
+        //6. 위로 스크롤시 이전 페이지 위치로 스크롤
+        //아래로 스크롤시에는 다음 페이지의 위치로 스크롤
+    });
+});    
+</script>
+</body>
+</html>
