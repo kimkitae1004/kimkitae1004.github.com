@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>현대자산운용</title>
+    <script src="prefixfree.min.js"></script>
+    <link rel="stylesheet" href="./style/fontsys.css">
+    <style>
+    * { margin: 0; padding: 0; }    
+    body, html{ margin:0; padding:0; width:100%; font-family: 'Noto Sans KR', sans-serif; -ms-overflow-style:none; }
+    ::-webkit-scrollbar { display:none; }    
+    ul { list-style:none; }
+    a { text-decoration: none; }
+        
+    .hd { width: 100%; height:98px; background-color:rgba(0,0,0,0.25); 
+        position:fixed; left: 0; top: 0; z-index:999;  }
+    .hd:hover { background-color:#fff;  }
+    .hd:before { content:""; clear:both; display:block; background-color:rgba(230,230,230,0.5); width: 100%; height: 1px; position:absolute; top:98px; left: 0; }
+    .hd:hover::before { background-color:rgba(30,30,30,0.4); }  
+    .hd_bar:after { content:""; clear:both; display:block; width: 100%; 
+        height: 1px; background-color:#f1f1f1; position:absolute; top:98px; left: 0; 
+        z-index:9999; }    
+    .hd_wrap { width: 1440px; margin: 0 auto; }
+    .logo { display:block; width: 172px; height: 24px; float:left;    margin-top: 38px;
+        background-repeat: no-repeat;
+        background-position:center center; background-image: url("./images/logo_h1_diff_type.png"); text-indent:-9999px; }
+    .hd:hover .logo { background-image:url("./images/logo_h1.png"); }    
+    .gnb { width: 1080px; margin-left: 44px; float:left; position:relative; 
+        background-color:transparent; } 
+    .gnb:after { content:""; clear:both; display:block; }    
+    .gnb:hover { background-color:#fff; }    
+    .gnb ul:after { content:""; clear:both; display:block; }    
+    .gnb li { position:relative; }    
+    .gnb > ul > li { padding:35px 20px; font-size:20px; float:left;  }          
+    .gnb li a { display:block; }    
+    .gnb li a.dept1 { color:#fff; font-weight:600; padding:0px 24px; }    
+    .hd:hover .gnb li a.dept1 { display:block; color:#222; }
+    .hd .gnb li:hover { background-color:#f1f1f1; }   
+    .hd .gnb li:hover a.dept1 { color:navy; }    
+    .gnb li .sub { position:absolute; top:98px; left: 0; z-index:999; background-color:#fff; padding:24px; min-width:125px; height:200px; overflow:hidden; display:none; 
+        border-bottom:2px solid rgba(0,0,0,0.5);  }
+    .gnb:before, .gnb:after { content:""; display:block; width:1500px; height: 248px; position:absolute; top:98px; z-index:998; background-color:#fff; display:none; 
+        border-bottom:2px solid rgba(0,0,0,0.5); }
+    .gnb:before { right:1080px; }    
+    .gnb:after { left:1000px; }        
+    .gnb.on:before, .gnb.on:after { display:block; }    
+    .gnb.on li .sub { display:block; }
+    .gnb li .sub li { clear:both; line-height: 30px; }
+    .gnb li .sub li a { color:#666; font-weight:600; font-size:14px; padding-left: 10px;
+        text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+    .gnb li .sub li a:hover { color:#111; background-color:#f1f1f1; }    
+    .left_menu { float:right; margin-top: 32px; }
+    .left_menu li { float:left; position:relative; }
+    .left_menu li.lang_loc { width: 92px; height: 38px; }    
+    .lang_sel { width:75px; height: 36px; overflow:hidden; font-size:16px; font-weight:bold; padding-left: 15px; color:#fff; line-height: 36px; cursor:pointer; height: 36px; transition:0.5s; margin-right: 15px; border:1px solid transparent; position:absolute; top: 0; left: 0; z-index:999; }
+    .hd:hover .lang_sel { color:#333 }    
+    .lang_sel.on { height: 74px; background-color:azure; border:1px solid rgba(0,0,0,0.4); }
+    .lang_sel a { display:block; color:#999; }    
+    .cur_lang { display:block; }    
+    .cur_lang:after { content:"▼"; padding-left:8px;  }    
+    .lang_sel.on .cur_lang:after { content:"▲"; }   
+    .menu_open_btn {  width: 32px; height: 36px; position:relative; margin-top:7px; cursor:pointer; }
+    .menu_open_btn span { display:block; position:absolute; left: 0; background-color:#fff; 
+        height: 3px; width: 32px; opacity:1; transition:0.5s; 
+        transform:rotate(0deg) translateY(0); }
+    .menu_open_btn span.it2 { width: 20px; }    
+    .hd:hover .menu_open_btn span { background-color:#333; }
+    .menu_open_btn span.it1 { top:0; }
+    .menu_open_btn span.it2 { top:10px; }
+    .menu_open_btn span.it3 { top:20px; }    
+    .menu_open_btn.on span.it1 { transform:rotate(45deg); top:10px; }    
+    .menu_open_btn.on span.it2 { opacity:0; }   
+    .menu_open_btn.on span.it3 { transform:rotate(135deg); top:10px;}    
+        
+    .ft { clear:both; width: 100%; min-height:70px; padding:12px 0px; 
+        background-color:#eee; }
+    .ft_wrap { width: 1440px; margin: 0 auto; font-size:14px;  position:relative; }
+    .fnb { clear:both; }
+    .fnb li { float:left; height:28px; color:#333; margin-right:20px; font-size:14px; 
+        font-weight:600; }
+    .fnb li a { display:inline-block; color:#333;  }    
+    .fnb li ~ li:before { content:"|"; padding-right:20px; }    
+    .addr { clear:both; color:#333; font-size:14px; line-height: 1.6; font-weight:500; }    
+    .copyright { clear:both; color:#555; font-size:14px;  line-height: 1.6; padding-bottom: 20px; padding-top: 6px; font-weight:bold; }   
+    .cate { padding-left: 10px; padding-right: 10px; }
+    .to_top { width: 62px; height: 62px; display:block; position:fixed; bottom:90px; right:25px; z-index:9999; background-image: url("./images/ico_top.png"); background-repeat: no-repeat; background-position: center center; cursor:pointer; }    
+    .ft_relation { position:absolute; bottom: 20px; right:10px; 
+        width: 210px; height: 40px;  line-height: 40px; cursor:pointer; 
+        overflow:hidden; transition:0.5s; 
+        border-top:2px solid #333; border-bottom:1px solid #333;
+        border-left:1px solid #ccc; border-right:1px solid #ccc; 
+    }
+    .ft_relation.on { height: 280px; } 
+    .relation_btn { display:block; color:#333; padding-left: 10px; position:absolute; bottom: 0px; font-weight: bold;  }
+    .relation_btn:after { content:"▼"; padding-left:100px; text-align:right; }    
+    .ft_relation.on .relation_btn:after { content:"▲"; } 
+    .relation_lst { display:none; }
+    .relation_lst li { background-color:#ddd; }
+    .relation_lst li a { padding-left: 10px; color:#666; font-weight: bold; }    
+    .relation_lst li:hover a { color:#000; }    
+    .ft_relation.on .relation_lst { display:block; }    
+    </style>
+    <style>       
+    .page { width:100%; clear:both;  position:relative; 
+        background-position:center center; background-repeat: no-repeat; 
+        background-size:100% 100%; font-size:24pt; color:#fff; }
+    .page:after { content:""; clear:both; display:block; } 
+    .page_wrap:after { content:""; clear:both; display:block; }    
+    .pg { width:100vw; height:100vh; overflow:hidden; }    
+    #page1 {  background-image:url("./images/bg_main_01.jpg"); }
+    #page2 {  background-image:url("./images/bg_main_02.jpg");   }    
+    #page3 {  background-image:url("./images/bg_main_03.jpg");   }    
+    #page4 {  background-image:url("./images/bg_main_04.jpg");   }
+    #page5 { background-image:url("./images/bg_main_05.jpg");   }        
+    .page_tit { margin-top: 134px;    color: #fff;    font-size: 5.882rem;
+    font-weight: 900;    word-break: break-word;    letter-spacing: -.04rem;
+    line-height: 7.058rem;  transition-delay: 1s; padding-top: 4rem;
+    transition: transform 1.5s, opacity 1.7s;
+    transform: translateY(50px);
+    opacity: 0; }
+    .page_com { margin-top: 44px;    color: #fff;    font-size: 1.412rem;
+    word-break: keep-all;    letter-spacing: -.04rem;    line-height: 1.882rem; 
+        transition-delay: 1s;    transition: transform 2.5s, opacity 2.7s;
+    transform: translateY(50px);    opacity: 0; }    
+    .page_tit.main, .page_com.main { text-align:center; }   
+    .page_tit.bk_typo { color:#111; }    
+    .page.on .page_tit { transform: translateY(0);    opacity: 1; }  
+    .page.on .page_com { transform: translateY(0);    opacity: 1; }   
+    .page_wrap { width: 1440px; margin: 0 auto; position:relative; } 
+        
+    #page1 .page_wrap { padding-top:10rem; }
+    .scroll_bottom1 { position: absolute;    bottom: 180px;    left: 50%;
+    width: 60px;    height: 60px;    transform: translateX(-50%);  }
+    .page.on .scroll_bottom1 { display:block; }   
+    .scroll_bottom1:before {  content:""; display:block; width:50%; 
+        margin-left:50%;
+        border-left:1px dotted #fff; height: 1px; animation: scroll_bt2 1.5s infinite; }
+        
+    .scroll_bottom1 span { position: absolute;    top: 0;
+    left: 50%;    width: 32px;    height: 32px;
+    margin: -10px 0 0 -15px;    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    animation: scroll_bt1 1.5s infinite; }    
+    @keyframes scroll_bt1 { 
+        0% { top:0; opacity:1;  }
+        50% { opacity:1; }
+        100% { top:100px; opacity:0; }
+    }
+    @keyframes scroll_bt2 { 
+        0% { height: 1px; opacity:1; }
+        50% { opacity:1;}
+        100% { height: 100px; opacity:0;}
+    }        
+        
+    .scroll_bottom2 { position: absolute;    bottom: 0;    left:calc(50% - 720px); }   
+    .scroll_bottom2 p { position: relative;    padding-bottom: 110px;
+    color: #fff;    font-size: .705rem;    font-weight: 700;
+    writing-mode: vertical-rl;    text-orientation:mixed; }   
+    .scroll_bottom2 p:before { content:"";    position: absolute;
+    top: 65px;    left: 50%;    width: 8px;
+    height: 8px;    margin-left: -4px;    border-radius: 4px;
+    background: #fff;    animation-name: scroll_bt3;
+    animation-duration:1s;    animation-timing-function:ease-in; 
+    animation-iteration-count: infinite;}    
+    .scroll_bottom2 p:after { content:"";
+    position: absolute;    bottom: 0;    left: 50%;
+    width: 1px;    height: 84px;    background-color: #fff;
+    transform: translateX(-50%);    opacity: 0.3; } 
+    @keyframes scroll_bt3 { 
+        0% { top:65px; opacity:1;  }
+        100% { top:150px; opacity:0; }
+    }    
+        
+    .con_wrap { position:absolute; top:25%; right:4%; } 
+    .cur_page { clear:both; margin-top: 80px; }
+    .cur_tit { clear:both; color:#fff; text-align:left; font-size:20px; width: 100%; height: 80px; line-height: 80px; }
+    .cur_page .bar { float:left; width: 80px; height: 5px; background-color:rgba(33,240,86,0.2); margin-right: 10px; }
+    .cur_page .bar.on { background-color:rgba(255,255,255,0.85); }    
+    #page2 .con_wrap { width: 698px; height: 624px;  }
+    #page2 .pg_item { position:relative; }
+    .earth_box li { position:absolute; top: 0; left: 0; width: 698px; height:624px; 
+        background-position: center center; background-repeat: no-repeat; }
+    .earth_box li.item1 { background-image:url("./images/img_earth.png"); }
+    .earth_box li.item2 { background-image:url("./images/earth_line_back.png"); 
+        animation-name:ani1; animation-duration:15s; animation-iteration-count: infinite; 
+        animation-delay:13s; }    
+    .earth_box li.item3 { background-image:url("./images/earth_line_front.png"); 
+        animation-name:ani2; animation-duration:16s; animation-iteration-count: infinite; 
+        animation-delay:0s; }    
+    @keyframes ani1 { 
+        0% { transform:rotate(0deg); }
+        100% { transform:rotate(360deg); }
+    }    
+    @keyframes ani2 { 
+        0% { transform:rotate(0deg); }
+        100% { transform:rotate(-360deg); }
+    }    
+    .btn_lst { width: 698px; height: 624px; }    
+    .btn_lst li { position:absolute; }
+    .btn_lst li a { display:block; text-align:center; line-height:1.2; font-size:16px;
+        padding:29% 1%; box-sizing:border-box; width: 100px; height: 100px; border-radius:100px; transition:0.5s; background-color:transparent; color:#fff; border:2px solid #fff; transform:scale(1); }
+    .btn_lst li:hover a {  background-color:gold; transform:scale(1.4);
+        border:2px solid gold; }   
+    .btn_lst li.item1 { left:1%; top:22%; }    
+    .btn_lst li.item2 { left:50%; top:-8%; margin-left: -75px; }     
+    .btn_lst li.item3 { left:100%; top:22%; margin-left: -150px; }    
+    .btn_lst li.item4 { left:1%; bottom:22%; }    
+    .btn_lst li.item5 { left:50%; bottom:-8%; margin-left: -75px; }     
+    .btn_lst li.item6 { left:100%; bottom:22%; margin-left: -150px; }
+        
+    #page3 .con_wrap { top:auto; bottom:13%; }   
+    .icon_lst { position:relative; height: 300px; bottom: 0; }
+    .icon_lst li { float:left; margin:15px; position:relative; 
+        transition:0.5s; min-width:240px; min-height:230px; }
+    .icon_lst li a { display:block; width: 200px; height: 200px; padding:30px 25px; 
+        background-color:rgba(0,0,0,0.45); color:#fff; transition:0.5s; position:absolute; bottom: 0; left: 0; word-break:keep-all; background-repeat: no-repeat; background-position:160px 160px; } 
+    .icon_tit { font-size:18px;  transition:0.5s;  }
+    .icon_com { font-size:15px; padding: 20px 0px; display:none; transition:0.5s; }
+    .icon_lst li:hover { min-width: 350px; }    
+    .icon_lst li:hover .icon_com { display:block; font-size:17px; }    
+    .icon_lst li:hover .icon_tit { font-size:24px;  }    
+    .icon_lst li:hover a { width: 300px; height: 300px; background-color: deeppink; 
+        background-position:260px 260px; }   
+    .icon_lst li.item1 a { background-image: url("./images/ico_menu_type01_01.png"); }
+    .icon_lst li.item2 a { background-image: url("./images/ico_menu_type01_02.png"); }
+    .icon_lst li.item3 a { background-image: url("./images/ico_menu_type01_03.png"); }
+        
+    #page4 .con_wrap { top:60%; right:25%; }    
+    .rhambus_lst { position:relative; } 
+    .rhambus_lst li { width: 280px; height: 280px; position:absolute; left: 50%; top: 0; 
+         transform-origin:-25px -25px; background-color:rgba(0,0,0,0.35); overflow:hidden; 
+        cursor:pointer; transition:0.5s; }
+    .rhambus_lst li:hover { background-color:rgba(12,230,105,0.8); }
+    .rhambus_lst li.item1 {  transform:rotate(45deg); }
+    .rhambus_lst li.item2 {  transform:rotate(135deg); }  
+    .rhambus_lst li.item3 {  transform:rotate(225deg); }
+    .rhambus_lst li.item4 {  transform:rotate(315deg); }  
+    .rhambus_lst li.item1:hover {  transform:rotate(45deg) scale(1.2); }
+    .rhambus_lst li.item2:hover {  transform:rotate(135deg) scale(1.2); }  
+    .rhambus_lst li.item3:hover {  transform:rotate(225deg) scale(1.2); }
+    .rhambus_lst li.item4:hover {  transform:rotate(315deg) scale(1.2); }  
+    .rhambus_lst li a { display:block; width:88%; height:70%;  color:#fff; margin:15% auto;
+        position:relative; } 
+    .rhambus_lst li.item1 a {  transform:rotate(-45deg); } 
+    .rhambus_lst li.item2 a {  transform:rotate(-135deg); }  
+    .rhambus_lst li.item3 a {  transform:rotate(-225deg); }   
+    .rhambus_lst li.item4 a {  transform:rotate(-315deg); }   
+    .rhambus_tit { clear:both; font-size:17px; text-align:center; margin:100px auto; margin-bottom: 0; width: 100%; position:absolute; top:-15%; }
+    .rhambus_lst li:hover .rhambus_tit { margin: 10px auto; position:static; top:auto; }   
+    .rhambus_data { clear:both; font-size:12px; width: 126px; margin:15px auto; display:none; margin-top: 40px; padding-top:20px; }
+    .rhambus_data span { display:inline-block; margin:5px; padding:5px; float:left; 
+        text-align: center; }
+    .rhambus_data span.first:after { content:"|"; padding-left: 15px; }    
+    .rhambus_lst li:hover .rhambus_data { display:block; }    
+    .rhambus_com { font-size:12px; clear:both; width: 190px; margin:15px auto; display:none; }  
+    .rhambus_com span { display:inline-block; float:left; margin:6px; padding:5px; 
+        border:2px solid #fff; border-radius:20px; text-align: center; }    
+    .rhambus_lst li:hover .rhambus_com { display:block; }   
+
+    #page5 .con_wrap { top:55%; left:50%; width: 1440px; margin-left: -720px; } 
+    #page5 .page_item { width: 100%; margin: 0 auto; clear:both; }
+    .nt_lst { clear:both; width: 100%; }
+    .nt_lst li { width:29%; float:left; margin:2%; min-height:300px; border-top:2px solid #333; } 
+    .nt_tit { color:#333; font-size:16px; text-align:left; line-height:4.2; }
+    .tb { display:table; border-collapse: collapse;  }
+    .tb tr { display:table-row; }
+    .tb td { display:table-cell; line-height: 1.2; }
+    .tb td.tb_full_col { line-height: 1.8; }    
+    .nt_link { display:inline-block; width: 300px; padding-right: 10px; color:#333; font-size:16px; overflow:hidden; white-space:nowrap; text-overflow: ellipsis; }
+    .nt_link.nt_first { width: 400px; white-space: normal; line-height: 1.2; height: 2.4em; text-align: left; word-wrap: break-word; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical; font-size: 28px; }
+    .nt_date { display:inline-block; width:90px; color:#666; font-size:16px; text-align:center; }    
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        window.onload = function () {
+//            var elm = ".page";
+            $(".page").each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(".page").eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {  //다음 페이지가 있으면
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) { //이전 페이지가 있으면
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("body, html").stop().not("animated").animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 850, complete: function () {
+
+                        }
+                    });
+                });
+            });
+            $(".page").mouseenter(function(){
+                $(this).addClass("on");    
+            });
+            $(".page").mouseleave(function(){
+                $(this).removeClass("on");    
+            });
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+       $(".menu_open_btn").click(function(){
+           $(this).toggleClass("on");
+           $(".gnb").toggleClass("on");
+       }); 
+        $(".hd").mouseleave(function(){
+            $(".gnb").removeClass("on");
+            $(".menu_open_btn").removeClass("on");
+            $(".lang_sel").removeClass("on");
+        });   
+        $(".lang_sel").click(function(){
+           $(this).toggleClass("on"); 
+        });
+        $(".to_top").click(function(){
+           $("body, html").not(":animated").animate({scrollTop:"0px"}, 600); 
+        });
+        $(".ft_relation").click(function(){
+            $(this).toggleClass("on");
+        });
+        $(".to_top").css("display","none");
+        $(window).scroll(function(){
+            var sc_top = $(window).scrollTop();
+            if(sc_top>=600) { $(".to_top").fadeIn(); }
+            else { $(".to_top").fadeOut(); }
+        });
+    });    
+    </script>
+</head>
+<body>
+<div class="container">
+    <header class="hd" id="header">
+        <div class="hd_bar"></div>
+        <div class="hd_wrap">
+            <a href="" class="logo">현대자산운용</a>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="" class="dept1">사업영역</a>
+                        <ul class="sub">
+                            <li><a href="">조직구조</a></li>
+                            <li><a href="">종합자산운용(AM)</a></li>
+                            <li><a href="">IB</a></li>
+                            <li><a href="">PE</a></li>
+                            <li><a href="">DI</a></li>
+                            <li><a href="">REITs</a></li>
+                            <li><a href="">AMCO</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dept1">펀드상품</a>
+                        <ul class="sub">
+                            <li><a href="">펀드포커스</a></li>
+                            <li><a href="">펀드찾기</a></li>
+                            <li><a href="">부동산 포트폴리오</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dept1">투자철학</a>
+                        <ul class="sub">
+                            <li><a href="">투자철학&amp;프로세스</a></li>
+                            <li><a href="">위험관리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dept1">회사소개</a>
+                        <ul class="sub">
+                            <li><a href="">개요&amp;비전</a></li>
+                            <li><a href="">연혁</a></li>
+                            <li><a href="">인력구성</a></li>
+                            <li><a href="">무궁화신탁 소개</a></li>
+                            <li><a href="">스튜어드십코드</a></li>
+                            <li><a href="">공지&amp;뉴스</a></li>
+                            <li><a href="">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dept1">인재채용</a>
+                        <ul class="sub">
+                            <li><a href="">채용공고</a></li>
+                            <li><a href="">인재상&amp;직무소개</a></li>
+                            <li><a href="">인사제도&amp;복리후생</a></li>
+                            <li><a href="">채용절차</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dept1">공시</a>
+                        <ul class="sub">
+                            <li><a href="">경영공시</a></li>
+                            <li><a href="">펀드공시</a></li>
+                            <li><a href="">파생상품공시</a></li>
+                            <li><a href="">자산운용보고서</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="left_menu">
+                <ul>
+                    <li class="lang_loc">
+                        <div class="lang_sel">
+                            <span class="cur_lang">KOR</span>
+                            <a href="">ENG</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu_open_btn">
+                            <span class="lst_bar it1"></span>
+                            <span class="lst_bar it2"></span>
+                            <span class="lst_bar it3"></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="page pg on" id="page1">
+        <div class="page_wrap">
+            <h2 class="page_tit main">Your First Capital Firm,<br>
+            Your Financial Renovation!</h2>
+            <p class="page_com main">다각화된 금융서비스로 최선의 투자 솔루션을 전달하는 캐피탈펌을 추구합니다.</p>
+        </div>
+        <div class="scroll_bottom1">
+            <span></span>
+        </div>
+    </section>
+    <section class="page pg" id="page2">
+        <div class="page_wrap">
+            <h2 class="page_tit">All-rounder<br>in the Investment</h2>
+            <p class="page_com">전통자산부터 대체자산까지, 운용과 컨설팅을 아우르는 폭 넓은 금융서비스를 제공합니다.</p>
+            <div class="cur_page">
+                <h3 class="cur_tit">02</h3>
+                <span class="bar"></span>
+                <span class="bar on"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="scroll_bottom2">
+            <p>SCROLL</p>
+        </div>
+        <div class="con_wrap">
+            <div class="pg_item">
+                <ul class="earth_box">
+                    <li class="item1"></li>
+                    <li class="item2"></li>
+                    <li class="item3"></li>
+                </ul>
+                <ul class="btn_lst">
+                    <li class="item1"><a href="">자산운용<br>(AM)</a></li>
+                    <li class="item2"><a href="">기업금융<br>(IB)</a></li>
+                    <li class="item3"><a href="">프라이빗<br>에쿼티(PE)</a></li>
+                    <li class="item4"><a href="">자산관리<br>(AMCO)</a></li>
+                    <li class="item5"><a href="">개발투자<br>(DI)</a></li>
+                    <li class="item6"><a href="">리츠<br>(REITS)</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page pg" id="page3">
+        <div class="page_wrap">
+            <h2 class="page_tit">Broaden Your<br>Investment Horizons</h2>
+            <p class="page_com">전문성을 바탕으로 한 도전과 혁신으로 금융업의 새로운 이정표를 제시합니다.</p>
+            <div class="cur_page">
+                <h3 class="cur_tit">03</h3>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar on"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="scroll_bottom2">
+            <p>SCROLL</p>
+        </div>
+        <div class="con_wrap">
+            <div class="pg_item">
+                <ul class="icon_lst">
+                    <li class="item1">
+                        <a href="">
+                            <h2 class="icon_tit">유연한 조직 구축으로 혁신적 투자 기회 발굴</h2>
+                            <p class="icon_com">공유 개방형 플랫폼 조직 구축으로 부서간 협업의 유연성을 높여 다양하고 혁신적인 투자 기회를 발굴하고, 제안합니다.</p>
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="">
+                            <h2 class="icon_tit">다양하고 꾸준한 투자 기회 발굴로 고객 자산 증대 기여</h2>
+                            <p class="icon_com">펀드운용, 투자자문, 부동산개발, 기업 인수합병 및 구조조정 등 다양한 분야에서 고객의 자산을 지키고 키우는 데 도움을 드리고자 합니다.</p>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="">
+                            <h2 class="icon_tit">무궁화금융그룹 가족으로 더욱 든든한 경영 안정성 확보</h2>
+                            <p class="icon_com">2020년 무궁화신탁 자회사 편입 후, 무궁화금융그룹의 성장과 함께 다양한 영역에서의 시너지를 창출합니다.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page pg" id="page4">
+        <div class="page_wrap">
+            <h2 class="page_tit">Find Valuable<br>Opportunities</h2>
+            <p class="page_com">가치 있는 투자기회를 찾아 고객의 믿음에 만족스러운 성과로 보답하겠습니다.</p>
+            <div class="cur_page">
+                <h3 class="cur_tit">04</h3>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar on"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="scroll_bottom2">
+            <p>SCROLL</p>
+        </div>
+        <div class="con_wrap">
+            <div class="pg_item">
+                <ul class="rhambus_lst">
+                    <li class="item1">
+                        <a href="">
+                            <div class="rhambus_data">
+                                <span class="first">국내</span><span class="last">주식형</span>
+                            </div>
+                            <h2 class="rhambus_tit">현대뉴현대그룹플러스<br>증권펀드</h2>
+                            <div class="rhambus_com">
+                                <span class="first">#현대그룹주</span><span class="last">#뉴딜펀드</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="">
+                            <div class="rhambus_data">
+                                <span class="first">국내</span><span class="last">주식형</span>
+                            </div>
+                            <h2 class="rhambus_tit">현대강소기업<br>증권자투자신탁1호</h2>
+                            <div class="rhambus_com">
+                                <span class="first">#중소형주</span><span class="last">#작은거인</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="">
+                            <div class="rhambus_data">
+                                <span class="first">국내</span><span class="last">채권형</span>
+                            </div>
+                            <h2 class="rhambus_tit">현대트러스트단기채<br>증권자투자신탁1호</h2>
+                            <div class="rhambus_com">
+                                <span class="first">#단기채펀드</span><span class="last">#입출금자유</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item4">
+                        <a href="">
+                            <div class="rhambus_data">
+                                <span class="first">해외</span><span class="last">재간접</span>
+                            </div>
+                            <h2 class="rhambus_tit">현대AIM시그니처<br>글로벌EMP펀드(UH)</h2>
+                            <div class="rhambus_com">
+                                <span class="first">#글로벌자산배분</span><span class="last">#ETF</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page pg" id="page5">
+        <div class="page_wrap">
+            <h2 class="page_tit bk_typo">Grow Up<br>
+            with Hyundai AM</h2>
+        </div>
+        <div class="scroll_bottom2">
+            <p>SCROLL</p>
+        </div>
+        <div class="con_wrap">
+            <div class="page_item">
+                <ul class="nt_lst">
+                    <li class="item1">
+                        <h3 class="nt_tit">공지사항</h3>
+                    </li>
+                    <li class="item2">
+                        <h3 class="nt_tit">공시</h3>
+                        <table class="tb">
+                            <tbody>
+                                <tr>
+                                    <td class="tb_full_col" colspan="2">
+                                        <a href="" class="nt_link nt_first">[수시공시]부동산집합투자기구 공시 - 현대안다인컴트리리츠부동산모투자신탁[리츠-재간접형]</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_full_col" colspan="2">
+                                        <span class="nt_date">2021-02-22</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_col1">
+                                        <a href="" class="nt_link">[집합투자기구 정정]현대유퍼스트부동산투자신탁30호[파생형]</a>
+                                    </td>
+                                    <td class="tb_col2">
+                                        <span class="nt_date">2021-02-10</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_col1">
+                                        <a href="" class="nt_link">[수시공시]부동산집합투자기구 공시 - 현대안다인컴트리리츠부동산모투자신탁[리츠-재간접형]</a>
+                                    </td>
+                                    <td class="tb_col2">
+                                        <span class="nt_date">2021-02-09</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li class="item3">
+                        <h3 class="nt_tit">채용공고</h3>
+                        <table class="tb">
+                            <tbody>
+                                <tr>
+                                    <td class="tb_full_col" colspan="2">
+                                        <a href="" class="nt_link nt_first">마케팅본부 마케팅기획팀 인턴 채용 공고</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_full_col" colspan="2">
+                                        <span class="nt_date">2021-01-29</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_col1">
+                                        <a href="" class="nt_link">경영기획본부 전산/총무업무 (사원~대리급) 채용 공고</a>
+                                    </td>
+                                    <td class="tb_col2">
+                                        <span class="nt_date">2020-05-15</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tb_col1">
+                                        <a href="" class="nt_link">경영관리본부 재무관리팀 (사원 ~ 대리)</a>
+                                    </td>
+                                    <td class="tb_col2">
+                                        <span class="nt_date">2020-05-15</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </section>
+    <footer class="page ft" id="footer">
+        <div class="ft_wrap">
+            <nav class="fnb">
+                <ul>
+                    <li><a href="">개인정보 처리방침</a></li>
+                    <li><a href="">홈페이지 이용약관</a></li>
+                    <li><a href="">영상정보처리기기 운영방침</a></li>
+                    <li><a href="">사이트맵</a></li>
+                </ul>
+            </nav>
+            <p class="addr">
+                <span class="cate">07320 서울특별시 영등포구 여의대로 24, 38층(여의도동,전국경제인연합회회관) 현대자산운용(주)</span>
+                <span class="cate">TEL 02-2090-0500</span>
+                <span class="cate">FAX 02-2070-7277</span>
+            </p>
+            <p class="copyright">COPYRIGHT HYUNDAI ASSET MANAGEMENT Co.,Ltd. All rights reserved.</p>
+            <div class="ft_relation">
+                <span class="relation_btn">관련사이트</span>
+                <ul class="relation_lst">
+                    <li><a href="http://www.kofia.or.kr" target="_blank">금융투자협회</a></li>
+                    <li><a href="http://www.fss.or.kr" target="_blank">금융감독원</a></li>
+                    <li><a href="http://www.fss.or.kr/s1332" target="_blank">서민금융1332</a></li>
+                    <li><a href="http://fund.kofia.or.kr" target="_blank">펀드정보원클릭시스템</a></li>
+                    <li><a href="http://www.mgtrust.co.kr" target="_blank">무궁화신탁</a></li>
+                    <li><a href="http://www.kreitsnp.com" target="_blank">케이리츠투자운용</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="to_top"></div>   
+</body>
+</html>
